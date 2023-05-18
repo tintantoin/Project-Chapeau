@@ -1,0 +1,17 @@
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.exe
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.deps.json
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.runtimeconfig.json
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.pdb
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.csproj.AssemblyReference.cache
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.ChapeauUI.InlogUI.resources
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.csproj.GenerateResource.cache
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.AssemblyInfoInputs.cache
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.AssemblyInfo.cs
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.csproj.CoreCompileInputs.cache
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\refint\ProjectChapeau.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.pdb
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.genruntimeconfig.cache
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ref\ProjectChapeau.dll
