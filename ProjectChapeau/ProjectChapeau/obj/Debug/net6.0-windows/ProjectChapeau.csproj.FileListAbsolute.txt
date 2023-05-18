@@ -16,3 +16,4 @@ C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\Projec
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.genruntimeconfig.cache
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ref\ProjectChapeau.dll
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.Properties.Resources.resources
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.ChapeauUI.TafelOverzicht.resources

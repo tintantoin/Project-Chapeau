@@ -83,7 +83,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(190, 393);
+            this.btnLogin.Location = new System.Drawing.Point(198, 361);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 29);
             this.btnLogin.TabIndex = 5;
@@ -94,7 +94,7 @@
             // lblForgotPassword
             // 
             this.lblForgotPassword.AutoSize = true;
-            this.lblForgotPassword.Location = new System.Drawing.Point(172, 435);
+            this.lblForgotPassword.Location = new System.Drawing.Point(190, 407);
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(120, 20);
             this.lblForgotPassword.TabIndex = 6;
