@@ -16,5 +16,13 @@ namespace ProjectChapeau.ChapeauUI
         {
             InitializeComponent();
         }
+
+        private void btnTable1_Click(object sender, EventArgs e)
+        {
+            btnTable10.BackColor = Color.MediumAquamarine;
+            btnTable9.BackColor = Color.SandyBrown;
+            btnTable3.BackColor = Color.Silver;
+            btnTable4.BackColor = Color.Coral;
+        }
     }
 }
