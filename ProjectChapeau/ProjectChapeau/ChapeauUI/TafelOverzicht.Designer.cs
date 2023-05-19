@@ -80,6 +80,7 @@
             this.btnTable2.TabIndex = 3;
             this.btnTable2.Text = "2";
             this.btnTable2.UseVisualStyleBackColor = false;
+            this.btnTable2.Click += new System.EventHandler(this.btnTable2_Click);
             // 
             // btnTable4
             // 
@@ -90,6 +91,7 @@
             this.btnTable4.TabIndex = 5;
             this.btnTable4.Text = "4";
             this.btnTable4.UseVisualStyleBackColor = false;
+            this.btnTable4.Click += new System.EventHandler(this.btnTable4_Click);
             // 
             // btnTable3
             // 
@@ -100,6 +102,7 @@
             this.btnTable3.TabIndex = 4;
             this.btnTable3.Text = "3";
             this.btnTable3.UseVisualStyleBackColor = false;
+            this.btnTable3.Click += new System.EventHandler(this.btnTable3_Click);
             // 
             // btnTable6
             // 
@@ -110,6 +113,7 @@
             this.btnTable6.TabIndex = 7;
             this.btnTable6.Text = "6";
             this.btnTable6.UseVisualStyleBackColor = false;
+            this.btnTable6.Click += new System.EventHandler(this.btnTable6_Click);
             // 
             // btnTable5
             // 
@@ -120,6 +124,7 @@
             this.btnTable5.TabIndex = 6;
             this.btnTable5.Text = "5";
             this.btnTable5.UseVisualStyleBackColor = false;
+            this.btnTable5.Click += new System.EventHandler(this.btnTable5_Click);
             // 
             // btnTable8
             // 
@@ -130,6 +135,7 @@
             this.btnTable8.TabIndex = 9;
             this.btnTable8.Text = "8";
             this.btnTable8.UseVisualStyleBackColor = false;
+            this.btnTable8.Click += new System.EventHandler(this.btnTable8_Click);
             // 
             // btnTable7
             // 
@@ -140,6 +146,7 @@
             this.btnTable7.TabIndex = 8;
             this.btnTable7.Text = "7";
             this.btnTable7.UseVisualStyleBackColor = false;
+            this.btnTable7.Click += new System.EventHandler(this.btnTable7_Click);
             // 
             // btnTable10
             // 
@@ -150,6 +157,7 @@
             this.btnTable10.TabIndex = 11;
             this.btnTable10.Text = "10";
             this.btnTable10.UseVisualStyleBackColor = false;
+            this.btnTable10.Click += new System.EventHandler(this.btnTable10_Click);
             // 
             // btnTable9
             // 
@@ -160,6 +168,7 @@
             this.btnTable9.TabIndex = 10;
             this.btnTable9.Text = "9";
             this.btnTable9.UseVisualStyleBackColor = false;
+            this.btnTable9.Click += new System.EventHandler(this.btnTable9_Click);
             // 
             // btnTableFree
             // 
