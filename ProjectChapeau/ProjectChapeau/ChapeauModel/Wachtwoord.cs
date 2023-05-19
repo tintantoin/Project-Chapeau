@@ -56,5 +56,4 @@ namespace ProjectChapeau.ChapeauModel
             return userWachtwoord;
         }
     }
-
 }

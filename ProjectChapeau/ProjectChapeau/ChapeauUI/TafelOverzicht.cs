@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectChapeau.ChapeauDAL;
+using ProjectChapeau.ChapeauModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace ProjectChapeau.ChapeauUI
 {
@@ -35,6 +38,11 @@ namespace ProjectChapeau.ChapeauUI
         private void btnTable1_Click(object sender, EventArgs e)
         {
             OpenTable(1);
+            PersoneelDAO personeelDAO = new PersoneelDAO();
+            List<Personeel> personeel = personeelDAO.GetAllPersoneel();
+            MessageBox.Show($"{personeel[0].id}");
+
+
         }
 
         private void btnTable2_Click(object sender, EventArgs e)
