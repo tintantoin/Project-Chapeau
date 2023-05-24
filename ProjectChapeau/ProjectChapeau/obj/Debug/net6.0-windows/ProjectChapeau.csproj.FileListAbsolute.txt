@@ -15,3 +15,17 @@ C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\refint
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.pdb
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.genruntimeconfig.cache
 C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ref\ProjectChapeau.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.Properties.Resources.resources
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.ChapeauUI.TafelOverzicht.resources
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.ChapeauUI.TafelStatusUI.resources
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\ProjectChapeau.dll.config
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\obj\Debug\net6.0-windows\ProjectChapeau.csproj.CopyComplete
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Project-Chapeau\ProjectChapeau\ProjectChapeau\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll

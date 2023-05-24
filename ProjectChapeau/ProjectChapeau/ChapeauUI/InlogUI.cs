@@ -16,5 +16,15 @@ namespace ProjectChapeau.ChapeauUI
         {
             InitializeComponent();
         }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello, World!", "Message Box Example", MessageBoxButtons.OK);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
