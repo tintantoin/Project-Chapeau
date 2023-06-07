@@ -9,7 +9,7 @@ namespace ProjectChapeau.ChapeauModel
 {
     class Personeel
     {
-        public int id;
+        public int personeelsId;
         public string voornaam;
         public string achternaam;
         public FunctieType functie;
