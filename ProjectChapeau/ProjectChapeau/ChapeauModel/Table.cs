@@ -8,9 +8,10 @@ namespace ProjectChapeau.ChapeauModel
 {
     class Table
     {
-        public Table TafelNummer;
-        public TafelStatus Tafelstatus;
-        public int Capaciteit;
-        public int ServerderId;
+        public int TableId { get; set; }
+        public TafelStatus Tafelstatus { get; set; }
+        public int Capaciteit { get; set; }
+        public int ServerderId { get; set; }
+        public int RekeningsNummer { get; set; }
     }
 }

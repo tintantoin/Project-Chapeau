@@ -9,10 +9,10 @@ namespace ProjectChapeau.ChapeauModel
 {
     class Personeel
     {
-        public int personeelsId;
-        public string voornaam;
-        public string achternaam;
-        public FunctieType functie;
-        public Wachtwoord wachtwoord;       
+        public int personeelsId { get; set; }
+        public string voornaam { get; set; }
+        public string achternaam { get; set; }
+        public FunctieType functie { get; set; }
+        public Wachtwoord wachtwoord { get; set; }
     }
 }
