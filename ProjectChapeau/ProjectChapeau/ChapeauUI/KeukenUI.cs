@@ -10,8 +10,8 @@ namespace ProjectChapeau.ChapeauUI
 {
     internal class KeukenUI : Form, IItemBereiders
     {
-        private Label label1;
-        private ListView listView1;
+        private Label TitelLbl;
+        private ListView BestellingenList;
         private ColumnHeader BesteldItemIdHdr;
         private ColumnHeader BestellingsIdHdr;
         private ColumnHeader CountHdr;
@@ -19,6 +19,11 @@ namespace ProjectChapeau.ChapeauUI
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
+        private Button button1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
         private ItemBereidersService service;
 
         public KeukenUI(ItemBereidersService service)
@@ -43,8 +48,8 @@ namespace ProjectChapeau.ChapeauUI
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.TitelLbl = new System.Windows.Forms.Label();
+            this.BestellingenList = new System.Windows.Forms.ListView();
             this.BesteldItemIdHdr = new System.Windows.Forms.ColumnHeader();
             this.BestellingsIdHdr = new System.Windows.Forms.ColumnHeader();
             this.CountHdr = new System.Windows.Forms.ColumnHeader();
@@ -52,32 +57,37 @@ namespace ProjectChapeau.ChapeauUI
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // TitelLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(639, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.TitelLbl.AutoSize = true;
+            this.TitelLbl.Location = new System.Drawing.Point(594, 32);
+            this.TitelLbl.Name = "TitelLbl";
+            this.TitelLbl.Size = new System.Drawing.Size(128, 25);
+            this.TitelLbl.TabIndex = 0;
+            this.TitelLbl.Text = "Keuken Orders";
             // 
-            // listView1
+            // BestellingenList
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.BestellingenList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.BesteldItemIdHdr,
             this.BestellingsIdHdr,
             this.CountHdr,
             this.DescriptionHdr});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(12, 103);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(664, 317);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.BestellingenList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BestellingenList.GridLines = true;
+            this.BestellingenList.Location = new System.Drawing.Point(12, 80);
+            this.BestellingenList.Name = "BestellingenList";
+            this.BestellingenList.Size = new System.Drawing.Size(664, 317);
+            this.BestellingenList.TabIndex = 1;
+            this.BestellingenList.UseCompatibleStateImageBehavior = false;
+            this.BestellingenList.View = System.Windows.Forms.View.Details;
             // 
             // BesteldItemIdHdr
             // 
@@ -135,14 +145,64 @@ namespace ProjectChapeau.ChapeauUI
             this.radioButton3.Text = "radioButton3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 433);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(753, 306);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(979, 309);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(766, 363);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(966, 360);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "label5";
+            // 
             // KeukenUI
             // 
             this.ClientSize = new System.Drawing.Size(1187, 488);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BestellingenList);
+            this.Controls.Add(this.TitelLbl);
             this.Name = "KeukenUI";
             this.ResumeLayout(false);
             this.PerformLayout();

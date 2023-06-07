@@ -8,10 +8,7 @@ namespace ProjectChapeau.ChapeauModel
 {
     internal class Serveerder
     {
-        public string VoorNaam { get; set; }
-        public string AchterName { get; set; }
-        public Wachtwoord WachtWoord { get; set; }
         public Personeel PersoneelId { get; set; }
-        public FunctieType functie { get; set; }
+        public int ServeerdId { get; set; }
     }
 }
