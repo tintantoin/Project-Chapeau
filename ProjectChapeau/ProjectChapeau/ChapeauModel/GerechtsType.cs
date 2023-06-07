@@ -1,4 +1,6 @@
-﻿
+
+
+﻿using System;﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
 {
+
+ 
     internal enum GerechtsType
     {
         Starter, Main, Dessert, Tussengerecht

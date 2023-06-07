@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
-{
-    internal enum MenuType
+{ 
+
+
+     enum MenuType
     {
         Lunch, Avond, Drank
     }

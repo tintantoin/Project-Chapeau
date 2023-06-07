@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
 {
-    internal class Tafel
+    class Table
     {
-        public int Id { get; set; }
+        public int TableId { get; set; }
+        public TafelStatus Tafelstatus { get; set; }
         public int Capaciteit { get; set; }
+        public int ServerderId { get; set; }
         public int RekeningsNummer { get; set; }
     }
 }

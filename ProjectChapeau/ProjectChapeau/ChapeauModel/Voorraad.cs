@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
-{
-    internal class Voorraad
+{ 
+    class Voorraad
     {
-        public MenuItem menuItem { get; set; }
-        public int voorraad { get; set; }
+        public int voorraad { get ; set; }
+        public MenuItem menuItemId { get; set; }
+
     }
 }
