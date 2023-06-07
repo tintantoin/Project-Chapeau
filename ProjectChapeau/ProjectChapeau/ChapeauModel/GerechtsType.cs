@@ -1,4 +1,5 @@
 
+
 ﻿using System;﻿
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
 {
-//<<<<<<< HEAD
-//=======
-    enum GerechtsType
-//>>>>>>> e313c8fdb5bd211eb07fdfc2edfbca3f72aefc86
+
+ 
+    internal enum GerechtsType
     {
         Starter, Main, Dessert, Tussengerecht
     }
