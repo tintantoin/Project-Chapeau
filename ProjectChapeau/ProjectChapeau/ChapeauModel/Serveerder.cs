@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectChapeau.ChapeauModel
 {
-    internal class Serveerder
+    class Serveerder
     {
+
+        public int ServeerderId { get; set; }
+
         public Personeel PersoneelId { get; set; }
-        public int ServeerdId { get; set; }
     }
 }
