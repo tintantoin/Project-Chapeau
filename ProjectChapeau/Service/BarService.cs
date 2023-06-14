@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +20,7 @@ namespace Service
 
         public override Bestelling GetBestelling(int id)
         {
-            throw new NotImplementedException();
+             return itemBereidersDao.GetItems(id);
         }
 
         public override void SetStatus()

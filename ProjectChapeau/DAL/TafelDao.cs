@@ -1,4 +1,5 @@
-﻿using ProjectChapeau.ChapeauModel;
+﻿
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectChapeau.ChapeauDAL
+namespace DAL
 {
-    class TafelDao : BaseDao
+    public class TafelDao : BaseDao
     {
         /*
         public List<Tafel> haalAlleTafelsOP()
@@ -19,7 +20,7 @@ namespace ProjectChapeau.ChapeauDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
         */
-        public List<Tafel> GetAllTafels()
+        public List<Table> GetAllTafels()
         {
             string query = "SELECT TableNr, Capaciteit, RekeningsId, ServeerderId, TafelStatusId FROM [Table]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -36,19 +37,19 @@ namespace ProjectChapeau.ChapeauDAL
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        private List<Tafel> ReadTables(DataTable dataTable)
+        private List<Table> ReadTables(DataTable dataTable)
         {
-            List<Tafel> tafels = new List<Tafel>();
+            List<Table> tafels = new List<Table>();
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Tafel tafel = new Tafel()
+                Table tafel = new Table()
                 {
-                    nummer = (int)dr["TableNr"],
-                    capaciteit = (int)dr["Capaciteit"],
+                    TableId = (int)dr["TableNr"],
+                    Capaciteit = (int)dr["Capaciteit"],
                     //RekeningsId = (int)dr["RekeningsId"],
                     //ServeerderId = (int)dr["ServeerderId"],
-                    TafelStatusId = (int)dr["TafelStatusId"]
+                    Tafelstatus = (TafelStatus)dr["TafelStatusId"]
                 };
                 tafels.Add(tafel);
             }

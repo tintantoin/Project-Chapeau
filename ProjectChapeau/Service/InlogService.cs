@@ -1,4 +1,4 @@
-﻿using ProjectChapeau.ChapeauModel;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Runtime.Intrinsics.Arm;
-using ProjectChapeau.ChapeauDAL;
+using DAL;
+using Model;
 
 namespace Service
 {
-    class InlogService
+    public class InlogService
     {
         PersoneelDAO personeelDAO = new PersoneelDAO();
 
@@ -19,18 +20,15 @@ namespace Service
             Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));            
             if (personeel == null)
             {
-                MessageBox.Show("Username error");
             }
             else
             {
                 if (personeel.wachtwoord.Trim() == ComputeSha256Hash(password).Trim())
                 {
-                    MessageBox.Show("heel ziek error");
                     return personeel.functie;
                 }
                 else
                 {
-                    MessageBox.Show("Password error");
                 }
             }
             return FunctieType.GeenFunctie;

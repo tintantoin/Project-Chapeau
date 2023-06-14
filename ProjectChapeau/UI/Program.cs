@@ -1,4 +1,4 @@
-namespace ProjectChapeau.ChapeauUI
+namespace UI
 {
     internal static class Program
     {

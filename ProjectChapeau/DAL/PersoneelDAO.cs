@@ -5,12 +5,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectChapeau.ChapeauModel;
 using System.Data.Common;
+using Model;
 
-namespace ProjectChapeau.ChapeauDAL
+namespace DAL
 {
-    class PersoneelDAO : BaseDao
+    public class PersoneelDAO : BaseDao
     {
         public List<Personeel> GetAllPersoneel()
         {
@@ -60,7 +60,7 @@ namespace ProjectChapeau.ChapeauDAL
             {
                 Personeel personeel = new Personeel()
                 {
-                    id = (int)dr["PersoneelID"],
+                    personeelsId = (int)dr["PersoneelID"],
                     functie = (FunctieType)(int)dr["FunctieID"],
                     voornaam = dr["Voornaam"].ToString(),
                     achternaam = dr["Achternaam"].ToString(),

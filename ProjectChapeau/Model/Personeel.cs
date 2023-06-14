@@ -13,6 +13,6 @@ namespace Model
         public string voornaam { get; set; }
         public string achternaam { get; set; }
         public FunctieType functie { get; set; }
-        public Wachtwoord wachtwoord { get; set; }
+        public string wachtwoord { get; set; }
     }
 }

@@ -1,14 +1,15 @@
-﻿using ProjectChapeau.ChapeauDAL;
-using ProjectChapeau.ChapeauModel;
+﻿
+using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectChapeau.ChapeauService
+namespace Service
 {
-    class TafelService
+    public class TafelService
     {
         private TafelDao tafelDb;
 
@@ -17,9 +18,9 @@ namespace ProjectChapeau.ChapeauService
             tafelDb = new TafelDao();
         }
 
-        public List<Tafel> GetTafels()
+        public List<Table> GetTafels()
         {
-            List<Tafel> tafels = tafelDb.GetAllTafels();
+            List<Table> tafels = tafelDb.GetAllTafels();
             return tafels;
         }
         public void ChangeStatus(int tafelStatusId,int tafelNummer)

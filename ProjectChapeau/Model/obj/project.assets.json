@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\teunk\\source\\repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
+      "projectPath": "C:\\Users\\teunk\\source\\repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\obj\\",
+      "outputPath": "C:\\Users\\teunk\\source\\repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
