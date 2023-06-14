@@ -13,6 +13,8 @@ namespace ProjectChapeau.ChapeauModel
         public string voornaam;
         public string achternaam;
         public FunctieType functie;
-        public Wachtwoord wachtwoord;       
+        public string wachtwoord;       
+
+        public string UserName { get { return $"{achternaam} + {id}"; } }
     }
 }

@@ -8,6 +8,6 @@ namespace ProjectChapeau.ChapeauModel
 {
     enum FunctieType
     {
-        BarPersoneel, KeukenPersoneel, Bediening, Manager, GeenFunctie
+        BarPersoneel = 1, KeukenPersoneel, Bediening, Manager, GeenFunctie
     }
 }
