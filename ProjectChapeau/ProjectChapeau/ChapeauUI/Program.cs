@@ -13,7 +13,6 @@ namespace ProjectChapeau.ChapeauUI
             ApplicationConfiguration.Initialize();
             //Application.Run(TafelOverzicht.GetInstance());           
             Application.Run(new InlogUI());
-
         }
     }
 }
