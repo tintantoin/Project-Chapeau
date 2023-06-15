@@ -30,16 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TafelOverzicht));
             this.picChapeauLogIn = new System.Windows.Forms.PictureBox();
-            this.btnTable1 = new System.Windows.Forms.Button();
-            this.btnTable2 = new System.Windows.Forms.Button();
-            this.btnTable4 = new System.Windows.Forms.Button();
-            this.btnTable3 = new System.Windows.Forms.Button();
-            this.btnTable6 = new System.Windows.Forms.Button();
-            this.btnTable5 = new System.Windows.Forms.Button();
-            this.btnTable8 = new System.Windows.Forms.Button();
-            this.btnTable7 = new System.Windows.Forms.Button();
-            this.btnTable10 = new System.Windows.Forms.Button();
-            this.btnTable9 = new System.Windows.Forms.Button();
             this.btnTableFree = new System.Windows.Forms.Button();
             this.btnTableOccupied = new System.Windows.Forms.Button();
             this.btnTableReserved = new System.Windows.Forms.Button();
@@ -48,6 +38,7 @@
             this.lblTableOccupied = new System.Windows.Forms.Label();
             this.lblTableReserved = new System.Windows.Forms.Label();
             this.lblTableOrdered = new System.Windows.Forms.Label();
+            this.tableLayoutPanelTafels = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,116 +50,6 @@
             this.picChapeauLogIn.Size = new System.Drawing.Size(179, 111);
             this.picChapeauLogIn.TabIndex = 1;
             this.picChapeauLogIn.TabStop = false;
-            // 
-            // btnTable1
-            // 
-            this.btnTable1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable1.Location = new System.Drawing.Point(170, 178);
-            this.btnTable1.Name = "btnTable1";
-            this.btnTable1.Size = new System.Drawing.Size(79, 68);
-            this.btnTable1.TabIndex = 2;
-            this.btnTable1.Text = "1";
-            this.btnTable1.UseVisualStyleBackColor = false;
-            this.btnTable1.Click += new System.EventHandler(this.btnTable1_Click);
-            // 
-            // btnTable2
-            // 
-            this.btnTable2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable2.Location = new System.Drawing.Point(321, 178);
-            this.btnTable2.Name = "btnTable2";
-            this.btnTable2.Size = new System.Drawing.Size(79, 68);
-            this.btnTable2.TabIndex = 3;
-            this.btnTable2.Text = "2";
-            this.btnTable2.UseVisualStyleBackColor = false;
-            this.btnTable2.Click += new System.EventHandler(this.btnTable2_Click);
-            // 
-            // btnTable4
-            // 
-            this.btnTable4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable4.Location = new System.Drawing.Point(321, 281);
-            this.btnTable4.Name = "btnTable4";
-            this.btnTable4.Size = new System.Drawing.Size(79, 68);
-            this.btnTable4.TabIndex = 5;
-            this.btnTable4.Text = "4";
-            this.btnTable4.UseVisualStyleBackColor = false;
-            this.btnTable4.Click += new System.EventHandler(this.btnTable4_Click);
-            // 
-            // btnTable3
-            // 
-            this.btnTable3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable3.Location = new System.Drawing.Point(170, 281);
-            this.btnTable3.Name = "btnTable3";
-            this.btnTable3.Size = new System.Drawing.Size(79, 68);
-            this.btnTable3.TabIndex = 4;
-            this.btnTable3.Text = "3";
-            this.btnTable3.UseVisualStyleBackColor = false;
-            this.btnTable3.Click += new System.EventHandler(this.btnTable3_Click);
-            // 
-            // btnTable6
-            // 
-            this.btnTable6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable6.Location = new System.Drawing.Point(321, 380);
-            this.btnTable6.Name = "btnTable6";
-            this.btnTable6.Size = new System.Drawing.Size(79, 68);
-            this.btnTable6.TabIndex = 7;
-            this.btnTable6.Text = "6";
-            this.btnTable6.UseVisualStyleBackColor = false;
-            this.btnTable6.Click += new System.EventHandler(this.btnTable6_Click);
-            // 
-            // btnTable5
-            // 
-            this.btnTable5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable5.Location = new System.Drawing.Point(170, 380);
-            this.btnTable5.Name = "btnTable5";
-            this.btnTable5.Size = new System.Drawing.Size(79, 68);
-            this.btnTable5.TabIndex = 6;
-            this.btnTable5.Text = "5";
-            this.btnTable5.UseVisualStyleBackColor = false;
-            this.btnTable5.Click += new System.EventHandler(this.btnTable5_Click);
-            // 
-            // btnTable8
-            // 
-            this.btnTable8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable8.Location = new System.Drawing.Point(321, 485);
-            this.btnTable8.Name = "btnTable8";
-            this.btnTable8.Size = new System.Drawing.Size(79, 68);
-            this.btnTable8.TabIndex = 9;
-            this.btnTable8.Text = "8";
-            this.btnTable8.UseVisualStyleBackColor = false;
-            this.btnTable8.Click += new System.EventHandler(this.btnTable8_Click);
-            // 
-            // btnTable7
-            // 
-            this.btnTable7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable7.Location = new System.Drawing.Point(170, 485);
-            this.btnTable7.Name = "btnTable7";
-            this.btnTable7.Size = new System.Drawing.Size(79, 68);
-            this.btnTable7.TabIndex = 8;
-            this.btnTable7.Text = "7";
-            this.btnTable7.UseVisualStyleBackColor = false;
-            this.btnTable7.Click += new System.EventHandler(this.btnTable7_Click);
-            // 
-            // btnTable10
-            // 
-            this.btnTable10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable10.Location = new System.Drawing.Point(321, 590);
-            this.btnTable10.Name = "btnTable10";
-            this.btnTable10.Size = new System.Drawing.Size(79, 68);
-            this.btnTable10.TabIndex = 11;
-            this.btnTable10.Text = "10";
-            this.btnTable10.UseVisualStyleBackColor = false;
-            this.btnTable10.Click += new System.EventHandler(this.btnTable10_Click);
-            // 
-            // btnTable9
-            // 
-            this.btnTable9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTable9.Location = new System.Drawing.Point(170, 590);
-            this.btnTable9.Name = "btnTable9";
-            this.btnTable9.Size = new System.Drawing.Size(79, 68);
-            this.btnTable9.TabIndex = 10;
-            this.btnTable9.Text = "9";
-            this.btnTable9.UseVisualStyleBackColor = false;
-            this.btnTable9.Click += new System.EventHandler(this.btnTable9_Click);
             // 
             // btnTableFree
             // 
@@ -242,11 +123,28 @@
             this.lblTableOrdered.TabIndex = 19;
             this.lblTableOrdered.Text = "ORDERED";
             // 
+            // tableLayoutPanelTafels
+            // 
+            this.tableLayoutPanelTafels.ColumnCount = 2;
+            this.tableLayoutPanelTafels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTafels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTafels.Location = new System.Drawing.Point(172, 209);
+            this.tableLayoutPanelTafels.Name = "tableLayoutPanelTafels";
+            this.tableLayoutPanelTafels.RowCount = 3;
+            this.tableLayoutPanelTafels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.93939F));
+            this.tableLayoutPanelTafels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.06061F));
+            this.tableLayoutPanelTafels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanelTafels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanelTafels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelTafels.Size = new System.Drawing.Size(250, 280);
+            this.tableLayoutPanelTafels.TabIndex = 20;
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 890);
+            this.Controls.Add(this.tableLayoutPanelTafels);
             this.Controls.Add(this.lblTableOrdered);
             this.Controls.Add(this.lblTableReserved);
             this.Controls.Add(this.lblTableOccupied);
@@ -255,16 +153,6 @@
             this.Controls.Add(this.btnTableReserved);
             this.Controls.Add(this.btnTableOccupied);
             this.Controls.Add(this.btnTableFree);
-            this.Controls.Add(this.btnTable10);
-            this.Controls.Add(this.btnTable9);
-            this.Controls.Add(this.btnTable8);
-            this.Controls.Add(this.btnTable7);
-            this.Controls.Add(this.btnTable6);
-            this.Controls.Add(this.btnTable5);
-            this.Controls.Add(this.btnTable4);
-            this.Controls.Add(this.btnTable3);
-            this.Controls.Add(this.btnTable2);
-            this.Controls.Add(this.btnTable1);
             this.Controls.Add(this.picChapeauLogIn);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
@@ -277,16 +165,6 @@
         #endregion
 
         private PictureBox picChapeauLogIn;
-        private Button btnTable1;
-        private Button btnTable2;
-        private Button btnTable4;
-        private Button btnTable3;
-        private Button btnTable6;
-        private Button btnTable5;
-        private Button btnTable8;
-        private Button btnTable7;
-        private Button btnTable10;
-        private Button btnTable9;
         private Button btnTableFree;
         private Button btnTableOccupied;
         private Button btnTableReserved;
@@ -295,5 +173,6 @@
         private Label lblTableOccupied;
         private Label lblTableReserved;
         private Label lblTableOrdered;
+        private TableLayoutPanel tableLayoutPanelTafels;
     }
 }

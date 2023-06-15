@@ -9,10 +9,12 @@ namespace ProjectChapeau.ChapeauModel
 {
     class Personeel
     {
-        public int personeelsId { get; set; }
-        public string voornaam { get; set; }
-        public string achternaam { get; set; }
-        public FunctieType functie { get; set; }
-        public Wachtwoord wachtwoord { get; set; }
+        public int id;
+        public string voornaam;
+        public string achternaam;
+        public FunctieType functie;
+        public string wachtwoord;       
+
+        public string UserName { get { return $"{achternaam} + {id}"; } }
     }
 }
