@@ -13,6 +13,7 @@ namespace Model
         public DateTime InstuurTijd { get; set; }
         public MenuItem menuItemId { get; set; }
         public GerechtsStatus Status { get; set; }
+        public int Count { get; set; }
 
     }
 }

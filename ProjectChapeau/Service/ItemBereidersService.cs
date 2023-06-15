@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,15 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal abstract class ItemBereidersService
+    public abstract class ItemBereidersService
     {
+        ItemBereidersDao itemBereidersDao;
 
-        public abstract void SetStatus();
+        public void SetStatus(int id, GerechtsStatus s)
+        {
+            itemBereidersDao.SetStatus(s, id);
+        }
         public abstract Bestelling GetBestelling(int id);
+        public abstract List<Bestelling> GetAllBestellingen();
     }
 }

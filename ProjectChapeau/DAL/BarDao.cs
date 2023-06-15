@@ -9,12 +9,12 @@ namespace DAL
 {
     public class BarDao : ItemBereidersDao
     {
-        public override Bestelling GetItems(int id)
+        public override List<Bestelling> GetAllBestellingen()
         {
             throw new NotImplementedException();
         }
 
-        public override void SetStatus()
+        public override Bestelling GetBestelling(int id)
         {
             throw new NotImplementedException();
         }

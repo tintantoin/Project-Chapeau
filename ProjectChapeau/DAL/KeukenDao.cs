@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class KeukenDao : ItemBereidersDao
+    public class KeukenDao : ItemBereidersDao
     {
-        public override Bestelling GetItems(int id)
+        public override List<Bestelling> GetAllBestellingen()
         {
             throw new NotImplementedException();
         }
 
-        public override void SetStatus()
+        public override Bestelling GetBestelling(int id)
         {
             throw new NotImplementedException();
         }

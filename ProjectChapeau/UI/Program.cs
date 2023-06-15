@@ -1,3 +1,5 @@
+using Model;
+
 namespace UI
 {
     internal static class Program

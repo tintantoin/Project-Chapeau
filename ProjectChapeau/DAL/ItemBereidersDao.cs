@@ -9,7 +9,11 @@ namespace DAL
 {
     public abstract class ItemBereidersDao:BaseDao
     {
-        public abstract void SetStatus();
-        public abstract Bestelling GetItems(int id);
+        public void SetStatus(GerechtsStatus s, int id)
+        {
+
+        }
+        public abstract Bestelling GetBestelling(int id);
+        public abstract List<Bestelling> GetAllBestellingen();
     }
 }

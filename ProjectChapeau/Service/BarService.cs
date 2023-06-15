@@ -9,23 +9,18 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal class BarService : ItemBereidersService
+    public class BarService : ItemBereidersService
     {
         private ItemBereidersDao itemBereidersDao;
 
-        public BarService(ItemBereidersDao itemBereidersDao)
+        public override List<Bestelling> GetAllBestellingen()
         {
-            this.itemBereidersDao = itemBereidersDao;
+            return itemBereidersDao.GetAllBestellingen();
         }
 
         public override Bestelling GetBestelling(int id)
         {
-             return itemBereidersDao.GetItems(id);
-        }
-
-        public override void SetStatus()
-        {
-            throw new NotImplementedException();
+             return itemBereidersDao.GetBestelling(id);
         }
     }
 }

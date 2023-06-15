@@ -8,23 +8,18 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal class KeukenService : ItemBereidersService
+    public class KeukenService : ItemBereidersService
     {
         private ItemBereidersDao itemBereidersDao;
 
-        public KeukenService(ItemBereidersDao itemBereidersDao)
+        public override List<Bestelling> GetAllBestellingen()
         {
-            this.itemBereidersDao = itemBereidersDao;
+            return itemBereidersDao.GetAllBestellingen();
         }
 
         public override Bestelling GetBestelling(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void SetStatus()
-        {
-            throw new NotImplementedException();
+            return itemBereidersDao.GetBestelling(id);
         }
     }
 }

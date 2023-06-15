@@ -1,13 +1,15 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace UI
 {
-    internal class KeukenUI : Form, IItemBereiders
+    internal class ItemBereiders : Form
     {
         private Label label5;
         private Label label4;
@@ -23,20 +25,48 @@ namespace UI
         private ColumnHeader CountHdr;
         private ColumnHeader DescriptionHdr;
         private Label TitelLbl;
+        private Personeel gebruiker;
+        private ItemBereidersService BereidersService;
+
+        public ItemBereiders(Personeel gebruiker)
+        {
+            this.gebruiker = gebruiker;
+            InitializeComponent();
+            if (gebruiker.functie == FunctieType.KeukenPersoneel)
+            {
+                BereidersService = new KeukenService();
+                this.TitelLbl.Text = "Keuken Orders";
+            }
+            else
+            {
+                BereidersService = new BarService();
+                this.TitelLbl.Text = "Drink Orders";
+            }
+        }
 
         public void FillView(Bestelling b)
         {
-            throw new NotImplementedException();
+            foreach (BesteldItem besteld in b.Items)
+            {
+                ListViewItem li = new ListViewItem(besteld.BestedItemId.ToString());
+                li.SubItems.Add(b.BestellingId.ToString());
+                li.SubItems.Add(besteld.Count.ToString());
+                li.SubItems.Add(besteld.Opmerking);
+                BestellingenList.Items.Add(li);
+            }
         }
-
+        public List<Bestelling> GetAllBestellingen()
+        {
+            return BereidersService.GetAllBestellingen();
+        }
         public Bestelling GetBestelling(int id)
         {
-            throw new NotImplementedException();
+            return BereidersService.GetBestelling(id);
         }
 
-        public void SetStatus()
+        public void SetStatus(int id, GerechtsStatus s)
         {
-            throw new NotImplementedException();
+            BereidersService.SetStatus(id, s);
         }
 
         private void InitializeComponent()
@@ -181,7 +211,7 @@ namespace UI
             this.TitelLbl.Name = "TitelLbl";
             this.TitelLbl.Size = new System.Drawing.Size(128, 25);
             this.TitelLbl.TabIndex = 10;
-            this.TitelLbl.Text = "Keuken Orders";
+            this.TitelLbl.Text = "";
             // 
             // KeukenUI
             // 
