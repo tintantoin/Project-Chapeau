@@ -12,5 +12,22 @@ namespace ProjectChapeau.ChapeauModel
         public Serveerder serveerder { get; set; }
         public int BestellingId { get; set; }
         public List<BesteldItem> Items { get; set; }
+
+        public void AddItem(BesteldItem item)
+        {
+
+        }
+
+        public void RemoveItem(BesteldItem item)
+        {
+
+        }
+
+        public int CountItem(BesteldItem item) 
+        {
+            return Items.Count;
+        }
     }
+
+
 }

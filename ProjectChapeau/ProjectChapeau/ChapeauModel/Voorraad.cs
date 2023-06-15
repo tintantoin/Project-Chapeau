@@ -11,5 +11,9 @@ namespace ProjectChapeau.ChapeauModel
         public int voorraad { get ; set; }
         public MenuItem menuItemId { get; set; }
 
+        void ChangeVoorraad(int voorraad)
+        {
+
+        }
     }
 }
