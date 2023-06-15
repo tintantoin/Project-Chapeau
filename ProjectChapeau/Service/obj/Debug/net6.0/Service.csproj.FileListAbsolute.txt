@@ -1,0 +1,17 @@
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\Service.deps.json
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\Service.dll
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\Service.pdb
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\DAL.dll
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\Model.dll
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\DAL.pdb
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\bin\Debug\net6.0\Model.pdb
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.dll
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\refint\Service.dll
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\Service.pdb
+C:\Users\teunk\Source\Repos\Project-Chapeauuu\ProjectChapeau\Service\obj\Debug\net6.0\ref\Service.dll
