@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Runtime.Intrinsics.Arm;
 using DAL;
 using Model;
+using Xceed.Wpf.Toolkit;
 
 namespace Service
 {
@@ -17,25 +18,19 @@ namespace Service
 
         public FunctieType LogUserIn(string userName, string password)
         {
-            Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));            
-            if (personeel == null)
-            {
-            }
-            else
+            Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));
+            if (personeel != null)
             {
                 if (personeel.wachtwoord.Trim() == ComputeSha256Hash(password).Trim())
                 {
                     return personeel.functie;
-                }
-                else
-                {
-                }
+                };
             }
             return FunctieType.GeenFunctie;
         }
         public void SetDBWachtwoord(int id, string wachtwoord)
         {
-            personeelDAO.ChangePassword(id, ComputeSha256Hash(wachtwoord));        
+            personeelDAO.ChangePassword(id, ComputeSha256Hash(wachtwoord));
         }
         private string ComputeSha256Hash(string computeThis)
         {
@@ -44,7 +39,7 @@ namespace Service
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte bit in bytes)
             {
-                stringBuilder.Append(bit.ToString("x2")); 
+                stringBuilder.Append(bit.ToString("x2"));
             }
             return stringBuilder.ToString();
         }

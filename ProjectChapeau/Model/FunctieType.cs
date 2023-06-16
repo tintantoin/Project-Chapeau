@@ -8,6 +8,6 @@ namespace Model
 {
     public enum FunctieType
     {
-        BarPersoneel = 1, KeukenPersoneel, Bediening, Manager, GeenFunctie
+        GeenFunctie, BarPersoneel , KeukenPersoneel, Bediening, Manager
     }
 }

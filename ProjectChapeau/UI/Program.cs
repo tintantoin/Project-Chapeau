@@ -12,7 +12,9 @@ namespace UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(TafelOverzicht.GetInstance());           
-            Application.Run(new InlogUI());
+            //Application.Run(new Form1());
+            FormChanger formChanger = FormChanger.GetFormChanger();
+            formChanger.StartApplication();
         }
     }
 }

@@ -54,9 +54,9 @@ namespace UI
             this.lblTheTable.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTheTable.Location = new System.Drawing.Point(225, 199);
             this.lblTheTable.Name = "lblTheTable";
-            this.lblTheTable.Size = new System.Drawing.Size(110, 41);
+            this.lblTheTable.Size = new System.Drawing.Size(87, 41);
             this.lblTheTable.TabIndex = 3;
-            this.lblTheTable.Text = "........qq";
+            this.lblTheTable.Text = "Table";
             // 
             // btnStatusFree
             // 

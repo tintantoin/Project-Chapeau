@@ -16,18 +16,18 @@ namespace UI
 {
     public partial class TafelOverzicht : Form
     {
-        private static TafelOverzicht hetTafelOverzicht;
         private TafelService tafelService;
         private List<Table> tafels;
-        private List<Button> buttons = new List<Button>();
-        private TafelOverzicht()
+        private List<Button> buttons;
+        private FormChanger formChanger;
+        public TafelOverzicht()
         {
             InitializeComponent();
+            buttons = new List<Button>();
+            formChanger = FormChanger.GetFormChanger();
             RefreshTables();
             LoadAllButtons();
             GiveTableStatus();
-
-            //naar (-,naar zijkant, naar onder)
             /*
             btnTable10.BackColor = Color.MediumAquamarine;
             btnTable9.BackColor = Color.SandyBrown;
@@ -35,15 +35,6 @@ namespace UI
             btnTable4.BackColor = Color.Coral;
             */
         }
-        public static TafelOverzicht GetInstance()
-        {
-            if (hetTafelOverzicht == null)
-            {
-                hetTafelOverzicht = new TafelOverzicht();
-            }
-            return hetTafelOverzicht;
-        }
-
         public void LoadAllButtons()
         {
             List<Button> buttons = AddButtons();
@@ -55,27 +46,16 @@ namespace UI
                 count++;
             }
         }
-        /*
-        private void btnTable1_Click(object sender, EventArgs e)
-        {
-            OpenTable(1);
-            
-            PersoneelDAO personeelDAO = new PersoneelDAO();
-            List<Personeel> personeel = personeelDAO.GetAllPersoneel();
-            MessageBox.Show($"{personeel[0].id}");
-            
-        }
-        `*/
+    
         void Button_Click(object sender, EventArgs e)
         {
-            // Handle the button click event
             Button button = (Button)sender;
             OpenTable(button.Text);
         }
 
         private void OpenTable(string tableNumber) 
         {
-            TafelStatusUI tafelStatusUI = new TafelStatusUI();
+            TafelStatusUI tafelStatusUI = new TafelStatusUI(this);
             tafelStatusUI.TableNumber(int.Parse(tableNumber));
             tafelStatusUI.ShowDialog();
         }
@@ -85,7 +65,7 @@ namespace UI
             int count = 0;
             foreach (Table tafel in tafels)
             {
-                giveTheColor(buttons[count], tafel.Tafelstatus);//here
+                giveTheColor(buttons[count], tafel.Tafelstatus);
                 count++;
             }
         }
@@ -114,7 +94,7 @@ namespace UI
             foreach (Table tafel in tafels)
             {
                 Button button = new Button();
-                button.Text = tafel.TableId.ToString();
+                button.Text = tafel.Tafelnummer.ToString();
                 button.Size = new Size(100,70);
                 button.Click += Button_Click;
                 buttons.Add(button);
@@ -147,6 +127,16 @@ namespace UI
         {
             tafelService = new TafelService();
             tafels = tafelService.GetTafels();
+        }
+
+        private void btnLogTableoverzichtOut_Click(object sender, EventArgs e)
+        {
+            formChanger.SluitForm();
+            /*
+            this.Close();
+            InlogUI inlogUI = new InlogUI();
+            inlogUI.ShowDialog();
+            */
         }
     }
 }

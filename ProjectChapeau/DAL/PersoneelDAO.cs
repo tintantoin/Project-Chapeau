@@ -39,20 +39,7 @@ namespace DAL
             };
             ExecuteEditQuery(query, sqlParameters);
         }
-        /*
-        public Personeel GetPersoneelByID(int id)
-        {
-
-            SqlCommand command = new SqlCommand($"SELECT * FROM Customers WHERE LastName='@LastName'", dbConnection);
-            command.Parameters.AddWithValue("@LastName", LastName);
-
-            string query = "SELECT PersoneelID, FunctieID, Voornaam, Achternaam, wachtwoord FROM Personeel WHERE PersoneelID = @id";
-
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
-        }
-        */
-
+      
         private List<Personeel> ReadTables(DataTable dataTable)
         {
             List<Personeel> personeelsLijst = new List<Personeel>();

@@ -36,7 +36,11 @@
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblForgotPassword = new System.Windows.Forms.Label();
+            this.panelNoUserNameAndPassword = new System.Windows.Forms.Panel();
+            this.lblNotEnteredAll = new System.Windows.Forms.Label();
+            this.btnInvalidNameOrPass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
+            this.panelNoUserNameAndPassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // picChapeauLogIn
@@ -101,11 +105,40 @@
             this.lblForgotPassword.Text = "Forgot password";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
+            // panelNoUserNameAndPassword
+            // 
+            this.panelNoUserNameAndPassword.Controls.Add(this.lblNotEnteredAll);
+            this.panelNoUserNameAndPassword.Controls.Add(this.btnInvalidNameOrPass);
+            this.panelNoUserNameAndPassword.Location = new System.Drawing.Point(12, 12);
+            this.panelNoUserNameAndPassword.Name = "panelNoUserNameAndPassword";
+            this.panelNoUserNameAndPassword.Size = new System.Drawing.Size(530, 631);
+            this.panelNoUserNameAndPassword.TabIndex = 7;
+            // 
+            // lblNotEnteredAll
+            // 
+            this.lblNotEnteredAll.AutoSize = true;
+            this.lblNotEnteredAll.Location = new System.Drawing.Point(57, 306);
+            this.lblNotEnteredAll.Name = "lblNotEnteredAll";
+            this.lblNotEnteredAll.Size = new System.Drawing.Size(376, 20);
+            this.lblNotEnteredAll.TabIndex = 1;
+            this.lblNotEnteredAll.Text = "You have not entered details for username or password,";
+            // 
+            // btnInvalidNameOrPass
+            // 
+            this.btnInvalidNameOrPass.Location = new System.Drawing.Point(186, 376);
+            this.btnInvalidNameOrPass.Name = "btnInvalidNameOrPass";
+            this.btnInvalidNameOrPass.Size = new System.Drawing.Size(94, 59);
+            this.btnInvalidNameOrPass.TabIndex = 0;
+            this.btnInvalidNameOrPass.Text = "Oke";
+            this.btnInvalidNameOrPass.UseVisualStyleBackColor = true;
+            this.btnInvalidNameOrPass.Click += new System.EventHandler(this.btnInvalidNameOrPass_Click);
+            // 
             // InlogUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 692);
+            this.Controls.Add(this.panelNoUserNameAndPassword);
             this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtboxPassword);
@@ -116,6 +149,8 @@
             this.Name = "InlogUI";
             this.Text = "InlogUI";
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).EndInit();
+            this.panelNoUserNameAndPassword.ResumeLayout(false);
+            this.panelNoUserNameAndPassword.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +165,8 @@
         private TextBox txtboxPassword;
         private Button btnLogin;
         private Label lblForgotPassword;
+        private Panel panelNoUserNameAndPassword;
+        private Label lblNotEnteredAll;
+        private Button btnInvalidNameOrPass;
     }
 }

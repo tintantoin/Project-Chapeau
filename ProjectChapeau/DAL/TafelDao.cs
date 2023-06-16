@@ -45,7 +45,7 @@ namespace DAL
             {
                 Table tafel = new Table()
                 {
-                    TableId = (int)dr["TableNr"],
+                    Tafelnummer = (int)dr["TableNr"],
                     Capaciteit = (int)dr["Capaciteit"],
                     //RekeningsId = (int)dr["RekeningsId"],
                     //ServeerderId = (int)dr["ServeerderId"],

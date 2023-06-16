@@ -39,6 +39,7 @@
             this.lblTableReserved = new System.Windows.Forms.Label();
             this.lblTableOrdered = new System.Windows.Forms.Label();
             this.tableLayoutPanelTafels = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogTableoverzichtOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,11 +140,22 @@
             this.tableLayoutPanelTafels.Size = new System.Drawing.Size(250, 280);
             this.tableLayoutPanelTafels.TabIndex = 20;
             // 
+            // btnLogTableoverzichtOut
+            // 
+            this.btnLogTableoverzichtOut.Location = new System.Drawing.Point(468, 43);
+            this.btnLogTableoverzichtOut.Name = "btnLogTableoverzichtOut";
+            this.btnLogTableoverzichtOut.Size = new System.Drawing.Size(94, 29);
+            this.btnLogTableoverzichtOut.TabIndex = 21;
+            this.btnLogTableoverzichtOut.Text = "Log out";
+            this.btnLogTableoverzichtOut.UseVisualStyleBackColor = true;
+            this.btnLogTableoverzichtOut.Click += new System.EventHandler(this.btnLogTableoverzichtOut_Click);
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 890);
+            this.Controls.Add(this.btnLogTableoverzichtOut);
             this.Controls.Add(this.tableLayoutPanelTafels);
             this.Controls.Add(this.lblTableOrdered);
             this.Controls.Add(this.lblTableReserved);
@@ -174,5 +186,6 @@
         private Label lblTableReserved;
         private Label lblTableOrdered;
         private TableLayoutPanel tableLayoutPanelTafels;
+        private Button btnLogTableoverzichtOut;
     }
 }

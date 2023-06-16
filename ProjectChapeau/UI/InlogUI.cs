@@ -16,10 +16,13 @@ namespace UI
     public partial class InlogUI : Form
     {
         InlogService InlogService;
+        FormChanger formChanger;
         public InlogUI()
         {
             InitializeComponent();
+            panelNoUserNameAndPassword.Hide();
             InlogService = new InlogService();
+            formChanger = FormChanger.GetFormChanger();
         }
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
@@ -31,22 +34,43 @@ namespace UI
         {
             if (txtboxUsername.Text == "" || txtboxPassword.Text == "")
             {
-                MessageBox.Show($"Fill something");
+                lblNotEnteredAll.Text = "You have not entered details for username or password";
+                panelNoUserNameAndPassword.Show();
                 return;
             }
+
             string userName = txtboxUsername.Text;
             string password = txtboxPassword.Text;
             FunctieType type = InlogService.LogUserIn(userName, password);
-            if (type != FunctieType.GeenFunctie)
+            switch (type)
             {
-                MessageBox.Show($"Log {type}");
+                case FunctieType.BarPersoneel:
+                    break;
+                case FunctieType.KeukenPersoneel:
+                    formChanger.OpenForm(new KeukenUI());
+                    break;
+                case FunctieType.Manager:
+                    break;
+                case FunctieType.Bediening:
+                    formChanger.OpenForm(new TafelOverzicht());
+                    break;
+                default:
+                    NoLogin();
+                    break;
             }
-            else
-            {
-                MessageBox.Show($"niks");
-            }
-
-            //log user in (userName, password)
+        }
+        private void btnInvalidNameOrPass_Click(object sender, EventArgs e)
+        {
+            panelNoUserNameAndPassword.Hide();
+        }
+        private void NoLogin()
+        {
+            panelNoUserNameAndPassword.Show();
+            lblNotEnteredAll.Text = "                   Invalid username or password";
+        }
+        private void OpenPanel()
+        {
+            panelNoUserNameAndPassword.Show();
         }
     }
 }

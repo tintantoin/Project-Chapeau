@@ -17,10 +17,13 @@ namespace UI
     {
         int tableNumber;
         TafelService tafelService;
+        TafelOverzicht tafelOverzicht;
 
-        public TafelStatusUI()
+        public TafelStatusUI(TafelOverzicht tafelOverzicht)
         {
+            tafelOverzicht.Hide();
             InitializeComponent();
+            this.tafelOverzicht = tafelOverzicht;
             tafelService = new TafelService();
         }
         public void TableNumber(int tableNumber)
@@ -30,9 +33,9 @@ namespace UI
         }
         private void btnBackTafelStatus_Click(object sender, EventArgs e)
         {
-            TafelOverzicht overzicht = TafelOverzicht.GetInstance();
-            overzicht.GiveTableStatus();
+            tafelOverzicht.GiveTableStatus();
             this.Close();
+            tafelOverzicht.Show();
         }
 
         private void btnStatusFree_Click(object sender, EventArgs e)
