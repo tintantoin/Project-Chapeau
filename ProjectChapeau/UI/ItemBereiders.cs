@@ -48,7 +48,7 @@ namespace UI
         {
             foreach (BesteldItem besteld in b.Items)
             {
-                ListViewItem li = new ListViewItem(besteld.BestedItemId.ToString());
+                ListViewItem li = new ListViewItem(besteld.BesteldItemId.ToString());
                 li.SubItems.Add(b.BestellingId.ToString());
                 li.SubItems.Add(besteld.Count.ToString());
                 li.SubItems.Add(besteld.Opmerking);

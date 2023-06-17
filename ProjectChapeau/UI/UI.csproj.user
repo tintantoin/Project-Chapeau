@@ -7,6 +7,12 @@
     <Compile Update="ItemBereiders.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MessageUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ServeerderUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TafelOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>

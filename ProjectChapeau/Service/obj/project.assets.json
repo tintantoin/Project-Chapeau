@@ -924,23 +924,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teunk\\.nuget\\packages\\": {},
+    "C:\\Users\\Gebruiker\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj",
-      "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\obj\\",
+      "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
+      "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\teunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -955,11 +955,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj"
+            "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj"
+            "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
             }
           }
         }
@@ -995,7 +995,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

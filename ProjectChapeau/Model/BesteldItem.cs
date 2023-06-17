@@ -9,6 +9,7 @@ namespace Model
 {
     public class BesteldItem
     {
+        public int BesteldItemId { get; set; }
         public string Opmerking { get; set; }
         public DateTime InstuurTijd { get; set; }
         public GerechtsStatus Status { get; set; }
