@@ -11,6 +11,6 @@ namespace Model
 
         public int ServeerderId { get; set; }
 
-        public Personeel PersoneelId { get; set; }
+        public Personeel personeel { get; set; }
     }
 }

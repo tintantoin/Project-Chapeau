@@ -13,8 +13,11 @@ namespace UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            Personeel personeel = new Personeel();
+            personeel.functie = FunctieType.KeukenPersoneel;
+            ItemBereidersUI ui = new ItemBereidersUI(personeel);
             //Application.Run(TafelOverzicht.GetInstance());           
-            Application.Run(new InlogUI());
+            Application.Run(ui);
 
         }
     }

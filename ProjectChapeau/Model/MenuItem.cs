@@ -12,6 +12,7 @@ namespace Model
     {
         public int MenuItemId { get; set; }
         public string Name { get; set; }
+        public string Opmerking { get; set; }
         public float Prijs { get; set; }
         public bool IsAlcoholisch { get; set; }
         public MenuType menu { get; set; }

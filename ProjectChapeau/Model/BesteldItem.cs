@@ -8,7 +8,7 @@ namespace Model
 {
     public class BesteldItem
     {
-        public int BestedItemId { get; set; }
+        public int BesteldItemId { get; set; }
         public string Opmerking { get; set; }
         public DateTime InstuurTijd { get; set; }
         public MenuItem menuItemId { get; set; }

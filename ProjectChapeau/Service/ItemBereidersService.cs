@@ -8,15 +8,49 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public abstract class ItemBereidersService
+    public class ItemBereidersService
     {
         ItemBereidersDao itemBereidersDao;
+
+        public ItemBereidersService()
+        {
+            itemBereidersDao= new ItemBereidersDao();
+        }
 
         public void SetStatus(int id, GerechtsStatus s)
         {
             itemBereidersDao.SetStatus(s, id);
         }
-        public abstract Bestelling GetBestelling(int id);
-        public abstract List<Bestelling> GetAllBestellingen();
+        public void FillItemBereidersTable(GerechtsStatus s, int id)
+        {
+            itemBereidersDao.FillItemBereidersTable(s, id);
+        }
+        public void RemoveItemBereiderItem(int id)
+        {
+            itemBereidersDao.RemoveItemBereiderItem(id);
+        }
+        public GerechtsStatus GetStatus(int id)
+        {
+            return itemBereidersDao.GetStatus(id);
+        }
+        public void GetAllStatus(Bestelling b)
+        {
+            foreach (BesteldItem item in b.Items)
+            {
+                item.Status = itemBereidersDao.GetStatus(b.BestellingId);
+            }
+        }
+        public List<BesteldItem> FilterItems(GerechtsStatus s, Bestelling bestelling)
+        {
+            List<BesteldItem> items = new List<BesteldItem>();
+            foreach (BesteldItem item in bestelling.Items)
+            {
+                if (item.Status == s)
+                {
+                    items.Add(item);
+                }
+            }
+            return items;
+        }
     }
 }
