@@ -57,54 +57,55 @@
             this.NotStartedLbl = new System.Windows.Forms.Label();
             this.PreparedLbl = new System.Windows.Forms.Label();
             this.SelectIdLbl = new System.Windows.Forms.Label();
+            this.btnLogOutItemBereiders = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OrderStatusLbl
             // 
             this.OrderStatusLbl.AutoSize = true;
-            this.OrderStatusLbl.Location = new System.Drawing.Point(694, 212);
+            this.OrderStatusLbl.Location = new System.Drawing.Point(793, 283);
             this.OrderStatusLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OrderStatusLbl.Name = "OrderStatusLbl";
-            this.OrderStatusLbl.Size = new System.Drawing.Size(10, 15);
+            this.OrderStatusLbl.Size = new System.Drawing.Size(13, 20);
             this.OrderStatusLbl.TabIndex = 29;
             this.OrderStatusLbl.Text = " ";
             // 
             // SelectedOrderLbl
             // 
             this.SelectedOrderLbl.AutoSize = true;
-            this.SelectedOrderLbl.Location = new System.Drawing.Point(527, 212);
+            this.SelectedOrderLbl.Location = new System.Drawing.Point(602, 283);
             this.SelectedOrderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SelectedOrderLbl.Name = "SelectedOrderLbl";
-            this.SelectedOrderLbl.Size = new System.Drawing.Size(10, 15);
+            this.SelectedOrderLbl.Size = new System.Drawing.Size(13, 20);
             this.SelectedOrderLbl.TabIndex = 28;
             this.SelectedOrderLbl.Text = " ";
             // 
             // OrderStatusIndicLbl
             // 
             this.OrderStatusIndicLbl.AutoSize = true;
-            this.OrderStatusIndicLbl.Location = new System.Drawing.Point(676, 180);
+            this.OrderStatusIndicLbl.Location = new System.Drawing.Point(773, 240);
             this.OrderStatusIndicLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OrderStatusIndicLbl.Name = "OrderStatusIndicLbl";
-            this.OrderStatusIndicLbl.Size = new System.Drawing.Size(71, 15);
+            this.OrderStatusIndicLbl.Size = new System.Drawing.Size(89, 20);
             this.OrderStatusIndicLbl.TabIndex = 27;
             this.OrderStatusIndicLbl.Text = "Order status";
             // 
             // Selectedorderindiclbl
             // 
             this.Selectedorderindiclbl.AutoSize = true;
-            this.Selectedorderindiclbl.Location = new System.Drawing.Point(501, 180);
+            this.Selectedorderindiclbl.Location = new System.Drawing.Point(573, 240);
             this.Selectedorderindiclbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Selectedorderindiclbl.Name = "Selectedorderindiclbl";
-            this.Selectedorderindiclbl.Size = new System.Drawing.Size(99, 15);
+            this.Selectedorderindiclbl.Size = new System.Drawing.Size(129, 20);
             this.Selectedorderindiclbl.TabIndex = 26;
             this.Selectedorderindiclbl.Text = " Selected order ID\n";
             // 
             // SelectOrderBtn
             // 
-            this.SelectOrderBtn.Location = new System.Drawing.Point(150, 517);
-            this.SelectOrderBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SelectOrderBtn.Location = new System.Drawing.Point(171, 689);
+            this.SelectOrderBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SelectOrderBtn.Name = "SelectOrderBtn";
-            this.SelectOrderBtn.Size = new System.Drawing.Size(99, 29);
+            this.SelectOrderBtn.Size = new System.Drawing.Size(113, 39);
             this.SelectOrderBtn.TabIndex = 25;
             this.SelectOrderBtn.Text = "Select OrderId";
             this.SelectOrderBtn.UseVisualStyleBackColor = true;
@@ -119,10 +120,10 @@
             this.DescriptionHdr});
             this.InPrepListview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InPrepListview.GridLines = true;
-            this.InPrepListview.Location = new System.Drawing.Point(8, 59);
-            this.InPrepListview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InPrepListview.Location = new System.Drawing.Point(9, 79);
+            this.InPrepListview.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.InPrepListview.Name = "InPrepListview";
-            this.InPrepListview.Size = new System.Drawing.Size(466, 123);
+            this.InPrepListview.Size = new System.Drawing.Size(532, 163);
             this.InPrepListview.TabIndex = 21;
             this.InPrepListview.UseCompatibleStateImageBehavior = false;
             this.InPrepListview.View = System.Windows.Forms.View.Details;
@@ -153,19 +154,19 @@
             // TitelLbl
             // 
             this.TitelLbl.AutoSize = true;
-            this.TitelLbl.Location = new System.Drawing.Point(398, 10);
+            this.TitelLbl.Location = new System.Drawing.Point(455, 13);
             this.TitelLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitelLbl.Name = "TitelLbl";
-            this.TitelLbl.Size = new System.Drawing.Size(0, 15);
+            this.TitelLbl.Size = new System.Drawing.Size(0, 20);
             this.TitelLbl.TabIndex = 20;
             // 
             // InPreparationBtn
             // 
             this.InPreparationBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.InPreparationBtn.Location = new System.Drawing.Point(501, 59);
-            this.InPreparationBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InPreparationBtn.Location = new System.Drawing.Point(573, 79);
+            this.InPreparationBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.InPreparationBtn.Name = "InPreparationBtn";
-            this.InPreparationBtn.Size = new System.Drawing.Size(94, 32);
+            this.InPreparationBtn.Size = new System.Drawing.Size(107, 43);
             this.InPreparationBtn.TabIndex = 30;
             this.InPreparationBtn.Text = "In preparation";
             this.InPreparationBtn.UseVisualStyleBackColor = false;
@@ -174,10 +175,10 @@
             // PreparedBtn
             // 
             this.PreparedBtn.BackColor = System.Drawing.Color.DarkOrange;
-            this.PreparedBtn.Location = new System.Drawing.Point(599, 59);
-            this.PreparedBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PreparedBtn.Location = new System.Drawing.Point(685, 79);
+            this.PreparedBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PreparedBtn.Name = "PreparedBtn";
-            this.PreparedBtn.Size = new System.Drawing.Size(90, 32);
+            this.PreparedBtn.Size = new System.Drawing.Size(103, 43);
             this.PreparedBtn.TabIndex = 31;
             this.PreparedBtn.Text = "Prepared";
             this.PreparedBtn.UseVisualStyleBackColor = false;
@@ -186,10 +187,10 @@
             // ServedBtn
             // 
             this.ServedBtn.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ServedBtn.Location = new System.Drawing.Point(694, 59);
-            this.ServedBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ServedBtn.Location = new System.Drawing.Point(793, 79);
+            this.ServedBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ServedBtn.Name = "ServedBtn";
-            this.ServedBtn.Size = new System.Drawing.Size(86, 32);
+            this.ServedBtn.Size = new System.Drawing.Size(98, 43);
             this.ServedBtn.TabIndex = 32;
             this.ServedBtn.Text = "Served";
             this.ServedBtn.UseVisualStyleBackColor = false;
@@ -204,10 +205,10 @@
             this.columnHeader4});
             this.NotStartedListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NotStartedListView.GridLines = true;
-            this.NotStartedListView.Location = new System.Drawing.Point(8, 212);
-            this.NotStartedListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NotStartedListView.Location = new System.Drawing.Point(9, 283);
+            this.NotStartedListView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.NotStartedListView.Name = "NotStartedListView";
-            this.NotStartedListView.Size = new System.Drawing.Size(466, 123);
+            this.NotStartedListView.Size = new System.Drawing.Size(532, 163);
             this.NotStartedListView.TabIndex = 33;
             this.NotStartedListView.UseCompatibleStateImageBehavior = false;
             this.NotStartedListView.View = System.Windows.Forms.View.Details;
@@ -244,10 +245,10 @@
             this.columnHeader8});
             this.PreparedListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PreparedListView.GridLines = true;
-            this.PreparedListView.Location = new System.Drawing.Point(8, 373);
-            this.PreparedListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PreparedListView.Location = new System.Drawing.Point(9, 497);
+            this.PreparedListView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PreparedListView.Name = "PreparedListView";
-            this.PreparedListView.Size = new System.Drawing.Size(466, 123);
+            this.PreparedListView.Size = new System.Drawing.Size(532, 163);
             this.PreparedListView.TabIndex = 34;
             this.PreparedListView.UseCompatibleStateImageBehavior = false;
             this.PreparedListView.View = System.Windows.Forms.View.Details;
@@ -277,57 +278,68 @@
             // 
             // SelectOrdertxt
             // 
-            this.SelectOrdertxt.Location = new System.Drawing.Point(8, 523);
-            this.SelectOrdertxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SelectOrdertxt.Location = new System.Drawing.Point(9, 697);
+            this.SelectOrdertxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SelectOrdertxt.Name = "SelectOrdertxt";
-            this.SelectOrdertxt.Size = new System.Drawing.Size(106, 23);
+            this.SelectOrdertxt.Size = new System.Drawing.Size(121, 27);
             this.SelectOrdertxt.TabIndex = 35;
             // 
             // InPrepLbl
             // 
             this.InPrepLbl.AutoSize = true;
-            this.InPrepLbl.Location = new System.Drawing.Point(20, 31);
+            this.InPrepLbl.Location = new System.Drawing.Point(23, 41);
             this.InPrepLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InPrepLbl.Name = "InPrepLbl";
-            this.InPrepLbl.Size = new System.Drawing.Size(81, 15);
+            this.InPrepLbl.Size = new System.Drawing.Size(102, 20);
             this.InPrepLbl.TabIndex = 36;
             this.InPrepLbl.Text = "In Preparation";
             // 
             // NotStartedLbl
             // 
             this.NotStartedLbl.AutoSize = true;
-            this.NotStartedLbl.Location = new System.Drawing.Point(20, 189);
+            this.NotStartedLbl.Location = new System.Drawing.Point(23, 252);
             this.NotStartedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NotStartedLbl.Name = "NotStartedLbl";
-            this.NotStartedLbl.Size = new System.Drawing.Size(64, 15);
+            this.NotStartedLbl.Size = new System.Drawing.Size(82, 20);
             this.NotStartedLbl.TabIndex = 37;
             this.NotStartedLbl.Text = "NotStarted";
             // 
             // PreparedLbl
             // 
             this.PreparedLbl.AutoSize = true;
-            this.PreparedLbl.Location = new System.Drawing.Point(20, 348);
+            this.PreparedLbl.Location = new System.Drawing.Point(23, 464);
             this.PreparedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PreparedLbl.Name = "PreparedLbl";
-            this.PreparedLbl.Size = new System.Drawing.Size(54, 15);
+            this.PreparedLbl.Size = new System.Drawing.Size(69, 20);
             this.PreparedLbl.TabIndex = 38;
             this.PreparedLbl.Text = "Prepared";
             // 
             // SelectIdLbl
             // 
             this.SelectIdLbl.AutoSize = true;
-            this.SelectIdLbl.Location = new System.Drawing.Point(8, 506);
+            this.SelectIdLbl.Location = new System.Drawing.Point(9, 675);
             this.SelectIdLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SelectIdLbl.Name = "SelectIdLbl";
-            this.SelectIdLbl.Size = new System.Drawing.Size(97, 15);
+            this.SelectIdLbl.Size = new System.Drawing.Size(124, 20);
             this.SelectIdLbl.TabIndex = 39;
             this.SelectIdLbl.Text = "Select an OrderId";
             // 
+            // btnLogOutItemBereiders
+            // 
+            this.btnLogOutItemBereiders.Location = new System.Drawing.Point(828, 32);
+            this.btnLogOutItemBereiders.Name = "btnLogOutItemBereiders";
+            this.btnLogOutItemBereiders.Size = new System.Drawing.Size(94, 29);
+            this.btnLogOutItemBereiders.TabIndex = 40;
+            this.btnLogOutItemBereiders.Text = "Log out";
+            this.btnLogOutItemBereiders.UseVisualStyleBackColor = true;
+            this.btnLogOutItemBereiders.Click += new System.EventHandler(this.btnLogOutItemBereiders_Click);
+            // 
             // ItemBereidersUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 553);
+            this.ClientSize = new System.Drawing.Size(969, 737);
+            this.Controls.Add(this.btnLogOutItemBereiders);
             this.Controls.Add(this.SelectIdLbl);
             this.Controls.Add(this.PreparedLbl);
             this.Controls.Add(this.NotStartedLbl);
@@ -345,7 +357,7 @@
             this.Controls.Add(this.SelectOrderBtn);
             this.Controls.Add(this.InPrepListview);
             this.Controls.Add(this.TitelLbl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ItemBereidersUI";
             this.Text = "ItemBereidersUI";
             this.ResumeLayout(false);
@@ -384,5 +396,6 @@
         private Label NotStartedLbl;
         private Label PreparedLbl;
         private Label SelectIdLbl;
+        private Button btnLogOutItemBereiders;
     }
 }

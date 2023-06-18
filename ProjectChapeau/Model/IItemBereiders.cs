@@ -9,10 +9,10 @@ namespace Model
     public interface IItemBereiders
     {
         public string Titel { get; set; }
-        public virtual GerechtsType ZoekVoorgerecht() { return GerechtsType.Starter; }
-        public virtual GerechtsType ZoekTussenGerecht() { return GerechtsType.Tussengerecht; }
-        public virtual GerechtsType ZoekHoofdGerecht() { return GerechtsType.Main; }
-        public virtual GerechtsType ZoekNagerecht() { return GerechtsType.Dessert; }
-        public virtual GerechtsType ZoekDrank() { return GerechtsType.Drank; }
+        public virtual GerechtsType ZoekVoorgerecht() { return GerechtsType.ZoekNiet; }
+        public virtual GerechtsType ZoekTussenGerecht() { return GerechtsType.ZoekNiet; }
+        public virtual GerechtsType ZoekHoofdGerecht() { return GerechtsType.ZoekNiet; }
+        public virtual GerechtsType ZoekNagerecht() { return GerechtsType.ZoekNiet; }
+        public virtual GerechtsType ZoekDrank() { return GerechtsType.ZoekNiet; }
     }
 }

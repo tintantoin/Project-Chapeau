@@ -8,7 +8,6 @@ namespace Model
 {
     public class Serveerder
     {
-
         public int ServeerderId { get; set; }
 
         public Personeel personeel { get; set; }
