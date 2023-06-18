@@ -32,8 +32,8 @@
             this.picChapeauLogIn = new System.Windows.Forms.PictureBox();
             this.lblTheTable = new System.Windows.Forms.Label();
             this.btnStatusFree = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnStatusOccupied = new System.Windows.Forms.Button();
+            this.btnStatusReserved = new System.Windows.Forms.Button();
             this.btnBackTafelStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
@@ -66,26 +66,29 @@
             this.btnStatusFree.TabIndex = 4;
             this.btnStatusFree.Text = "FREE";
             this.btnStatusFree.UseVisualStyleBackColor = false;
+            this.btnStatusFree.Click += new System.EventHandler(this.btnStatusFree_Click);
             // 
-            // button1
+            // btnStatusOccupied
             // 
-            this.button1.BackColor = System.Drawing.Color.SandyBrown;
-            this.button1.Location = new System.Drawing.Point(208, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 44);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "OCCUPIED";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnStatusOccupied.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnStatusOccupied.Location = new System.Drawing.Point(208, 386);
+            this.btnStatusOccupied.Name = "btnStatusOccupied";
+            this.btnStatusOccupied.Size = new System.Drawing.Size(115, 44);
+            this.btnStatusOccupied.TabIndex = 5;
+            this.btnStatusOccupied.Text = "OCCUPIED";
+            this.btnStatusOccupied.UseVisualStyleBackColor = false;
+            this.btnStatusOccupied.Click += new System.EventHandler(this.btnStatusOccupied_Click);
             // 
-            // button2
+            // btnStatusReserved
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Location = new System.Drawing.Point(371, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 44);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "RESERVED";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnStatusReserved.BackColor = System.Drawing.Color.Silver;
+            this.btnStatusReserved.Location = new System.Drawing.Point(371, 386);
+            this.btnStatusReserved.Name = "btnStatusReserved";
+            this.btnStatusReserved.Size = new System.Drawing.Size(115, 44);
+            this.btnStatusReserved.TabIndex = 6;
+            this.btnStatusReserved.Text = "RESERVED";
+            this.btnStatusReserved.UseVisualStyleBackColor = false;
+            this.btnStatusReserved.Click += new System.EventHandler(this.btnStatusReserved_Click);
             // 
             // btnBackTafelStatus
             // 
@@ -103,8 +106,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 843);
             this.Controls.Add(this.btnBackTafelStatus);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnStatusReserved);
+            this.Controls.Add(this.btnStatusOccupied);
             this.Controls.Add(this.btnStatusFree);
             this.Controls.Add(this.lblTheTable);
             this.Controls.Add(this.picChapeauLogIn);
@@ -121,8 +124,8 @@
         private PictureBox picChapeauLogIn;
         private Label lblTheTable;
         private Button btnStatusFree;
-        private Button button1;
-        private Button button2;
+        private Button btnStatusOccupied;
+        private Button btnStatusReserved;
         private Button btnBackTafelStatus;
     }
 }
