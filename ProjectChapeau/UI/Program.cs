@@ -14,7 +14,7 @@ namespace UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Personeel personeel = new Personeel();
-            personeel.functie = FunctieType.KeukenPersoneel;
+            personeel.functie = FunctieType.BarPersoneel;
             ItemBereidersUI ui = new ItemBereidersUI(personeel);
             //Application.Run(TafelOverzicht.GetInstance());           
             Application.Run(ui);

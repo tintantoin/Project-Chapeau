@@ -14,7 +14,6 @@ namespace UI
 {
     public partial class ItemBereidersUI : Form
     {
-        private Personeel gebruiker;
         private ItemBereidersService BereidersService;
         private BestellingService bestellingService;
         private BesteldItemService itemService;
@@ -24,18 +23,15 @@ namespace UI
         {
             try
             {
-                this.gebruiker = gebruiker;
-
-
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
                 this.itemService = new BesteldItemService();
-                if (this.gebruiker.functie == FunctieType.KeukenPersoneel)
+                if (gebruiker.functie == FunctieType.KeukenPersoneel)
                 {
                     itembereiderGebruiker = new ItemBereiderGebruiker(new Keuken());
 
                 }
-                else if (this.gebruiker.functie == FunctieType.BarPersoneel)
+                else if (gebruiker.functie == FunctieType.BarPersoneel)
                 {
                     itembereiderGebruiker = new ItemBereiderGebruiker(new Bar());
                 }
@@ -173,7 +169,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.InPreparation);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItemId.gerechttype)
+                switch (item.menuItem.gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -208,7 +204,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.Prepared);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItemId.gerechttype)
+                switch (item.menuItem.gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -243,7 +239,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.Served);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItemId.gerechttype)
+                switch (item.menuItem.gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();

@@ -60,5 +60,13 @@ namespace Model
         {
             return nagerechtenAf;
         }
+        public void AddItem(BesteldItem item)
+        {
+            Items.Add(item);
+        }
+        public void RemoveItem(BesteldItem item)
+        {
+            Items.Remove(item);
+        }
     }
 }
