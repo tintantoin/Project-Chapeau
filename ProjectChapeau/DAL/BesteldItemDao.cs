@@ -13,7 +13,7 @@ namespace DAL
     {
         public List<BesteldItem> GetBestelling(int id, GerechtsType type)
         {
-            string query = "SELECT bestelditemId, BesteldItem.Opmerking, MenuItem.Naam, Amount FROM BesteldItem JOIN MenuItem ON BesteldItem.MenuItemId = MenuItem.MenuItemId JOIN GerechtType ON MenuItem.MenuItemId = GerechtType.MenuItemId WHERE GerechtType.TypeGerecht = @GerechtType AND bestellingsId = @id ORDER BY Instuurtijd";
+            string query = "SELECT bestelditemId, Opmerking, Amount FROM BesteldItem JOIN MenuItem ON BesteldItem.MenuItemId = MenuItem.MenuItemId JOIN GerechtType ON MenuItem.MenuItemId = GerechtType.MenuItemId WHERE GerechtType.TypeGerecht = @GerechtType AND bestellingsId = @id ORDER BY Instuurtijd";
             SqlParameter[] sqlParameters = new SqlParameter[2]
             {
                 new SqlParameter("@id", id),
@@ -27,12 +27,13 @@ namespace DAL
             foreach (DataRow dr in dataTable.Rows)
             {
                 BesteldItem item= new BesteldItem()
+                
                 {
                     BesteldItemId = (int)dr["BesteldItemId"],
-                    Opmerking = (string)dr["BesteldItem.Opmerking"],
-                    menuItemId = (MenuItem)dr["MenuItem.Naam"],
+                    Opmerking = (string)dr["Opmerking"],
                     Count = (int)dr["Amount"]
                 };
+                
                 bestelling.Add(item);
             }
             return bestelling;

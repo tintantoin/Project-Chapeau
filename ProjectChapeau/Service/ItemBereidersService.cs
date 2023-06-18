@@ -37,7 +37,7 @@ namespace Service
         {
             foreach (BesteldItem item in b.Items)
             {
-                item.Status = itemBereidersDao.GetStatus(b.BestellingId);
+                item.Status = GetStatus(b.BestellingId);
             }
         }
         public List<BesteldItem> FilterItems(GerechtsStatus s, Bestelling bestelling)
@@ -45,7 +45,7 @@ namespace Service
             List<BesteldItem> items = new List<BesteldItem>();
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status == s)
+                if (item.Status.ToString() == s.ToString())
                 {
                     items.Add(item);
                 }

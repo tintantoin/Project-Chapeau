@@ -29,7 +29,6 @@ namespace UI
 
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
-                bestellingen = GetAllBestellingen();
                 this.itemService = new BesteldItemService();
                 if (this.gebruiker.functie == FunctieType.KeukenPersoneel)
                 {
@@ -46,6 +45,8 @@ namespace UI
                 }
                 InitializeComponent();
                 TitelLbl.Text = itembereiderGebruiker.gebruiker.Titel;
+                FillAllViews();
+                
             }
             catch (Exception e)
             {
@@ -58,14 +59,25 @@ namespace UI
             bestellingen = GetAllBestellingen();
             bestellingen = GetBestellingen(bestellingen, itembereiderGebruiker);
             bestellingen = GetAllStatus(bestellingen);
-            List<BesteldItem> NotStarteditems =
+            List<BesteldItem> NotStarteditems = FilterAllItemsByStatus((GerechtsStatus)3, bestellingen);
+            List<BesteldItem> InPrepItems = FilterAllItemsByStatus((GerechtsStatus)0, bestellingen);
+            List<BesteldItem> FinishedItems = FilterAllItemsByStatus((GerechtsStatus)1, bestellingen);
+            FillView(NotStarteditems, bestellingen, NotStartedListView);
+            FillView(InPrepItems, bestellingen, InPrepListview);
+            FillView(FinishedItems, bestellingen, PreparedListView);
         }
-        public void FillView(Bestelling b, ListView view)
+        public void FillView(List<BesteldItem> items,List<Bestelling>b,  ListView view)
         {
-            foreach (BesteldItem besteld in b.Items)
+            foreach (BesteldItem besteld in items)
             {
                 ListViewItem li = new ListViewItem(besteld.BesteldItemId.ToString());
-                li.SubItems.Add(b.BestellingId.ToString());
+                foreach (Bestelling bestelling in b)
+                {
+                    if (bestelling.Items.Contains(besteld))
+                    {
+                        li.SubItems.Add(bestelling.BestellingId.ToString());
+                    }
+                }
                 li.SubItems.Add(besteld.Count.ToString());
                 li.SubItems.Add(besteld.Opmerking);
                 view.Items.Add(li);
@@ -77,18 +89,21 @@ namespace UI
             List<BesteldItem> ItemsVanStatus = new List<BesteldItem>();
             foreach (Bestelling b in bestellingen)
             {
-                items
+                ItemsVanStatus = FilterItemsByStatus(s, b);
+                FillList(ItemsVanStatus, AllitemsVanStatus);
+            }
+            return AllitemsVanStatus;
+        }
+        public void FillList(List<BesteldItem> ItemsVanStatus, List<BesteldItem>Gefilterd)
+        {
+            foreach (BesteldItem item in ItemsVanStatus)
+            {
+                Gefilterd.Add(item);
             }
         }
         public List<BesteldItem> FilterItemsByStatus(GerechtsStatus s, Bestelling bestelling)
-        {
-            List<BesteldItem> itemsVanStatus = new List<BesteldItem>();
-            List<BesteldItem> items = new List<BesteldItem>();
-            items = BereidersService.FilterItems(s, bestelling);
-            foreach (BesteldItem item in items)
-            {
-                itemsVanStatus.Add(item);
-            }
+        {            
+            List<BesteldItem> itemsVanStatus = BereidersService.FilterItems(s, bestelling);
             return itemsVanStatus;
         }
         public List<Bestelling> GetAllBestellingen()

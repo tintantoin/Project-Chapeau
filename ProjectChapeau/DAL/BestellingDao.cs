@@ -23,7 +23,7 @@ namespace DAL
             {
                 Bestelling besteldItem = new Bestelling()
                 {
-                    BestellingId = (int)dr["BesteldItemId"]
+                    BestellingId = (int)dr["BestellingsId"]
                 };
                 bestellingen.Add(besteldItem);
             }

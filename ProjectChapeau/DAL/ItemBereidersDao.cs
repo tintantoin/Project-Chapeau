@@ -51,14 +51,16 @@ namespace DAL
         }
         private GerechtsStatus ReadItemBereidersTable(DataTable dataTable)
         {
-            GerechtsStatus status = new GerechtsStatus();
+            List<GerechtsStatus> statussen = new List<GerechtsStatus>();
             foreach (DataRow dr in dataTable.Rows)
             {
+                GerechtsStatus status= new GerechtsStatus();
                 {
                     status = (GerechtsStatus)dr["IsKlaar"];
                 };
+                
             }
-            return status;
+            return statussen.ElementAt(0);
         }
 
 

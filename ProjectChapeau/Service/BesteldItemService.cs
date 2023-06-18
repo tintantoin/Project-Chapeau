@@ -22,10 +22,15 @@ namespace Service
             foreach (Bestelling id in ids)
             {
                 id.Items = (besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekVoorgerecht()));
+                b.Add(id);
                 id.Items = (besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekTussenGerecht()));
+                b.Add(id);
                 id.Items = (besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekHoofdGerecht()));
+                b.Add(id);
                 id.Items = (besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekNagerecht()));
+                b.Add(id);
                 id.Items = (besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekDrank()));
+                b.Add(id);
             }
             return b;
         }
