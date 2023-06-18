@@ -17,13 +17,13 @@ namespace UI
     public partial class InlogUI : Form
     {
         private const int labelBuffer = 3000;
-        private InlogService InlogService;
+        private InlogService inlogService;
         private FormChanger formChanger;
         public InlogUI()
         {
             InitializeComponent();
             pnlPopUpInlog.Hide();
-            InlogService = new InlogService();
+            inlogService = new InlogService();
             formChanger = FormChanger.GetFormChanger();
         }
 
@@ -42,18 +42,19 @@ namespace UI
             }
             string userName = txtboxUsername.Text;
             string password = txtboxPassword.Text;
-            FunctieType type = InlogService.LogUserIn(userName, password);
+            FunctieType type = inlogService.LogUserIn(userName, password);
             switch (type)
             {
                 case FunctieType.BarPersoneel:
+                    formChanger.OpenForm(new ItemBereidersUI(inlogService.ReturnPersoneel(userName, password)));
                     break;
                 case FunctieType.KeukenPersoneel:
-                    formChanger.OpenForm(new KeukenUI());
+                    formChanger.OpenForm(new ItemBereidersUI(inlogService.ReturnPersoneel(userName, password)));
                     break;
                 case FunctieType.Manager:
                     break;
                 case FunctieType.Bediening:
-                    formChanger.OpenForm(new TafelOverzicht(InlogService.ReturnName(userName, password)));
+                    formChanger.OpenForm(new TafelOverzicht(inlogService.ReturnPersoneel(userName, password).voornaam));
                     break;
                 default:
                     NoLogin();

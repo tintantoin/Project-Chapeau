@@ -20,6 +20,7 @@ namespace UI
         private BesteldItemService itemService;
         private ItemBereiderGebruiker itembereiderGebruiker;
         private List<Bestelling> bestellingen;
+        private FormChanger formChanger;
         public ItemBereidersUI(Personeel gebruiker)
         {
             try
@@ -30,6 +31,7 @@ namespace UI
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
                 this.itemService = new BesteldItemService();
+                this.formChanger = FormChanger.GetFormChanger();
                 if (this.gebruiker.functie == FunctieType.KeukenPersoneel)
                 {
                     itembereiderGebruiker = new ItemBereiderGebruiker(new Keuken());
@@ -268,6 +270,11 @@ namespace UI
                 MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
             }
 
+        }
+
+        private void btnLogOutItemBereiders_Click(object sender, EventArgs e)
+        {
+            formChanger.SluitForm();
         }
     }
 }
