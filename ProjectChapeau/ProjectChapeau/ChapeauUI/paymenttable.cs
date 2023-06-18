@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace ProjectChapeau.ChapeauUI
 {
-    public partial class InlogUI : Form
+    public partial class paymenttable : Form
     {
-        public InlogUI()
+        public paymenttable()
         {
             InitializeComponent();
         }
 
-        private void lblForgotPassword_Click(object sender, EventArgs e)
+        private void Table1clicked_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello, World!", "Message Box Example", MessageBoxButtons.OK);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void tableClicked_Click(object sender, EventArgs e)
         {
-
+            var paymentUI = new PaymentUI();
+            paymentUI.Show();
         }
     }
 }

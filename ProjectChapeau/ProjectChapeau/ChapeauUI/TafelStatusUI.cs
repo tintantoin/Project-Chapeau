@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace ProjectChapeau.ChapeauUI
 {
-    public partial class InlogUI : Form
+    public partial class TafelStatusUI : Form
     {
-        public InlogUI()
+        public TafelStatusUI()
         {
             InitializeComponent();
         }
-
-        private void lblForgotPassword_Click(object sender, EventArgs e)
+        public void TableNumber(int tableNumber)
         {
-            MessageBox.Show("Hello, World!", "Message Box Example", MessageBoxButtons.OK);
+            lblTheTable.Text = "Table " + tableNumber.ToString();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnBackTafelStatus_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj": {}
+    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj": {}
   },
   "projects": {
-    "C:\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj": {
+    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj",
+        "projectUniqueName": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj",
         "projectName": "ProjectChapeau",
-        "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj",
-        "packagesPath": "C:\\Users\\AAron\\.nuget\\packages\\",
-        "outputPath": "C:\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\obj\\",
+        "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\ProjectChapeau.csproj",
+        "packagesPath": "C:\\Users\\akkay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\ProjectChapeau\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AAron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\akkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
