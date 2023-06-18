@@ -36,6 +36,7 @@ namespace UI
             this.btnStatusOccupied = new System.Windows.Forms.Button();
             this.btnStatusReserved = new System.Windows.Forms.Button();
             this.btnBackTafelStatus = new System.Windows.Forms.Button();
+            this.lblCurrentStateTable = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,21 @@ namespace UI
             this.btnBackTafelStatus.UseVisualStyleBackColor = true;
             this.btnBackTafelStatus.Click += new System.EventHandler(this.btnBackTafelStatus_Click);
             // 
+            // lblCurrentStateTable
+            // 
+            this.lblCurrentStateTable.AutoSize = true;
+            this.lblCurrentStateTable.Location = new System.Drawing.Point(196, 298);
+            this.lblCurrentStateTable.Name = "lblCurrentStateTable";
+            this.lblCurrentStateTable.Size = new System.Drawing.Size(144, 20);
+            this.lblCurrentStateTable.TabIndex = 8;
+            this.lblCurrentStateTable.Text = "Table . is currenty ......";
+            // 
             // TafelStatusUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 843);
+            this.Controls.Add(this.lblCurrentStateTable);
             this.Controls.Add(this.btnBackTafelStatus);
             this.Controls.Add(this.btnStatusReserved);
             this.Controls.Add(this.btnStatusOccupied);
@@ -128,5 +139,6 @@ namespace UI
         private Button btnStatusOccupied;
         private Button btnStatusReserved;
         private Button btnBackTafelStatus;
+        private Label lblCurrentStateTable;
     }
 }

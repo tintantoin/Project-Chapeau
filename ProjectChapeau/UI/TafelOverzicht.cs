@@ -20,22 +20,17 @@ namespace UI
         private List<Table> tafels;
         private List<Button> buttons;
         private FormChanger formChanger;
-        public TafelOverzicht()
+        public TafelOverzicht(string voorNaam)
         {
             InitializeComponent();
             buttons = new List<Button>();
             formChanger = FormChanger.GetFormChanger();
+            lblNameTafelOverzicht.Text = voorNaam;
             RefreshTables();
             LoadAllButtons();
-            GiveTableStatus();
-            /*
-            btnTable10.BackColor = Color.MediumAquamarine;
-            btnTable9.BackColor = Color.SandyBrown;
-            btnTable3.BackColor = Color.Silver;
-            btnTable4.BackColor = Color.Coral;
-            */
+            GiveTablesStatus();
         }
-        public void LoadAllButtons()
+        private void LoadAllButtons()
         {
             List<Button> buttons = AddButtons();
             int count = 0;
@@ -47,10 +42,10 @@ namespace UI
             }
         }
     
-        void Button_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            OpenTable(button.Text);
+            OpenTable(tafels[buttons.IndexOf(button)].Tafelnummer.ToString());
         }
 
         private void OpenTable(string tableNumber) 
@@ -59,7 +54,7 @@ namespace UI
             tafelStatusUI.TableNumber(int.Parse(tableNumber));
             tafelStatusUI.ShowDialog();
         }
-        public void GiveTableStatus()
+        public void GiveTablesStatus()
         {
             RefreshTables();
             int count = 0;
@@ -132,11 +127,17 @@ namespace UI
         private void btnLogTableoverzichtOut_Click(object sender, EventArgs e)
         {
             formChanger.SluitForm();
-            /*
-            this.Close();
-            InlogUI inlogUI = new InlogUI();
-            inlogUI.ShowDialog();
-            */
+        }
+        public TafelStatus GetTafelStatus(int tafelNummer)
+        {
+            foreach (var item in tafels)
+            {
+                if (item.Tafelnummer == tafelNummer)
+                {
+                    return tafels[tafels.IndexOf(item)].Tafelstatus;
+                }
+            }
+            return TafelStatus.Free;
         }
     }
 }

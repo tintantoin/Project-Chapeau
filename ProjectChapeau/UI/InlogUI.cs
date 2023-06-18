@@ -10,23 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace UI
 {
     public partial class InlogUI : Form
     {
-        InlogService InlogService;
-        FormChanger formChanger;
+        private const int labelBuffer = 3000;
+        private InlogService InlogService;
+        private FormChanger formChanger;
         public InlogUI()
         {
             InitializeComponent();
-            panelNoUserNameAndPassword.Hide();
+            pnlPopUpInlog.Hide();
             InlogService = new InlogService();
             formChanger = FormChanger.GetFormChanger();
         }
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
+            OpenPanel("Contact the manager to change your password");
             //InlogService.SetDBWachtwoord(4, "4444");
         }
 
@@ -34,11 +37,9 @@ namespace UI
         {
             if (txtboxUsername.Text == "" || txtboxPassword.Text == "")
             {
-                lblNotEnteredAll.Text = "You have not entered details for username or password";
-                panelNoUserNameAndPassword.Show();
+                OpenPanel("You have not entered details for username or password");
                 return;
             }
-
             string userName = txtboxUsername.Text;
             string password = txtboxPassword.Text;
             FunctieType type = InlogService.LogUserIn(userName, password);
@@ -52,25 +53,31 @@ namespace UI
                 case FunctieType.Manager:
                     break;
                 case FunctieType.Bediening:
-                    formChanger.OpenForm(new TafelOverzicht());
+                    formChanger.OpenForm(new TafelOverzicht(InlogService.ReturnName(userName, password)));
                     break;
                 default:
                     NoLogin();
                     break;
             }
+            if (type != FunctieType.GeenFunctie)
+            {
+                txtboxUsername.Text = "";
+            }
+            txtboxPassword.Text = "";
         }
         private void btnInvalidNameOrPass_Click(object sender, EventArgs e)
         {
-            panelNoUserNameAndPassword.Hide();
+            pnlPopUpInlog.Hide();
         }
         private void NoLogin()
         {
-            panelNoUserNameAndPassword.Show();
-            lblNotEnteredAll.Text = "                   Invalid username or password";
+            OpenPanel("Invalid username or password");
         }
-        private void OpenPanel()
+        private void OpenPanel(string text)
         {
-            panelNoUserNameAndPassword.Show();
+            lblPopUpInlog.Text = text;
+            lblPopUpInlog.Left = labelBuffer/text.Length; 
+            pnlPopUpInlog.Show();
         }
     }
 }

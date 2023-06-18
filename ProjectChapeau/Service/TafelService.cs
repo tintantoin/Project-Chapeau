@@ -17,7 +17,7 @@ namespace Service
         {
             tafelDb = new TafelDao();
         }
-
+        
         public List<Table> GetTafels()
         {
             List<Table> tafels = tafelDb.GetAllTafels();

@@ -38,8 +38,7 @@ namespace DAL
                 new SqlParameter("@wachtwoord", wachtwoord)
             };
             ExecuteEditQuery(query, sqlParameters);
-        }
-      
+        }  
         private List<Personeel> ReadTables(DataTable dataTable)
         {
             List<Personeel> personeelsLijst = new List<Personeel>();
@@ -56,8 +55,7 @@ namespace DAL
                 personeelsLijst.Add(personeel);
             }
             return personeelsLijst;
-        }    
-      
+        }          
     }
 }
 

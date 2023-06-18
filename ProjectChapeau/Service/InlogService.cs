@@ -28,6 +28,11 @@ namespace Service
             }
             return FunctieType.GeenFunctie;
         }
+        public string ReturnName(string userName, string password)
+        {
+            Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));
+            return personeel.voornaam;
+        }
         public void SetDBWachtwoord(int id, string wachtwoord)
         {
             personeelDAO.ChangePassword(id, ComputeSha256Hash(wachtwoord));

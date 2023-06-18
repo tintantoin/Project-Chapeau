@@ -40,6 +40,8 @@
             this.lblTableOrdered = new System.Windows.Forms.Label();
             this.tableLayoutPanelTafels = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogTableoverzichtOut = new System.Windows.Forms.Button();
+            this.lblNameTafelOverzicht = new System.Windows.Forms.Label();
+            this.lblCurrentUserTafelOverzicht = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +144,7 @@
             // 
             // btnLogTableoverzichtOut
             // 
-            this.btnLogTableoverzichtOut.Location = new System.Drawing.Point(468, 43);
+            this.btnLogTableoverzichtOut.Location = new System.Drawing.Point(468, 63);
             this.btnLogTableoverzichtOut.Name = "btnLogTableoverzichtOut";
             this.btnLogTableoverzichtOut.Size = new System.Drawing.Size(94, 29);
             this.btnLogTableoverzichtOut.TabIndex = 21;
@@ -150,11 +152,31 @@
             this.btnLogTableoverzichtOut.UseVisualStyleBackColor = true;
             this.btnLogTableoverzichtOut.Click += new System.EventHandler(this.btnLogTableoverzichtOut_Click);
             // 
+            // lblNameTafelOverzicht
+            // 
+            this.lblNameTafelOverzicht.AutoSize = true;
+            this.lblNameTafelOverzicht.Location = new System.Drawing.Point(468, 40);
+            this.lblNameTafelOverzicht.Name = "lblNameTafelOverzicht";
+            this.lblNameTafelOverzicht.Size = new System.Drawing.Size(49, 20);
+            this.lblNameTafelOverzicht.TabIndex = 22;
+            this.lblNameTafelOverzicht.Text = "Name";
+            // 
+            // lblCurrentUserTafelOverzicht
+            // 
+            this.lblCurrentUserTafelOverzicht.AutoSize = true;
+            this.lblCurrentUserTafelOverzicht.Location = new System.Drawing.Point(371, 40);
+            this.lblCurrentUserTafelOverzicht.Name = "lblCurrentUserTafelOverzicht";
+            this.lblCurrentUserTafelOverzicht.Size = new System.Drawing.Size(91, 20);
+            this.lblCurrentUserTafelOverzicht.TabIndex = 23;
+            this.lblCurrentUserTafelOverzicht.Text = "Current user:";
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 890);
+            this.Controls.Add(this.lblCurrentUserTafelOverzicht);
+            this.Controls.Add(this.lblNameTafelOverzicht);
             this.Controls.Add(this.btnLogTableoverzichtOut);
             this.Controls.Add(this.tableLayoutPanelTafels);
             this.Controls.Add(this.lblTableOrdered);
@@ -187,5 +209,7 @@
         private Label lblTableOrdered;
         private TableLayoutPanel tableLayoutPanelTafels;
         private Button btnLogTableoverzichtOut;
+        private Label lblNameTafelOverzicht;
+        private Label lblCurrentUserTafelOverzicht;
     }
 }
