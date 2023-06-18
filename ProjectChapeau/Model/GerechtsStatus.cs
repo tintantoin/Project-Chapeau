@@ -8,6 +8,6 @@ namespace Model
 {
     public enum GerechtsStatus
     {
-        InPreparation, Prepared, Served
+       InPreparation, Prepared, Served, NotStarted
     }
 }

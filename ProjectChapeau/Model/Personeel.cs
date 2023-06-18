@@ -14,5 +14,10 @@ namespace Model
         public string achternaam { get; set; }
         public FunctieType functie { get; set; }
         public string wachtwoord { get; set; }
+
+        public Personeel()
+        {
+            functie = new FunctieType();
+        }
     }
 }

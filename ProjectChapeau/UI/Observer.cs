@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace UI
 {
-    public class BarDao : ItemBereidersDao
+    internal class Observer : IObserver
     {
-        public override Bestelling GetItems(int id)
+        public void UpdateFill(BesteldItem b)
         {
             throw new NotImplementedException();
         }
 
-        public override void SetStatus()
+        public void UpdateRemove(BesteldItem b)
         {
             throw new NotImplementedException();
         }

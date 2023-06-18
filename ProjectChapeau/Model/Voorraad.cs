@@ -11,5 +11,9 @@ namespace Model
         public int voorraad { get ; set; }
         public MenuItem menuItemId { get; set; }
 
+        public Voorraad()
+        {
+            menuItemId= new MenuItem();
+        }
     }
 }

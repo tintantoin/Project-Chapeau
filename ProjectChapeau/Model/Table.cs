@@ -11,7 +11,13 @@ namespace Model
         public int Tafelnummer { get; set; }
         public TafelStatus Tafelstatus { get; set; }
         public int Capaciteit { get; set; }
-        public int ServerderId { get; set; }
+        public Serveerder serveerder { get; set; }
         public int RekeningsNummer { get; set; }
+
+        public Table()
+        {
+            Tafelstatus= new TafelStatus();
+            serveerder= new Serveerder();
+        }
     }
 }
