@@ -208,22 +208,22 @@
             // 
             this.orderPrice.AutoSize = true;
             this.orderPrice.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderPrice.Location = new System.Drawing.Point(325, 560);
+            this.orderPrice.Location = new System.Drawing.Point(313, 560);
             this.orderPrice.Name = "orderPrice";
-            this.orderPrice.Size = new System.Drawing.Size(65, 23);
+            this.orderPrice.Size = new System.Drawing.Size(89, 23);
             this.orderPrice.TabIndex = 8;
-            this.orderPrice.Text = "€0.00";
+            this.orderPrice.Text = "€113.00";
             this.orderPrice.Click += new System.EventHandler(this.orderPrice_Click);
             // 
             // vat
             // 
             this.vat.AutoSize = true;
             this.vat.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vat.Location = new System.Drawing.Point(325, 592);
+            this.vat.Location = new System.Drawing.Point(313, 592);
             this.vat.Name = "vat";
-            this.vat.Size = new System.Drawing.Size(65, 23);
+            this.vat.Size = new System.Drawing.Size(77, 23);
             this.vat.TabIndex = 9;
-            this.vat.Text = "€0.00";
+            this.vat.Text = "€23.73";
             this.vat.Click += new System.EventHandler(this.vat_Click);
             // 
             // button4
@@ -425,7 +425,7 @@
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(46, 15);
             this.price.TabIndex = 18;
-            this.price.Text = "€150.00";
+            this.price.Text = "€113.00";
             // 
             // label7
             // 
@@ -489,7 +489,7 @@
             this.cardPanelPayment.Controls.Add(this.label21);
             this.cardPanelPayment.Controls.Add(this.label22);
             this.cardPanelPayment.Controls.Add(this.pictureBox3);
-            this.cardPanelPayment.Location = new System.Drawing.Point(281, 13);
+            this.cardPanelPayment.Location = new System.Drawing.Point(77, 22);
             this.cardPanelPayment.Name = "cardPanelPayment";
             this.cardPanelPayment.Size = new System.Drawing.Size(454, 710);
             this.cardPanelPayment.TabIndex = 19;
@@ -832,7 +832,7 @@
             this.cashCardPaymentPanel.Controls.Add(this.label15);
             this.cashCardPaymentPanel.Controls.Add(this.label16);
             this.cashCardPaymentPanel.Controls.Add(this.pictureBox2);
-            this.cashCardPaymentPanel.Location = new System.Drawing.Point(1046, -4);
+            this.cashCardPaymentPanel.Location = new System.Drawing.Point(959, 12);
             this.cashCardPaymentPanel.Name = "cashCardPaymentPanel";
             this.cashCardPaymentPanel.Size = new System.Drawing.Size(455, 708);
             this.cashCardPaymentPanel.TabIndex = 18;
@@ -1070,7 +1070,7 @@
             this.panel2.Controls.Add(this.label55);
             this.panel2.Controls.Add(this.label56);
             this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Location = new System.Drawing.Point(574, -4);
+            this.panel2.Location = new System.Drawing.Point(515, 304);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(438, 723);
             this.panel2.TabIndex = 22;
@@ -1363,7 +1363,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(408, 705);
+            this.ClientSize = new System.Drawing.Size(411, 705);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cashCardPaymentPanel);
             this.Controls.Add(this.panel1);
