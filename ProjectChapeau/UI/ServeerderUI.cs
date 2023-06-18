@@ -12,15 +12,17 @@ using Service;
 
 namespace UI
 {
-    public partial class ServeerderUI : Form
+    public partial class ServeerderUI : Form, IObservable
     {
         private Bestelling bestelling;
         private ServeerderService serveerderService;
+        private List<IObserver> observers;
 
         public ServeerderUI()
         {
             bestelling = new Bestelling();
             serveerderService = new ServeerderService();
+            observers = new List<IObserver>();
             InitializeComponent();
             //pullMenuItem();
             SetPanelLocations();
@@ -211,6 +213,16 @@ namespace UI
         {
             ShowDrinkPanel();
 
+        }
+
+        void IObservable.AddObserver(IObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        void IObservable.RemoveObserver(IObserver observer)
+        {
+            observers.Remove(observer);
         }
     }
 }

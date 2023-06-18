@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {}
+    "C:\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
+    "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\akkay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\obj\\",
+        "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\AAron\\.nuget\\packages\\",
+        "outputPath": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\akkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AAron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+              "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -69,21 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+    "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\akkay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\obj\\",
+        "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\AAron\\.nuget\\packages\\",
+        "outputPath": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\akkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AAron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {
+    "C:\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\akkay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Service\\obj\\",
+        "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\AAron\\.nuget\\packages\\",
+        "outputPath": "C:\\Project-Chapeau\\ProjectChapeau\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\akkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AAron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,11 +152,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj"
+              "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+              "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -192,7 +192,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

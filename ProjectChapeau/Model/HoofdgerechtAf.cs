@@ -19,7 +19,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItemId.gerechttype == GerechtsType.Main)
+                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItem.gerechttype == GerechtsType.Main)
                 {
                     IsAf = false;
                     break;
@@ -36,7 +36,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared && item.menuItemId.gerechttype == GerechtsType.Dessert)
+                if (item.Status != GerechtsStatus.Prepared && item.menuItem.gerechttype == GerechtsType.Dessert)
                 {
                     IsAf = false;
                     break;
@@ -53,7 +53,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItemId.gerechttype == GerechtsType.Starter || item.menuItemId.gerechttype == GerechtsType.Tussengerecht)
+                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItem.gerechttype == GerechtsType.Starter || item.menuItem.gerechttype == GerechtsType.Tussengerecht)
                 {
                     IsAf = false;
                     break;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace UI
         private BesteldItemService itemService;
         private ItemBereiderGebruiker itembereiderGebruiker;
         private List<Bestelling> bestellingen;
+        private FormChanger formChanger;
         public ItemBereidersUI(Personeel gebruiker)
         {
             try
@@ -26,6 +28,7 @@ namespace UI
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
                 this.itemService = new BesteldItemService();
+                this.formChanger = FormChanger.GetFormChanger();
                 if (gebruiker.functie == FunctieType.KeukenPersoneel)
                 {
                     itembereiderGebruiker = new ItemBereiderGebruiker(new Keuken());
@@ -220,7 +223,7 @@ namespace UI
                         break;
                     default:
                         break;
-                }
+                };
                 ClearAllViews();
                 FillAllViews();
             }
@@ -264,6 +267,11 @@ namespace UI
                 MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
             }
 
+        }
+
+        private void btnLogOutItemBereiders_Click(object sender, EventArgs e)
+        {
+            formChanger.SluitForm();
         }
     }
 }

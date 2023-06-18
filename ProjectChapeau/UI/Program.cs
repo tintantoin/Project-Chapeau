@@ -15,9 +15,9 @@ namespace UI
             ApplicationConfiguration.Initialize();
             //Application.Run(TafelOverzicht.GetInstance());           
             //Application.Run(new Form1());
-            //FormChanger formChanger = FormChanger.GetFormChanger();
-            //formChanger.StartApplication();
-            Application.Run(new paymenttable());
+            FormChanger formChanger = FormChanger.GetFormChanger();
+            formChanger.StartApplication();
+            //Application.Run(new paymenttable());
         }
     }
 }
