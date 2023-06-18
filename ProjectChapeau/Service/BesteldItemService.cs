@@ -44,7 +44,7 @@ namespace Service
             {
                 foreach (BesteldItem item in ItemsInBestelling)
                 {
-                    b.Items.Add(item);
+                    b.AddItem(item);
                 }
             }
         }

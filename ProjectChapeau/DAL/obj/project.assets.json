@@ -799,19 +799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AAron\\.nuget\\packages\\": {}
+    "C:\\Users\\akkay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\AAron\\.nuget\\packages\\",
-      "outputPath": "C:\\Project-Chapeau\\ProjectChapeau\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\akkay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AAron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\akkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -825,8 +825,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-              "projectPath": "C:\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+            "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\akkay\\Source\\Repos\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
             }
           }
         }
@@ -866,7 +866,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

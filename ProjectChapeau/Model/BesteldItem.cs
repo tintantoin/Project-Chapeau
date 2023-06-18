@@ -11,13 +11,13 @@ namespace Model
         public int BesteldItemId { get; set; }
         public string Opmerking { get; set; }
         public DateTime InstuurTijd { get; set; }
-        public MenuItem menuItemId { get; set; }
+        public MenuItem menuItem { get; set; }
         public GerechtsStatus Status { get; set; }
         public int Count { get; set; }
 
         public BesteldItem()
         {
-            menuItemId= new MenuItem();
+            menuItem= new MenuItem();
             Status= new GerechtsStatus();
         }
     }
