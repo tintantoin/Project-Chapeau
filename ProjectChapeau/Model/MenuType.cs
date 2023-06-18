@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-
-
     public enum MenuType
     {
         Lunch, Avond, Drank
