@@ -12,16 +12,11 @@ namespace Model
     {
         public int MenuItemId { get; set; }
         public string Name { get; set; }
-        public string Opmerking { get; set; }
-        public float Prijs { get; set; }
+        public double Prijs { get; set; }
         public bool IsAlcoholisch { get; set; }
-        public MenuType menu { get; set; }
+        public MenuType menuType { get; set; }
         public GerechtsType gerechttype { get; set; }
-
-        public MenuItem()
-        {
-            menu = new MenuType();
-            gerechttype= new GerechtsType();
-        }
+        public string Opmerking { get ; set; }
+    
     }
 }
