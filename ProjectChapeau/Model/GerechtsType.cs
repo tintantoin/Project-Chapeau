@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-
-
     public enum GerechtsType
     {
-        Starter, Main, Dessert, Tussengerecht
+        Starter, Main, Dessert, Tussengerecht, Drank, ZoekNiet
     }
 }
