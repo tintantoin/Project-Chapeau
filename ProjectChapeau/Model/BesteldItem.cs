@@ -15,5 +15,10 @@ namespace Model
         public GerechtsStatus Status { get; set; }
         public int Count { get; set; }
 
+        public BesteldItem()
+        {
+            menuItemId= new MenuItem();
+            Status= new GerechtsStatus();
+        }
     }
 }

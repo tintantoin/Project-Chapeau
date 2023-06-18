@@ -41,12 +41,12 @@ namespace UI
                 }
                 else
                 {
-                    throw new Exception("Het Lijkt alsof er iets fout is gegaan");
+                    throw new Exception("Ongeldige functie voor de gebruiker.");
                 }
                 InitializeComponent();
                 TitelLbl.Text = itembereiderGebruiker.gebruiker.Titel;
                 FillAllViews();
-                
+
             }
             catch (Exception e)
             {
@@ -54,19 +54,27 @@ namespace UI
             }
 
         }
-        public void FillAllViews()
+        private void ClearAllViews()
+        {
+            NotStartedListView.Clear();
+            InPrepListview.Clear();
+            PreparedListView.Clear();
+        }
+        private void FillAllViews()
         {
             bestellingen = GetAllBestellingen();
             bestellingen = GetBestellingen(bestellingen, itembereiderGebruiker);
             bestellingen = GetAllStatus(bestellingen);
-            List<BesteldItem> NotStarteditems = FilterAllItemsByStatus((GerechtsStatus)3, bestellingen);
-            List<BesteldItem> InPrepItems = FilterAllItemsByStatus((GerechtsStatus)0, bestellingen);
-            List<BesteldItem> FinishedItems = FilterAllItemsByStatus((GerechtsStatus)1, bestellingen);
+            List<BesteldItem> InPrepItems = FilterAllItemsByStatus(GerechtsStatus.InPreparation, bestellingen);
+            List<BesteldItem> FinishedItems = FilterAllItemsByStatus(GerechtsStatus.Prepared, bestellingen);
+            List<BesteldItem> NotStarteditems = FilterAllItemsByStatus(GerechtsStatus.NotStarted, bestellingen);
+
+
             FillView(NotStarteditems, bestellingen, NotStartedListView);
             FillView(InPrepItems, bestellingen, InPrepListview);
             FillView(FinishedItems, bestellingen, PreparedListView);
         }
-        public void FillView(List<BesteldItem> items,List<Bestelling>b,  ListView view)
+        private void FillView(List<BesteldItem> items, List<Bestelling> b, ListView view)
         {
             foreach (BesteldItem besteld in items)
             {
@@ -83,7 +91,7 @@ namespace UI
                 view.Items.Add(li);
             }
         }
-        public List<BesteldItem> FilterAllItemsByStatus(GerechtsStatus s, List<Bestelling> bestellingen)
+        private List<BesteldItem> FilterAllItemsByStatus(GerechtsStatus s, List<Bestelling> bestellingen)
         {
             List<BesteldItem> AllitemsVanStatus = new List<BesteldItem>();
             List<BesteldItem> ItemsVanStatus = new List<BesteldItem>();
@@ -94,53 +102,172 @@ namespace UI
             }
             return AllitemsVanStatus;
         }
-        public void FillList(List<BesteldItem> ItemsVanStatus, List<BesteldItem>Gefilterd)
+        private void FillList(List<BesteldItem> ItemsVanStatus, List<BesteldItem> Gefilterd)
         {
             foreach (BesteldItem item in ItemsVanStatus)
             {
                 Gefilterd.Add(item);
             }
         }
-        public List<BesteldItem> FilterItemsByStatus(GerechtsStatus s, Bestelling bestelling)
-        {            
+        private List<BesteldItem> FilterItemsByStatus(GerechtsStatus s, Bestelling bestelling)
+        {
             List<BesteldItem> itemsVanStatus = BereidersService.FilterItems(s, bestelling);
             return itemsVanStatus;
         }
-        public List<Bestelling> GetAllBestellingen()
+        private List<Bestelling> GetAllBestellingen()
         {
             return bestellingService.GetAllBestelling();
         }
-        public List<Bestelling> GetBestellingen(List<Bestelling> id, ItemBereiderGebruiker gebruiker)
+        private List<Bestelling> GetBestellingen(List<Bestelling> id, ItemBereiderGebruiker gebruiker)
         {
             return itemService.GetBestellingen(id, gebruiker);
         }
-        public List<Bestelling> GetAllStatus(List<Bestelling> bestellingen)
+        private List<Bestelling> GetAllStatus(List<Bestelling> bestellingen)
         {
+            Bestelling bestelling = new Bestelling();
             foreach (Bestelling b in bestellingen)
             {
-                BereidersService.GetAllStatus(b);
+                bestelling = BereidersService.GetAllStatus(b);
+                b.Items = bestelling.Items;
             }
             return bestellingen;
         }
-        public void FillItemBereidersTable(GerechtsStatus s, int id)
+        private void FillItemBereidersTable(GerechtsStatus s, int id)
         {
             BereidersService.FillItemBereidersTable(s, id);
         }
-        public void SetStatus(int id, GerechtsStatus s)
+        private void SetStatus(int id, GerechtsStatus s)
         {
             BereidersService.SetStatus(id, s);
         }
-        public void RemoveItemBereiderItem(int id)
+        private void RemoveItemBereiderItem(int id)
         {
             BereidersService.RemoveItemBereiderItem(id);
         }
 
         private void SelectOrderBtn_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(SelectOrdertxt.Text);
-            GerechtsStatus status = BereidersService.GetStatus(id);
-            SelectIdLbl.Text = id.ToString();
-            OrderStatusLbl.Text = status.ToString();
+            try
+            {
+                int id = int.Parse(SelectOrdertxt.Text);
+                GerechtsStatus status = BereidersService.GetStatus(id);
+                SelectedOrderLbl.Text = id.ToString();
+                OrderStatusLbl.Text = status.ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ongeldig bestellings-ID. Voer een numerieke waarde in.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is een fout opgetreden bij het selecteren van de bestelling: " + ex.Message);
+            }
+        }
+
+        private void InPreparationBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(SelectedOrderLbl.Text);
+                Bestelling b = bestellingService.GetBestelling(id);
+                BereidersService.SetStatus(id, GerechtsStatus.InPreparation);
+                b = bestellingService.SearchBestelling(b, bestellingen);
+                BesteldItem item = itemService.SearchBesteldItem(id, b);
+                switch (item.menuItemId.gerechttype)
+                {
+                    case GerechtsType.Starter:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    case GerechtsType.Main:
+                        b.SchrijfAlleHoofdgerechtenAf();
+                        break;
+                    case GerechtsType.Dessert:
+                        b.SchrijfAlleNagerechtenAf();
+                        break;
+                    case GerechtsType.Tussengerecht:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    default:
+                        break;
+                }
+                ClearAllViews();
+                FillAllViews();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
+            }
+        }
+
+        private void PreparedBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(SelectedOrderLbl.Text);
+                Bestelling b = bestellingService.GetBestelling(id);
+                BereidersService.SetStatus(id, GerechtsStatus.Prepared);
+                b = bestellingService.SearchBestelling(b, bestellingen);
+                BesteldItem item = itemService.SearchBesteldItem(id, b);
+                switch (item.menuItemId.gerechttype)
+                {
+                    case GerechtsType.Starter:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    case GerechtsType.Main:
+                        b.SchrijfAlleHoofdgerechtenAf();
+                        break;
+                    case GerechtsType.Dessert:
+                        b.SchrijfAlleNagerechtenAf();
+                        break;
+                    case GerechtsType.Tussengerecht:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    default:
+                        break;
+                }
+                ClearAllViews();
+                FillAllViews();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
+            }
+        }
+
+        private void ServedBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(SelectedOrderLbl.Text);
+                Bestelling b = bestellingService.GetBestelling(id);
+                BereidersService.SetStatus(id, GerechtsStatus.Served);
+                b = bestellingService.SearchBestelling(b, bestellingen);
+                BesteldItem item = itemService.SearchBesteldItem(id, b);
+                switch (item.menuItemId.gerechttype)
+                {
+                    case GerechtsType.Starter:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    case GerechtsType.Main:
+                        b.SchrijfAlleHoofdgerechtenAf();
+                        break;
+                    case GerechtsType.Dessert:
+                        b.SchrijfAlleNagerechtenAf();
+                        break;
+                    case GerechtsType.Tussengerecht:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    default:
+                        break;
+                }
+                ClearAllViews();
+                FillAllViews();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
+            }
+
         }
     }
 }

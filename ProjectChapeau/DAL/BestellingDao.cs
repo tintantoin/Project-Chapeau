@@ -16,6 +16,15 @@ namespace DAL
             string query = "SELECT BestellingsId FROM Bestelling";
             return ReadTables(ExecuteSelectQuery(query));
         }
+        public Bestelling GetBestelling(int id)
+        {
+            string query = "SELECT BestellingsId FROM BesteldItem WHERE BesteldItemid = @id";
+            SqlParameter[] sqlParameter = new SqlParameter[1]
+            {
+                new SqlParameter("@id", id)
+            };
+            return ReadBestellingTables(ExecuteSelectQuery(query, sqlParameter));
+        }
         private List<Bestelling> ReadTables(DataTable dataTable)
         {
             List<Bestelling> bestellingen = new List<Bestelling>();
@@ -28,6 +37,19 @@ namespace DAL
                 bestellingen.Add(besteldItem);
             }
             return bestellingen;
+        }
+        private Bestelling ReadBestellingTables(DataTable dataTable)
+        {
+            Bestelling bestelling = new Bestelling();
+            int id = 0;
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                
+                id = (int)dr["BestellingsId"];
+                
+            }
+            bestelling.BestellingId = id;
+            return bestelling;
         }
     }
 }

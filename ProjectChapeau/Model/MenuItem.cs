@@ -17,6 +17,11 @@ namespace Model
         public bool IsAlcoholisch { get; set; }
         public MenuType menu { get; set; }
         public GerechtsType gerechttype { get; set; }
-    
+
+        public MenuItem()
+        {
+            menu = new MenuType();
+            gerechttype= new GerechtsType();
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace Model
             voorgerechtenAf = new VoorgerechtAf(this);
             hoofdgerechtenAf = new HoofdgerechtAf(this);
             nagerechtenAf = new NagerechtenAf(this);
+            huidigeStatus = GeefVoorgerechtenNietAfState();
+            Items= new List<BesteldItem>();
         }
         public void SchrijfAlleHoofdgerechtenAf()
         {
@@ -33,6 +35,10 @@ namespace Model
         public void SchrijfAlleVoorgerechtenAf()
         {
             huidigeStatus.SchrijfAlleVoorgerechtenAf();
+        }
+        public void SchrijfAlleNagerechtenAf()
+        {
+            huidigeStatus.SchrijfAlleNagerechtenAf();
         }
         public void ZetStatus(IBestellingsState nieuweStatus)
         {

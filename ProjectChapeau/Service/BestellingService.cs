@@ -21,6 +21,20 @@ namespace Service
         {
             return bestellingDao.GetAllBestelling();
         }
-        
+        public Bestelling GetBestelling(int id)
+        {
+            return bestellingDao.GetBestelling(id);
+        }
+        public Bestelling SearchBestelling(Bestelling b, List<Bestelling> bestellingen)
+        {
+            foreach (Bestelling bestelling in bestellingen)
+            {
+                if (b.BestellingId == bestelling.BestellingId)
+                {
+                    b = bestelling;
+                }
+            }
+            return b;
+        }
     }
 }

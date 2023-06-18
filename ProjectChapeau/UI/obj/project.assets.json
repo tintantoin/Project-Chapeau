@@ -953,7 +953,7 @@
       "projectName": "UI",
       "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\UI.csproj",
       "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teunk\\source\\repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\obj\\",
+      "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

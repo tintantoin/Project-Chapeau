@@ -934,7 +934,7 @@
       "projectName": "Service",
       "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teunk\\source\\repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\obj\\",
+      "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

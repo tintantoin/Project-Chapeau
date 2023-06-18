@@ -3,6 +3,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,43 +15,96 @@ namespace Service
 
         public ItemBereidersService()
         {
-            itemBereidersDao= new ItemBereidersDao();
+            itemBereidersDao = new ItemBereidersDao();
         }
 
         public void SetStatus(int id, GerechtsStatus s)
         {
-            itemBereidersDao.SetStatus(s, id);
+            try
+            {
+                itemBereidersDao.SetStatus(s, id);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+
         }
         public void FillItemBereidersTable(GerechtsStatus s, int id)
         {
-            itemBereidersDao.FillItemBereidersTable(s, id);
+            try
+            {
+                itemBereidersDao.FillItemBereidersTable(s, id);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new ApplicationException(ex.Message);
+            }
         }
         public void RemoveItemBereiderItem(int id)
         {
-            itemBereidersDao.RemoveItemBereiderItem(id);
+            try
+            {
+                itemBereidersDao.RemoveItemBereiderItem(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
         public GerechtsStatus GetStatus(int id)
         {
-            return itemBereidersDao.GetStatus(id);
-        }
-        public void GetAllStatus(Bestelling b)
-        {
-            foreach (BesteldItem item in b.Items)
+            try
             {
-                item.Status = GetStatus(b.BestellingId);
+                return itemBereidersDao.GetStatus(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+        public Bestelling GetAllStatus(Bestelling b)
+        {
+            try
+            {
+                foreach (BesteldItem item in b.Items)
+                {
+                    item.Status = GetStatus(item.BesteldItemId);
+                }
+                return b;
+            }
+            catch (Exception ex)
+            {
+
+                throw new ApplicationException($"{ex.Message}");
             }
         }
         public List<BesteldItem> FilterItems(GerechtsStatus s, Bestelling bestelling)
         {
-            List<BesteldItem> items = new List<BesteldItem>();
-            foreach (BesteldItem item in bestelling.Items)
+            try
             {
-                if (item.Status.ToString() == s.ToString())
+                List<BesteldItem> items = new List<BesteldItem>();
+                foreach (BesteldItem item in bestelling.Items)
                 {
-                    items.Add(item);
+                    if (item.Status == s)
+                    {
+                        items.Add(item);
+                    }
                 }
+                return items;
             }
-            return items;
+            catch (Exception ex)
+            {
+
+                throw new ApplicationException(ex.Message);
+            }
         }
     }
 }

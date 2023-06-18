@@ -26,15 +26,22 @@ namespace DAL
             List<BesteldItem> bestelling = new List<BesteldItem>();
             foreach (DataRow dr in dataTable.Rows)
             {
-                BesteldItem item= new BesteldItem()
-                
+                try
                 {
-                    BesteldItemId = (int)dr["BesteldItemId"],
-                    Opmerking = (string)dr["Opmerking"],
-                    Count = (int)dr["Amount"]
-                };
-                
-                bestelling.Add(item);
+                    BesteldItem item = new BesteldItem()
+                    {
+                        BesteldItemId = (int)dr["BesteldItemId"],
+                        Opmerking = (string)dr["Opmerking"],
+                        Count = (int)dr["Amount"]
+                    };
+
+                    bestelling.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception in ReadTables: " + ex.Message);
+                    throw;
+                }
             }
             return bestelling;
         }
