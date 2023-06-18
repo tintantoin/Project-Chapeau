@@ -52,12 +52,13 @@
             // 
             // button2
             // 
-            button2.Location = new Point(208, 427);
+            button2.Location = new Point(220, 423);
             button2.Name = "button2";
             button2.Size = new Size(211, 53);
             button2.TabIndex = 3;
             button2.Text = "ADD";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // MessageUI
             // 

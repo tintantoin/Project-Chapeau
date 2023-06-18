@@ -11,10 +11,15 @@ namespace DAL
 {
     public class ServeerderDao : BaseDao
     {
-        public List<MenuItem> pullMenuItem()
+        
+
+        public List<MenuItem> pullMenuItemByMenu(MenuType typeMenu)
         {
-            string query = "SELECT Naam, Prijs FROM MenuItem";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
+            string query = "SELECT Naam, Prijs From MenuItem JOIN Menu ON MenuItem.MenuItemId = Menu.MenuItemId WHERE MenuType =@menu ";
+            SqlParameter[] sqlParameters = new SqlParameter[1]
+            {
+                new SqlParameter("@menu",typeMenu) 
+            };
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
@@ -26,13 +31,16 @@ namespace DAL
             {
                 MenuItem item = new MenuItem()
                 {
-                    Name = (string)dr["Naam"],
-                    Prijs = (float)dr["Prijs"]
+                    Name = dr["Naam"].ToString(),
+                    Prijs = (double)dr["Prijs"],
+                    
                 };
                 items.Add(item);
             }
             return items;
         }
+     
+
         public void pushOrder(Bestelling b)
         {
 

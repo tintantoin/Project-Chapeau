@@ -21,9 +21,16 @@ namespace UI
             this.item = item;
         }
 
-        public void setDescription(int id)
+        public void setDescription()
         {
-            item.Opmerking = OpmerkingBox.Text;
+            item.Opmerking = item.Name; 
+            item.Opmerking += OpmerkingBox.Text;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            setDescription();
         }
     }
 }

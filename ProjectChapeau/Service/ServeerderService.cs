@@ -16,10 +16,12 @@ namespace Service
         {
             serveerderDao = new ServeerderDao();
         }
-        public List<MenuItem> pullMenuItem()
+
+        public List<MenuItem> pullMenuItemByMenu(MenuType typeMenu)
         {
-            return serveerderDao.pullMenuItem();
+            return serveerderDao.pullMenuItemByMenu(typeMenu);
         }
+        
 
         public void pushOrder(Bestelling b)
         {
