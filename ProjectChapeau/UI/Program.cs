@@ -1,5 +1,5 @@
 using ProjectChapeau.ChapeauUI;
-
+using Model;
 namespace UI
 {
     internal static class Program
@@ -15,9 +15,11 @@ namespace UI
             ApplicationConfiguration.Initialize();
             //Application.Run(TafelOverzicht.GetInstance());           
             //Application.Run(new Form1());
-            FormChanger formChanger = FormChanger.GetFormChanger();
-            formChanger.StartApplication();
-            //Application.Run(new paymenttable());
+            //FormChanger formChanger = FormChanger.GetFormChanger();
+            //formChanger.StartApplication();
+            Table table = new Table();
+            table.Tafelnummer = 4;
+            Application.Run(new ServeerderUI(table));
         }
     }
 }

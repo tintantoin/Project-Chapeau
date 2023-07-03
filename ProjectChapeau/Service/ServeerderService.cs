@@ -8,24 +8,32 @@ using Model;
 
 namespace Service
 {
-    public class ServeerderService 
+    public class ServeerderService
     {
         private ServeerderDao serveerderDao;
-
+         
         public ServeerderService()
         {
             serveerderDao = new ServeerderDao();
         }
 
-        public List<MenuItem> pullMenuItemByMenu(MenuType typeMenu)
+        public List<MenuItem> GetAllDrinks()
         {
-            return serveerderDao.pullMenuItemByMenu(typeMenu);
+            return serveerderDao.PullMenuItemByMenu(MenuType.Drank);
         }
-        
-
-        public void pushOrder(Bestelling b)
+        public List<MenuItem> GetAllDinners()
         {
-            serveerderDao.pushOrder(b);
+            return serveerderDao.PullMenuItemByMenu(MenuType.Avond);
+        }
+        public List<MenuItem> GetAllLunch()
+        {
+            return serveerderDao.PullMenuItemByMenu(MenuType.Lunch);
+        }
+
+        public void FinishOrder( int serveerderId, List<BesteldItem> besteldItems)
+        {
+           var bestellingId = serveerderDao.CreateBestellingId(serveerderId);
+           serveerderDao.CreateBestellingItems(besteldItems, bestellingId);
         }
     }
 }

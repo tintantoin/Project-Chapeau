@@ -60,13 +60,39 @@ namespace Model
         {
             return nagerechtenAf;
         }
+        public List<BesteldItem> GetAllItems()
+        {
+            return Items;
+        }
         public void AddItem(BesteldItem item)
         {
-            Items.Add(item);
+            var existingItem = Items.FirstOrDefault(m => m.menuItem.MenuItemId == item.menuItem.MenuItemId);
+            if (existingItem != null)
+            {
+                existingItem.Count++;
+            }
+            else
+            {
+                item.Count = 1;
+                Items.Add(item);          
+            }
+
+        }
+        public void DecreaseCount(BesteldItem item)
+        {
+            var existingItem = Items.FirstOrDefault(m => m.menuItem.MenuItemId == item.menuItem.MenuItemId);
+            if (existingItem == null) return;
+            existingItem.Count--;
+            if (existingItem.Count == 0)
+                RemoveItem(item);
         }
         public void RemoveItem(BesteldItem item)
         {
             Items.Remove(item);
+        }
+        public void ClearItems()
+        {
+            Items.Clear();
         }
     }
 }

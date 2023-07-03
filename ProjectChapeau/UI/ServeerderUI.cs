@@ -9,220 +9,177 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Service;
+using Xceed.Wpf.Toolkit.Primitives;
 
 namespace UI
 {
-    public partial class ServeerderUI : Form, IObservable
+
+    public partial class ServeerderUI : Form
     {
         private Bestelling bestelling;
         private ServeerderService serveerderService;
-        private List<IObserver> observers;
-
-        public ServeerderUI()
+        private Table tablenumber;
+        public ServeerderUI(Table tablenumber)
         {
+            InitializeComponent();
+
             bestelling = new Bestelling();
             serveerderService = new ServeerderService();
-            observers = new List<IObserver>();
-            InitializeComponent();
-            //pullMenuItem();
-            SetPanelLocations();
-            ShowLunchPanel();
-        }
-        Point BaseLocationForPanel = new(70, 200);
-        private void SetPanelLocations()
-        {
-            Dinnerpnl.Location = BaseLocationForPanel;
-            Lunchpnl.Location = BaseLocationForPanel;
-            Drinkpnl.Location = BaseLocationForPanel;
-            pnlDashboard.Location = BaseLocationForPanel;
+            this.tablenumber = tablenumber;
+            label1.Text += tablenumber.Tafelnummer.ToString();
         }
 
-        public void AddedItem(BesteldItem b)
+        private void lunchButton_Click(object sender, EventArgs e)
         {
-            bestelling.Items.Add(b);
+            var allLunch = serveerderService.GetAllLunch();
+            fillMenuListView(allLunch);
+            switchSelectedButton(MenuType.Lunch);
         }
-
-        public List<MenuItem> PullMenuItemByMenu(MenuType typeMenu)
+        private void dinnerButton_Click(object sender, EventArgs e)
         {
-            return serveerderService.pullMenuItemByMenu(typeMenu);
+            var allDinner = serveerderService.GetAllDinners();
+            fillMenuListView(allDinner);
+            switchSelectedButton(MenuType.Avond);
         }
-
-        public void pushOrder()
+        private void drinkButton_Click(object sender, EventArgs e)
         {
-            serveerderService.pushOrder(bestelling);
+            var allDrinks = serveerderService.GetAllDrinks();
+            fillMenuListView(allDrinks);
+            switchSelectedButton(MenuType.Drank);
         }
-        private void HideAllOtherPanels(Panel currentPanel)
+        private void addMenuItemToOrderButton_Click(object sender, EventArgs e)
         {
-            Dinnerpnl.Hide();
-            Lunchpnl.Hide();
-            Drinkpnl.Hide();
-            pnlDashboard.Hide();
-            currentPanel.Show();
-
-        }
-        public void ShowLunchPanel()
-        {
-            HideAllOtherPanels(Lunchpnl);
-            listViewLunchItems.Items.Clear();
-            try
+            foreach (ListViewItem item in menuListView.SelectedItems)
             {
-                List<MenuItem> items = PullMenuItemByMenu(MenuType.Lunch);
-                //MessageBox.Show(items[0].Name);
-                fillView(items);
-
+                MenuItem menuItem = (MenuItem)item.Tag;
+                if (menuItem.Voorraad < 1)
+                {
+                    MessageBox.Show($"Voorraad is niet genoeg voor '{menuItem.Name}'.");
+                    continue;
+                }
+                bestelling.AddItem(new BesteldItem()
+                {
+                    menuItem = menuItem,
+                    Opmerking = string.Empty,
+                    Status = GerechtsStatus.NotStarted
+                });
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        public void ShowDinnerPanel()
-        {
-            HideAllOtherPanels(Dinnerpnl);
-            listViewDinnerItems.Items.Clear();
-            try
-            {
-                List<MenuItem> items2 = PullMenuItemByMenu(MenuType.Avond);
-                fillView2(items2);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            fillOrderListView(bestelling.GetAllItems());
         }
 
-        public void ShowDrinkPanel()
+        private void addCommentButton_Click(object sender, EventArgs e)
         {
-            HideAllOtherPanels(Drinkpnl);
-            listViewDrinkItems.Items.Clear();
-            try
+            if (orderListView.SelectedItems.Count < 1)
+                return;
+            var orderToComment = (BesteldItem)orderListView.SelectedItems[0].Tag;
+            if (commentGroupBox.Visible)
             {
-                List<MenuItem> items3 = PullMenuItemByMenu(MenuType.Drank);
-                fillView3(items3);
+                commentGroupBox.Visible = false;
+                addCommentButton.Text = "Comment";
+                decreaseOrderButton.Enabled = true;
+                finishOrderButton.Enabled = true;
+                clearOrderButton.Enabled = true;
+                removeAllOrderButton.Enabled = true;
+                orderToComment.Opmerking = orderCommentTextBox.Text;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                commentGroupBox.Text = $"Comment - {orderToComment.menuItem.Name}";
+                orderCommentTextBox.Text = orderToComment.Opmerking;
+                commentGroupBox.Visible = true;
+                addCommentButton.Text = "Finish Comment";
+                decreaseOrderButton.Enabled = false;
+                finishOrderButton.Enabled = false;
+                clearOrderButton.Enabled = false;
+                removeAllOrderButton.Enabled = false;
             }
         }
 
-
-        public void removeItem(BesteldItem b)
+        private void finishOrderButton_Click(object sender, EventArgs e)
         {
-            bestelling.Items.Remove(b);
+            serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, bestelling.GetAllItems());
+            MessageBox.Show("Order finished succesfully");
+            Close();
         }
 
-        public void fillView(List<MenuItem> items)
+        private void decreaseOrderButton_Click(object sender, EventArgs e)
         {
-            listViewLunchItems.Items.Clear();
+            if (orderListView.SelectedItems.Count < 1) return;
+            var menuItem = (BesteldItem)orderListView.SelectedItems[0].Tag;
+            bestelling.DecreaseCount(menuItem);
+            fillOrderListView(bestelling.GetAllItems());
+
+        }
+
+        private void removeAllOrderButton_Click(object sender, EventArgs e)
+        {
+            if (orderListView.SelectedItems.Count < 1) return;
+            var menuItem = (BesteldItem)orderListView.SelectedItems[0].Tag;
+            bestelling.RemoveItem(menuItem);
+            fillOrderListView(bestelling.GetAllItems());
+        }
+
+        private void clearOrderButton_Click(object sender, EventArgs e)
+        {
+            bestelling.ClearItems();
+            fillOrderListView(bestelling.GetAllItems());
+        }
+        private void switchSelectedButton(MenuType menu)
+        {
+            var knownColor = Color.FromKnownColor(KnownColor.Control);
+            lunchButton.BackColor = knownColor;
+            dinnerButton.BackColor = knownColor;
+            drinkButton.BackColor = knownColor;
+            switch (menu)
+            {
+                case MenuType.Lunch:
+                    lunchButton.BackColor = Color.LightGreen;
+                    addMenuItemToOrderButton.Text = $"Add to Lunch";
+                    break;
+                case MenuType.Avond:
+                    dinnerButton.BackColor = Color.LightGreen;
+                    addMenuItemToOrderButton.Text = $"Add to Dinner";
+                    break;
+                case MenuType.Drank:
+                    drinkButton.BackColor = Color.LightGreen;
+                    addMenuItemToOrderButton.Text = $"Add to Drink";
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void fillMenuListView(List<MenuItem> items)
+        {
+            menuListView.Items.Clear();
             foreach (MenuItem item in items)
             {
                 ListViewItem li = new ListViewItem(item.Name);
                 li.SubItems.Add(item.Prijs.ToString());
+                li.SubItems.Add(item.Voorraad.ToString());
+                if (item.Voorraad < 1)
+                {
+                    li.BackColor = Color.LightSalmon;
+                }
                 li.Tag = item;
-                listViewLunchItems.Items.Add(li);
-
+                menuListView.Items.Add(li);
             }
-
         }
-        public void fillView2(List<MenuItem> items)
+
+        private void fillOrderListView(List<BesteldItem> items)
         {
-            listViewDinnerItems.Items.Clear();
-            foreach (MenuItem item in items)
+            orderListView.Items.Clear();
+            foreach (BesteldItem besteldItem in items)
             {
-                ListViewItem li = new ListViewItem(item.Name);
-                li.SubItems.Add(item.Prijs.ToString());
-                li.Tag = item;
-                listViewDinnerItems.Items.Add(li);
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.Tag = besteldItem;
+                listViewItem.Text = besteldItem.Count.ToString();
+                listViewItem.SubItems.Add(besteldItem.menuItem.Name);
+                listViewItem.SubItems.Add(besteldItem.menuItem.Prijs.ToString());
+                listViewItem.SubItems.Add(besteldItem.menuItem.MenuType.ToString());
+                orderListView.Items.Add(listViewItem);
             }
-        }
-        public void fillView3(List<MenuItem> items)
-        {
-            listViewDrinkItems.Items.Clear();
-            foreach (MenuItem item in items)
-            {
-                ListViewItem li = new ListViewItem(item.Name);
-                li.SubItems.Add(item.Prijs.ToString());
-                li.Tag = item;
-                listViewDrinkItems.Items.Add(li);
-            }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void LunchButton_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowLunchPanel();
-        }
-
-        private void DrinkButton_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void DinnerButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void ServeerderUI_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LunchButton_CheckedChanged_1(object sender, EventArgs e)
-        {
-            ShowLunchPanel();
-        }
-
-        private void AddItemButton_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem selectedItem in listViewDinnerItems.SelectedItems)
-            {
-                ListViewItem clonedItem = (ListViewItem)selectedItem.Clone();
-                addedDinnerlvi.Items.Add(clonedItem);
-            }
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem selectedItem in listViewDrinkItems.SelectedItems)
-            {
-                ListViewItem clonedItem = (ListViewItem)selectedItem.Clone();
-                AddedDrinklvi.Items.Add(clonedItem);
-            }
-        }
-        private void AddLunch_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem selectedItem in listViewLunchItems.SelectedItems)
-            {
-                ListViewItem clonedItem = (ListViewItem)selectedItem.Clone();
-                addedLunchlvi.Items.Add(clonedItem);
-            }
-        }
-
-
-        private void DinnerButton_CheckedChanged_1(object sender, EventArgs e)
-        {
-            ShowDinnerPanel();
-        }
-
-        private void DrinkButton_CheckedChanged_1(object sender, EventArgs e)
-        {
-            ShowDrinkPanel();
-
-        }
-
-        void IObservable.AddObserver(IObserver observer)
-        {
-            observers.Add(observer);
-        }
-
-        void IObservable.RemoveObserver(IObserver observer)
-        {
-            observers.Remove(observer);
-        }
     }
 }

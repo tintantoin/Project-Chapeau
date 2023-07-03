@@ -29,356 +29,315 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServeerderUI));
-            picChapeauLogIn = new PictureBox();
-            label2 = new Label();
             label1 = new Label();
-            DinnerButton = new RadioButton();
-            LunchButton = new RadioButton();
-            DrinkButton = new RadioButton();
-            listViewDinnerItems = new ListView();
-            columnHeader7 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
-            columnHeader9 = new ColumnHeader();
-            Dinnerpnl = new Panel();
-            Drinkpnl = new Panel();
-            AddDrink = new Button();
-            AddedDrinklvi = new ListView();
-            columnHeader11 = new ColumnHeader();
-            listViewDrinkItems = new ListView();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            AddDinner = new Button();
-            addedDinnerlvi = new ListView();
-            columnHeader12 = new ColumnHeader();
-            pnlDashboard = new Panel();
-            Lunchpnl = new Panel();
-            AddLunch = new Button();
-            addedLunchlvi = new ListView();
-            columnHeader10 = new ColumnHeader();
-            listViewLunchItems = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            ((System.ComponentModel.ISupportInitialize)picChapeauLogIn).BeginInit();
-            Dinnerpnl.SuspendLayout();
-            Drinkpnl.SuspendLayout();
-            Lunchpnl.SuspendLayout();
+            menuListView = new ListView();
+            ColumnName = new ColumnHeader();
+            ColumnPrijs = new ColumnHeader();
+            ColumnVoorraad = new ColumnHeader();
+            lunchButton = new Button();
+            dinnerButton = new Button();
+            drinkButton = new Button();
+            menuGroupBox = new GroupBox();
+            addMenuItemToOrderButton = new Button();
+            orderGroupBox = new GroupBox();
+            clearOrderButton = new Button();
+            removeAllOrderButton = new Button();
+            commentGroupBox = new GroupBox();
+            orderCommentTextBox = new TextBox();
+            finishOrderButton = new Button();
+            addCommentButton = new Button();
+            decreaseOrderButton = new Button();
+            orderListView = new ListView();
+            OrderColumnAaantal = new ColumnHeader();
+            OrderColumnName = new ColumnHeader();
+            OrderColumnPrice = new ColumnHeader();
+            OrderColumnType = new ColumnHeader();
+            logoPictureBox = new PictureBox();
+            menuGroupBox.SuspendLayout();
+            orderGroupBox.SuspendLayout();
+            commentGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
-            // 
-            // picChapeauLogIn
-            // 
-            picChapeauLogIn.Image = (Image)resources.GetObject("picChapeauLogIn.Image");
-            picChapeauLogIn.Location = new Point(12, 12);
-            picChapeauLogIn.Name = "picChapeauLogIn";
-            picChapeauLogIn.Size = new Size(179, 111);
-            picChapeauLogIn.TabIndex = 3;
-            picChapeauLogIn.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(310, 48);
-            label2.Name = "label2";
-            label2.Size = new Size(109, 46);
-            label2.TabIndex = 6;
-            label2.Text = "label2";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(217, 48);
+            label1.Location = new Point(119, 9);
             label1.Name = "label1";
-            label1.Size = new Size(97, 46);
+            label1.Size = new Size(170, 37);
             label1.TabIndex = 5;
-            label1.Text = "Table";
+            label1.Text = "Serveer tafel ";
             // 
-            // DinnerButton
+            // menuListView
             // 
-            DinnerButton.AutoSize = true;
-            DinnerButton.Location = new Point(217, 151);
-            DinnerButton.Name = "DinnerButton";
-            DinnerButton.Size = new Size(84, 24);
-            DinnerButton.TabIndex = 18;
-            DinnerButton.TabStop = true;
-            DinnerButton.Text = "DINNER";
-            DinnerButton.UseVisualStyleBackColor = true;
-            DinnerButton.CheckedChanged += DinnerButton_CheckedChanged_1;
+            menuListView.Columns.AddRange(new ColumnHeader[] { ColumnName, ColumnPrijs, ColumnVoorraad });
+            menuListView.FullRowSelect = true;
+            menuListView.Location = new Point(7, 76);
+            menuListView.Margin = new Padding(3, 2, 3, 2);
+            menuListView.Name = "menuListView";
+            menuListView.Size = new Size(462, 270);
+            menuListView.TabIndex = 0;
+            menuListView.UseCompatibleStateImageBehavior = false;
+            menuListView.View = View.Details;
             // 
-            // LunchButton
+            // ColumnName
             // 
-            LunchButton.AutoSize = true;
-            LunchButton.Location = new Point(31, 151);
-            LunchButton.Name = "LunchButton";
-            LunchButton.Size = new Size(78, 24);
-            LunchButton.TabIndex = 17;
-            LunchButton.TabStop = true;
-            LunchButton.Text = "LUNCH";
-            LunchButton.UseVisualStyleBackColor = true;
-            LunchButton.CheckedChanged += LunchButton_CheckedChanged_1;
+            ColumnName.Text = "Name";
+            ColumnName.Width = 250;
             // 
-            // DrinkButton
+            // ColumnPrijs
             // 
-            DrinkButton.AutoSize = true;
-            DrinkButton.Location = new Point(406, 151);
-            DrinkButton.Name = "DrinkButton";
-            DrinkButton.Size = new Size(82, 24);
-            DrinkButton.TabIndex = 19;
-            DrinkButton.TabStop = true;
-            DrinkButton.Text = "DRINKS";
-            DrinkButton.UseVisualStyleBackColor = true;
-            DrinkButton.CheckedChanged += DrinkButton_CheckedChanged_1;
+            ColumnPrijs.Text = "Price";
             // 
-            // listViewDinnerItems
+            // ColumnVoorraad
             // 
-            listViewDinnerItems.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8, columnHeader9 });
-            listViewDinnerItems.FullRowSelect = true;
-            listViewDinnerItems.Location = new Point(0, 3);
-            listViewDinnerItems.Name = "listViewDinnerItems";
-            listViewDinnerItems.Size = new Size(448, 499);
-            listViewDinnerItems.TabIndex = 0;
-            listViewDinnerItems.UseCompatibleStateImageBehavior = false;
-            listViewDinnerItems.View = View.Details;
+            ColumnVoorraad.Text = "Voorraad";
             // 
-            // columnHeader7
+            // lunchButton
             // 
-            columnHeader7.Text = "Name";
-            columnHeader7.Width = 200;
+            lunchButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lunchButton.Location = new Point(7, 22);
+            lunchButton.Name = "lunchButton";
+            lunchButton.Size = new Size(150, 49);
+            lunchButton.TabIndex = 22;
+            lunchButton.Text = "Lunch";
+            lunchButton.UseVisualStyleBackColor = true;
+            lunchButton.Click += lunchButton_Click;
             // 
-            // columnHeader8
+            // dinnerButton
             // 
-            columnHeader8.Text = "Price";
+            dinnerButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dinnerButton.Location = new Point(163, 22);
+            dinnerButton.Name = "dinnerButton";
+            dinnerButton.Size = new Size(150, 49);
+            dinnerButton.TabIndex = 23;
+            dinnerButton.Text = "Dinner";
+            dinnerButton.UseVisualStyleBackColor = true;
+            dinnerButton.Click += dinnerButton_Click;
             // 
-            // columnHeader9
+            // drinkButton
             // 
-            columnHeader9.Text = "MenuType";
-            columnHeader9.Width = 200;
+            drinkButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            drinkButton.Location = new Point(319, 22);
+            drinkButton.Name = "drinkButton";
+            drinkButton.Size = new Size(150, 49);
+            drinkButton.TabIndex = 24;
+            drinkButton.Text = "Drinks";
+            drinkButton.UseVisualStyleBackColor = true;
+            drinkButton.Click += drinkButton_Click;
             // 
-            // Dinnerpnl
+            // menuGroupBox
             // 
-            Dinnerpnl.Controls.Add(AddDinner);
-            Dinnerpnl.Controls.Add(addedDinnerlvi);
-            Dinnerpnl.Controls.Add(listViewDinnerItems);
-            Dinnerpnl.Location = new Point(41, 337);
-            Dinnerpnl.Name = "Dinnerpnl";
-            Dinnerpnl.Size = new Size(568, 846);
-            Dinnerpnl.TabIndex = 16;
+            menuGroupBox.Controls.Add(addMenuItemToOrderButton);
+            menuGroupBox.Controls.Add(lunchButton);
+            menuGroupBox.Controls.Add(drinkButton);
+            menuGroupBox.Controls.Add(menuListView);
+            menuGroupBox.Controls.Add(dinnerButton);
+            menuGroupBox.Location = new Point(10, 65);
+            menuGroupBox.Name = "menuGroupBox";
+            menuGroupBox.Size = new Size(476, 390);
+            menuGroupBox.TabIndex = 25;
+            menuGroupBox.TabStop = false;
+            menuGroupBox.Text = "Menu";
             // 
-            // Drinkpnl
+            // addMenuItemToOrderButton
             // 
-            Drinkpnl.Controls.Add(AddDrink);
-            Drinkpnl.Controls.Add(AddedDrinklvi);
-            Drinkpnl.Controls.Add(listViewDrinkItems);
-            Drinkpnl.Location = new Point(620, 519);
-            Drinkpnl.Name = "Drinkpnl";
-            Drinkpnl.Size = new Size(568, 844);
-            Drinkpnl.TabIndex = 17;
+            addMenuItemToOrderButton.BackColor = Color.AntiqueWhite;
+            addMenuItemToOrderButton.Location = new Point(6, 351);
+            addMenuItemToOrderButton.Name = "addMenuItemToOrderButton";
+            addMenuItemToOrderButton.Size = new Size(463, 33);
+            addMenuItemToOrderButton.TabIndex = 25;
+            addMenuItemToOrderButton.Text = "Add to Order";
+            addMenuItemToOrderButton.UseVisualStyleBackColor = false;
+            addMenuItemToOrderButton.Click += addMenuItemToOrderButton_Click;
             // 
-            // AddDrink
+            // orderGroupBox
             // 
-            AddDrink.Location = new Point(442, 742);
-            AddDrink.Name = "AddDrink";
-            AddDrink.Size = new Size(114, 43);
-            AddDrink.TabIndex = 2;
-            AddDrink.Text = "add";
-            AddDrink.UseVisualStyleBackColor = true;
-            AddDrink.Click += button2_Click;
+            orderGroupBox.Controls.Add(clearOrderButton);
+            orderGroupBox.Controls.Add(removeAllOrderButton);
+            orderGroupBox.Controls.Add(commentGroupBox);
+            orderGroupBox.Controls.Add(finishOrderButton);
+            orderGroupBox.Controls.Add(addCommentButton);
+            orderGroupBox.Controls.Add(decreaseOrderButton);
+            orderGroupBox.Controls.Add(orderListView);
+            orderGroupBox.Location = new Point(10, 461);
+            orderGroupBox.Name = "orderGroupBox";
+            orderGroupBox.Size = new Size(476, 347);
+            orderGroupBox.TabIndex = 26;
+            orderGroupBox.TabStop = false;
+            orderGroupBox.Text = "Order";
             // 
-            // AddedDrinklvi
+            // clearOrderButton
             // 
-            AddedDrinklvi.Columns.AddRange(new ColumnHeader[] { columnHeader11 });
-            AddedDrinklvi.Location = new Point(0, 508);
-            AddedDrinklvi.Name = "AddedDrinklvi";
-            AddedDrinklvi.Size = new Size(448, 215);
-            AddedDrinklvi.TabIndex = 1;
-            AddedDrinklvi.UseCompatibleStateImageBehavior = false;
-            AddedDrinklvi.View = View.Details;
+            clearOrderButton.BackColor = Color.OrangeRed;
+            clearOrderButton.Location = new Point(192, 308);
+            clearOrderButton.Name = "clearOrderButton";
+            clearOrderButton.Size = new Size(64, 33);
+            clearOrderButton.TabIndex = 33;
+            clearOrderButton.Text = "Clear";
+            clearOrderButton.UseVisualStyleBackColor = false;
+            clearOrderButton.Click += clearOrderButton_Click;
             // 
-            // columnHeader11
+            // removeAllOrderButton
             // 
-            columnHeader11.Text = "Name";
-            columnHeader11.Width = 250;
+            removeAllOrderButton.BackColor = Color.Tomato;
+            removeAllOrderButton.Location = new Point(98, 308);
+            removeAllOrderButton.Name = "removeAllOrderButton";
+            removeAllOrderButton.Size = new Size(88, 33);
+            removeAllOrderButton.TabIndex = 32;
+            removeAllOrderButton.Text = "Remove All";
+            removeAllOrderButton.UseVisualStyleBackColor = false;
+            removeAllOrderButton.Click += removeAllOrderButton_Click;
             // 
-            // listViewDrinkItems
+            // commentGroupBox
             // 
-            listViewDrinkItems.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6 });
-            listViewDrinkItems.FullRowSelect = true;
-            listViewDrinkItems.GridLines = true;
-            listViewDrinkItems.Location = new Point(0, 0);
-            listViewDrinkItems.Name = "listViewDrinkItems";
-            listViewDrinkItems.Size = new Size(448, 499);
-            listViewDrinkItems.TabIndex = 13;
-            listViewDrinkItems.UseCompatibleStateImageBehavior = false;
-            listViewDrinkItems.View = View.Details;
+            commentGroupBox.Controls.Add(orderCommentTextBox);
+            commentGroupBox.Location = new Point(7, 20);
+            commentGroupBox.Name = "commentGroupBox";
+            commentGroupBox.Size = new Size(463, 282);
+            commentGroupBox.TabIndex = 31;
+            commentGroupBox.TabStop = false;
+            commentGroupBox.Text = "Comment";
+            commentGroupBox.Visible = false;
             // 
-            // columnHeader4
+            // orderCommentTextBox
             // 
-            columnHeader4.Text = "Name";
-            columnHeader4.Width = 200;
+            orderCommentTextBox.Dock = DockStyle.Fill;
+            orderCommentTextBox.Location = new Point(3, 19);
+            orderCommentTextBox.Multiline = true;
+            orderCommentTextBox.Name = "orderCommentTextBox";
+            orderCommentTextBox.ScrollBars = ScrollBars.Both;
+            orderCommentTextBox.Size = new Size(457, 260);
+            orderCommentTextBox.TabIndex = 30;
             // 
-            // columnHeader5
+            // finishOrderButton
             // 
-            columnHeader5.Text = "Price";
+            finishOrderButton.BackColor = Color.LightGreen;
+            finishOrderButton.Location = new Point(383, 308);
+            finishOrderButton.Name = "finishOrderButton";
+            finishOrderButton.Size = new Size(87, 33);
+            finishOrderButton.TabIndex = 29;
+            finishOrderButton.Text = "Finish";
+            finishOrderButton.UseVisualStyleBackColor = false;
+            finishOrderButton.Click += finishOrderButton_Click;
             // 
-            // columnHeader6
+            // addCommentButton
             // 
-            columnHeader6.Text = "MenuType";
-            columnHeader6.Width = 200;
+            addCommentButton.BackColor = Color.AntiqueWhite;
+            addCommentButton.Location = new Point(262, 308);
+            addCommentButton.Name = "addCommentButton";
+            addCommentButton.Size = new Size(115, 33);
+            addCommentButton.TabIndex = 28;
+            addCommentButton.Text = "Comment";
+            addCommentButton.UseVisualStyleBackColor = false;
+            addCommentButton.Click += addCommentButton_Click;
             // 
-            // AddDinner
+            // decreaseOrderButton
             // 
-            AddDinner.Location = new Point(442, 742);
-            AddDinner.Name = "AddDinner";
-            AddDinner.Size = new Size(114, 43);
-            AddDinner.TabIndex = 2;
-            AddDinner.Text = "add";
-            AddDinner.UseVisualStyleBackColor = true;
-            AddDinner.Click += AddItemButton_Click;
+            decreaseOrderButton.BackColor = Color.LightSalmon;
+            decreaseOrderButton.Location = new Point(10, 308);
+            decreaseOrderButton.Name = "decreaseOrderButton";
+            decreaseOrderButton.Size = new Size(82, 33);
+            decreaseOrderButton.TabIndex = 27;
+            decreaseOrderButton.Text = "Remove 1";
+            decreaseOrderButton.UseVisualStyleBackColor = false;
+            decreaseOrderButton.Click += decreaseOrderButton_Click;
             // 
-            // addedDinnerlvi
+            // orderListView
             // 
-            addedDinnerlvi.Columns.AddRange(new ColumnHeader[] { columnHeader12 });
-            addedDinnerlvi.Location = new Point(0, 508);
-            addedDinnerlvi.Name = "addedDinnerlvi";
-            addedDinnerlvi.Size = new Size(448, 215);
-            addedDinnerlvi.TabIndex = 1;
-            addedDinnerlvi.UseCompatibleStateImageBehavior = false;
-            addedDinnerlvi.View = View.Details;
+            orderListView.Columns.AddRange(new ColumnHeader[] { OrderColumnAaantal, OrderColumnName, OrderColumnPrice, OrderColumnType });
+            orderListView.FullRowSelect = true;
+            orderListView.Location = new Point(8, 21);
+            orderListView.Margin = new Padding(3, 2, 3, 2);
+            orderListView.MultiSelect = false;
+            orderListView.Name = "orderListView";
+            orderListView.Size = new Size(462, 282);
+            orderListView.TabIndex = 26;
+            orderListView.UseCompatibleStateImageBehavior = false;
+            orderListView.View = View.Details;
             // 
-            // columnHeader12
+            // OrderColumnAaantal
             // 
-            columnHeader12.Text = "Price";
-            columnHeader12.Width = 250;
+            OrderColumnAaantal.Text = "Aantal";
+            OrderColumnAaantal.Width = 50;
             // 
-            // pnlDashboard
+            // OrderColumnName
             // 
-            pnlDashboard.Location = new Point(615, 15);
-            pnlDashboard.Name = "pnlDashboard";
-            pnlDashboard.Size = new Size(532, 423);
-            pnlDashboard.TabIndex = 21;
+            OrderColumnName.Text = "Naam";
+            OrderColumnName.Width = 200;
             // 
-            // Lunchpnl
+            // OrderColumnPrice
             // 
-            Lunchpnl.Controls.Add(AddLunch);
-            Lunchpnl.Controls.Add(addedLunchlvi);
-            Lunchpnl.Controls.Add(listViewLunchItems);
-            Lunchpnl.Location = new Point(632, 444);
-            Lunchpnl.Name = "Lunchpnl";
-            Lunchpnl.Size = new Size(568, 847);
-            Lunchpnl.TabIndex = 17;
+            OrderColumnPrice.Text = "Prijs";
+            OrderColumnPrice.Width = 80;
             // 
-            // AddLunch
+            // OrderColumnType
             // 
-            AddLunch.Location = new Point(442, 742);
-            AddLunch.Name = "AddLunch";
-            AddLunch.Size = new Size(114, 43);
-            AddLunch.TabIndex = 2;
-            AddLunch.Text = "add";
-            AddLunch.UseVisualStyleBackColor = true;
-            AddLunch.Click += AddLunch_Click;
+            OrderColumnType.Text = "Type";
+            OrderColumnType.Width = 100;
             // 
-            // addedLunchlvi
+            // logoPictureBox
             // 
-            addedLunchlvi.Columns.AddRange(new ColumnHeader[] { columnHeader10 });
-            addedLunchlvi.Location = new Point(0, 508);
-            addedLunchlvi.Name = "addedLunchlvi";
-            addedLunchlvi.Size = new Size(448, 215);
-            addedLunchlvi.TabIndex = 1;
-            addedLunchlvi.UseCompatibleStateImageBehavior = false;
-            addedLunchlvi.View = View.Details;
-            // 
-            // columnHeader10
-            // 
-            columnHeader10.Text = "Price";
-            columnHeader10.Width = 250;
-            // 
-            // listViewLunchItems
-            // 
-            listViewLunchItems.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewLunchItems.FullRowSelect = true;
-            listViewLunchItems.Location = new Point(0, 3);
-            listViewLunchItems.Name = "listViewLunchItems";
-            listViewLunchItems.Size = new Size(448, 499);
-            listViewLunchItems.TabIndex = 0;
-            listViewLunchItems.UseCompatibleStateImageBehavior = false;
-            listViewLunchItems.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Name";
-            columnHeader1.Width = 200;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Price";
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "MenuType";
-            columnHeader3.Width = 200;
+            logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
+            logoPictureBox.Location = new Point(10, 9);
+            logoPictureBox.Margin = new Padding(3, 2, 3, 2);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(103, 51);
+            logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            logoPictureBox.TabIndex = 28;
+            logoPictureBox.TabStop = false;
             // 
             // ServeerderUI
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(645, 1055);
-            Controls.Add(Drinkpnl);
-            Controls.Add(Lunchpnl);
-            Controls.Add(pnlDashboard);
-            Controls.Add(Dinnerpnl);
-            Controls.Add(DrinkButton);
-            Controls.Add(label2);
-            Controls.Add(DinnerButton);
-            Controls.Add(LunchButton);
+            ClientSize = new Size(495, 806);
+            Controls.Add(logoPictureBox);
+            Controls.Add(orderGroupBox);
+            Controls.Add(menuGroupBox);
             Controls.Add(label1);
-            Controls.Add(picChapeauLogIn);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "ServeerderUI";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ServeerderUI";
-            Load += ServeerderUI_Load;
-            ((System.ComponentModel.ISupportInitialize)picChapeauLogIn).EndInit();
-            Dinnerpnl.ResumeLayout(false);
-            Drinkpnl.ResumeLayout(false);
-            Lunchpnl.ResumeLayout(false);
+            menuGroupBox.ResumeLayout(false);
+            orderGroupBox.ResumeLayout(false);
+            commentGroupBox.ResumeLayout(false);
+            commentGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox picChapeauLogIn;
-        private Label label2;
         private Label label1;
-        private RadioButton DinnerButton;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
-        private ListView listViewDinnerItems;
-        private ColumnHeader columnHeader7;
-        private ColumnHeader columnHeader8;
-        private ColumnHeader columnHeader9;
-        private Panel Dinnerpnl;
-        private Panel pnlDashboard;
-        private RadioButton LunchButton;
-        private RadioButton DrinkButton;
-        private ListView addedDinnerlvi;
-        private Button AddDinner;
-        private Panel Lunchpnl;
-        private Button AddLunch;
-        private ListView addedLunchlvi;
-        private ListView listViewLunchItems;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader12;
-        private ColumnHeader columnHeader10;
-        private ListView listViewDrinkItems;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ListView AddedDrinklvi;
-        private ColumnHeader columnHeader11;
-        private Button AddDrink;
-        private Panel Drinkpnl;
+        private ListView menuListView;
+        private ColumnHeader ColumnName;
+        private ColumnHeader ColumnPrijs;
+        private Button lunchButton;
+        private Button dinnerButton;
+        private Button drinkButton;
+        private GroupBox menuGroupBox;
+        private GroupBox orderGroupBox;
+        private Button addMenuItemToOrderButton;
+        private ListView orderListView;
+        private ColumnHeader OrderColumnAaantal;
+        private ColumnHeader OrderColumnName;
+        private ColumnHeader OrderColumnPrice;
+        private Button addCommentButton;
+        private Button decreaseOrderButton;
+        private Button finishOrderButton;
+        private TextBox orderCommentTextBox;
+        private GroupBox commentGroupBox;
+        private PictureBox logoPictureBox;
+        private ColumnHeader ColumnVoorraad;
+        private ColumnHeader OrderColumnType;
+        private Button clearOrderButton;
+        private Button removeAllOrderButton;
     }
 }

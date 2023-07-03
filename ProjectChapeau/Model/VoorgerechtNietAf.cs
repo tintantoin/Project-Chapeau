@@ -29,7 +29,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared&& item.menuItem.gerechttype==GerechtsType.Starter || item.menuItem.gerechttype == GerechtsType.Tussengerecht)
+                if (item.Status != GerechtsStatus.Prepared&& item.menuItem.Gerechttype==GerechtsType.Starter || item.menuItem.Gerechttype == GerechtsType.Tussengerecht)
                 {
                     IsAf= false;
                     break;

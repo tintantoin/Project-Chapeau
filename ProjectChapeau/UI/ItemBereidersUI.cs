@@ -172,7 +172,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.InPreparation);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
+                switch (item.menuItem.Gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -207,7 +207,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.Prepared);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
+                switch (item.menuItem.Gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -242,7 +242,7 @@ namespace UI
                 BereidersService.SetStatus(id, GerechtsStatus.Served);
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
+                switch (item.menuItem.Gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -272,6 +272,11 @@ namespace UI
         private void btnLogOutItemBereiders_Click(object sender, EventArgs e)
         {
             formChanger.SluitForm();
+        }
+
+        private void ItemBereidersUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
