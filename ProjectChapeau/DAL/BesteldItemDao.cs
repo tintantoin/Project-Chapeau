@@ -13,11 +13,11 @@ namespace DAL
     {
         public List<BesteldItem> GetBestelling(int id, GerechtsType type)
         {
-            string query = "SELECT bestelditemId, Opmerking, Amount FROM BesteldItem JOIN MenuItem ON BesteldItem.MenuItemId = MenuItem.MenuItemId JOIN GerechtType ON MenuItem.MenuItemId = GerechtType.MenuItemId WHERE GerechtType.TypeGerecht = @GerechtType AND bestellingsId = @id ORDER BY Instuurtijd";
+            string query = "SELECT bestelditemId, Opmerking, Naam, Amount, TypeGerecht FROM BesteldItem JOIN MenuItem ON BesteldItem.MenuItemId = MenuItem.MenuItemId JOIN GerechtType ON MenuItem.MenuItemId = GerechtType.MenuItemId WHERE GerechtType.TypeGerecht = @GerechtType AND bestellingsId = @id";
             SqlParameter[] sqlParameters = new SqlParameter[2]
             {
                 new SqlParameter("@id", id),
-                new SqlParameter("@GerechtType", type)
+                new SqlParameter("@GerechtType", type.ToString())
             };
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -28,13 +28,18 @@ namespace DAL
             {
                 try
                 {
+                    GerechtsType type = new GerechtsType();
+                    string s = "";
                     BesteldItem item = new BesteldItem()
                     {
                         BesteldItemId = (int)dr["BesteldItemId"],
                         Opmerking = (string)dr["Opmerking"],
-                        Count = (int)dr["Amount"]
+                        Count = (int)dr["Amount"],
                     };
-
+                    item.menuItem.Name = (string)dr["Naam"];
+                    s = (string)dr["TypeGerecht"];
+                    type = (GerechtsType)Enum.Parse(typeof(GerechtsType),s);
+                    item.menuItem.gerechttype = type;
                     bestelling.Add(item);
                 }
                 catch (Exception ex)

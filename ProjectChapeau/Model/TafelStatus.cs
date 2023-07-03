@@ -8,6 +8,6 @@ namespace Model
 {
     public enum TafelStatus
     {
-        Free, Occupied, Reserved, Ordered
+        Free=1, Occupied, Reserved, Ordered
     }
 }

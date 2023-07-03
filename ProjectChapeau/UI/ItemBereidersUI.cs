@@ -14,10 +14,10 @@ namespace UI
 {
     public partial class ItemBereidersUI : Form
     {
+        private Personeel gebruiker;
         private ItemBereidersService BereidersService;
         private BestellingService bestellingService;
         private BesteldItemService itemService;
-        private ItemBereiderGebruiker itembereiderGebruiker;
         private List<Bestelling> bestellingen;
         public ItemBereidersUI(Personeel gebruiker)
         {
@@ -26,49 +26,43 @@ namespace UI
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
                 this.itemService = new BesteldItemService();
+                this.gebruiker = gebruiker;
                 if (gebruiker.functie == FunctieType.KeukenPersoneel)
                 {
-                    itembereiderGebruiker = new ItemBereiderGebruiker(new Keuken());
-
+                    gebruiker.gebruiker = new Keuken();
                 }
                 else if (gebruiker.functie == FunctieType.BarPersoneel)
                 {
-                    itembereiderGebruiker = new ItemBereiderGebruiker(new Bar());
+                    gebruiker.gebruiker = new Bar();
                 }
                 else
                 {
                     throw new Exception("Ongeldige functie voor de gebruiker.");
                 }
                 InitializeComponent();
-                TitelLbl.Text = itembereiderGebruiker.gebruiker.Titel;
-                FillAllViews();
+                TitelLbl.Text = gebruiker.gebruiker.Titel;
+                FillInAllViews(GerechtsStatus.InPreparation);
 
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
-
         }
         private void ClearAllViews()
         {
-            NotStartedListView.Clear();
-            InPrepListview.Clear();
-            PreparedListView.Clear();
+            NotStartedListView.Items.Clear();
+            InPrepListview.Items.Clear();
         }
-        private void FillAllViews()
+        private void FillInAllViews(GerechtsStatus s)
         {
             bestellingen = GetAllBestellingen();
-            bestellingen = GetBestellingen(bestellingen, itembereiderGebruiker);
-            bestellingen = GetAllStatus(bestellingen);
-            List<BesteldItem> InPrepItems = FilterAllItemsByStatus(GerechtsStatus.InPreparation, bestellingen);
-            List<BesteldItem> FinishedItems = FilterAllItemsByStatus(GerechtsStatus.Prepared, bestellingen);
+            GetBestellingen(bestellingen, gebruiker);
+            GetAllStatus(bestellingen);
+            List<BesteldItem> Items = FilterAllItemsByStatus(s, bestellingen);
             List<BesteldItem> NotStarteditems = FilterAllItemsByStatus(GerechtsStatus.NotStarted, bestellingen);
-
-
             FillView(NotStarteditems, bestellingen, NotStartedListView);
-            FillView(InPrepItems, bestellingen, InPrepListview);
-            FillView(FinishedItems, bestellingen, PreparedListView);
+            FillView(Items, bestellingen, InPrepListview);
         }
         private void FillView(List<BesteldItem> items, List<Bestelling> b, ListView view)
         {
@@ -80,9 +74,14 @@ namespace UI
                     if (bestelling.Items.Contains(besteld))
                     {
                         li.SubItems.Add(bestelling.BestellingId.ToString());
+                        li.SubItems.Add(bestelling.table.TableId.ToString());
+                        li.SubItems.Add(besteld.InstuurTijd.ToString());
+                        int WaitTimeInMinute = DateTime.Now.Minute - besteld.InstuurTijd.Minute;
+                        li.SubItems.Add(WaitTimeInMinute.ToString());
                     }
                 }
                 li.SubItems.Add(besteld.Count.ToString());
+                li.SubItems.Add(besteld.menuItem.Name);
                 li.SubItems.Add(besteld.Opmerking);
                 view.Items.Add(li);
             }
@@ -114,11 +113,11 @@ namespace UI
         {
             return bestellingService.GetAllBestelling();
         }
-        private List<Bestelling> GetBestellingen(List<Bestelling> id, ItemBereiderGebruiker gebruiker)
+        private void GetBestellingen(List<Bestelling> id, Personeel gebruiker)
         {
-            return itemService.GetBestellingen(id, gebruiker);
+            itemService.GetBestellingen(id, gebruiker);
         }
-        private List<Bestelling> GetAllStatus(List<Bestelling> bestellingen)
+        private void GetAllStatus(List<Bestelling> bestellingen)
         {
             Bestelling bestelling = new Bestelling();
             foreach (Bestelling b in bestellingen)
@@ -126,7 +125,6 @@ namespace UI
                 bestelling = BereidersService.GetAllStatus(b);
                 b.Items = bestelling.Items;
             }
-            return bestellingen;
         }
         private void FillItemBereidersTable(GerechtsStatus s, int id)
         {
@@ -140,7 +138,59 @@ namespace UI
         {
             BereidersService.RemoveItemBereiderItem(id);
         }
+        private void ChangeStatus(GerechtsStatus s)
+        {
+            try
+            {
+                int id = int.Parse(SelectedOrderLbl.Text);
+                Bestelling b = bestellingService.GetBestelling(id);
 
+                b = bestellingService.SearchBestelling(b, bestellingen);
+                BesteldItem item = itemService.SearchBesteldItem(id, b);
+                switch (item.menuItem.gerechttype)
+                {
+                    case GerechtsType.Starter:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    case GerechtsType.Main:
+                        b.SchrijfAlleHoofdgerechtenAf();
+                        break;
+                    case GerechtsType.Dessert:
+                        b.SchrijfAlleNagerechtenAf();
+                        break;
+                    case GerechtsType.Tussengerecht:
+                        b.SchrijfAlleVoorgerechtenAf();
+                        break;
+                    default:
+                        break;
+                }
+                if (item.Status == GerechtsStatus.NotStarted)
+                {
+                    BereidersService.FillItemBereidersTable(s, id);
+                }
+                else
+                {
+                    BereidersService.SetStatus(id, s);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
+            }
+            finally
+            {
+                ClearAllViews();
+                FillInAllViews(s);
+
+            }
+        }
+        private void SearchByStatus(GerechtsStatus status, string Label)
+        {
+            ClearAllViews();
+            FillInAllViews(status);
+            InPrepLbl.Text = Label;
+        }
         private void SelectOrderBtn_Click(object sender, EventArgs e)
         {
             try
@@ -162,108 +212,28 @@ namespace UI
 
         private void InPreparationBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = int.Parse(SelectedOrderLbl.Text);
-                Bestelling b = bestellingService.GetBestelling(id);
-                BereidersService.SetStatus(id, GerechtsStatus.InPreparation);
-                b = bestellingService.SearchBestelling(b, bestellingen);
-                BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
-                {
-                    case GerechtsType.Starter:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    case GerechtsType.Main:
-                        b.SchrijfAlleHoofdgerechtenAf();
-                        break;
-                    case GerechtsType.Dessert:
-                        b.SchrijfAlleNagerechtenAf();
-                        break;
-                    case GerechtsType.Tussengerecht:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    default:
-                        break;
-                }
-                ClearAllViews();
-                FillAllViews();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
-            }
+            ChangeStatus(GerechtsStatus.InPreparation);
         }
 
         private void PreparedBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = int.Parse(SelectedOrderLbl.Text);
-                Bestelling b = bestellingService.GetBestelling(id);
-                BereidersService.SetStatus(id, GerechtsStatus.Prepared);
-                b = bestellingService.SearchBestelling(b, bestellingen);
-                BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
-                {
-                    case GerechtsType.Starter:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    case GerechtsType.Main:
-                        b.SchrijfAlleHoofdgerechtenAf();
-                        break;
-                    case GerechtsType.Dessert:
-                        b.SchrijfAlleNagerechtenAf();
-                        break;
-                    case GerechtsType.Tussengerecht:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    default:
-                        break;
-                }
-                ClearAllViews();
-                FillAllViews();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
-            }
+            ChangeStatus(GerechtsStatus.Prepared);
         }
 
         private void ServedBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = int.Parse(SelectedOrderLbl.Text);
-                Bestelling b = bestellingService.GetBestelling(id);
-                BereidersService.SetStatus(id, GerechtsStatus.Served);
-                b = bestellingService.SearchBestelling(b, bestellingen);
-                BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
-                {
-                    case GerechtsType.Starter:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    case GerechtsType.Main:
-                        b.SchrijfAlleHoofdgerechtenAf();
-                        break;
-                    case GerechtsType.Dessert:
-                        b.SchrijfAlleNagerechtenAf();
-                        break;
-                    case GerechtsType.Tussengerecht:
-                        b.SchrijfAlleVoorgerechtenAf();
-                        break;
-                    default:
-                        break;
-                }
-                ClearAllViews();
-                FillAllViews();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Er is een fout opgetreden bij het voorbereiden van het item: " + ex.Message);
-            }
+            ChangeStatus(GerechtsStatus.Served);
 
+        }
+
+        private void SearchOnGoingItemsBtn_Click(object sender, EventArgs e)
+        {
+            SearchByStatus(GerechtsStatus.InPreparation, "In Preparation");
+        }
+
+        private void SearchFinishedItemsBtn_Click(object sender, EventArgs e)
+        {
+            SearchByStatus(GerechtsStatus.Prepared, "Finished");
         }
     }
 }

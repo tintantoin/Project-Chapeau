@@ -16,7 +16,7 @@ namespace Service
         {
             this.besteldItemDao = new BesteldItemDao();
         }
-        public List<Bestelling> GetBestellingen(List<Bestelling> ids, ItemBereiderGebruiker gebruiker)
+        public List<Bestelling> GetBestellingen(List<Bestelling> ids, Personeel gebruiker)
         {
             List<Bestelling> b = new List<Bestelling>();
             foreach (Bestelling id in ids)

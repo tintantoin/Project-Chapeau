@@ -11,6 +11,8 @@ namespace Model
     {
         public Serveerder serveerder { get; set; }
         public int BestellingId { get; set; }
+        public Table table { get; set; }
+        public DateTime InstuurTijd { get; set; }
         public List<BesteldItem> Items { get; set; }
         private IBestellingsState voorgerechtenNietAf;
         private IBestellingsState voorgerechtenAf;
@@ -24,8 +26,9 @@ namespace Model
             voorgerechtenAf = new VoorgerechtAf(this);
             hoofdgerechtenAf = new HoofdgerechtAf(this);
             nagerechtenAf = new NagerechtenAf(this);
-            huidigeStatus = GeefVoorgerechtenNietAfState();
-            Items= new List<BesteldItem>();
+            huidigeStatus = voorgerechtenNietAf;
+            Items = new List<BesteldItem>();
+            table = new Table();
         }
         public void SchrijfAlleHoofdgerechtenAf()
         {
