@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Model;
 using Service;
 using Xceed.Wpf.Toolkit.Primitives;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI
 {
@@ -97,8 +98,16 @@ namespace UI
 
         private void finishOrderButton_Click(object sender, EventArgs e)
         {
-            serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, bestelling.GetAllItems());
-            MessageBox.Show("Order finished succesfully");
+            
+            if (orderListView.Items.Count == 0)
+            {
+                MessageBox.Show("Order is leeg", "Waarschuwing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, tablenumber.Tafelnummer, bestelling.GetAllItems());
+                MessageBox.Show("Order finished succesfully");
+            }
             Close();
         }
 

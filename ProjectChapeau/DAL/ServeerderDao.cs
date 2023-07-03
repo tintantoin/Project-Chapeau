@@ -11,13 +11,15 @@ namespace DAL
 {
     public class ServeerderDao : BaseDao
     {
-        public int CreateBestellingId(int serveerderId)
+        public int CreateBestellingId(int serveerderId, int TableNr)
         {
-            string insertQuery = "insert into Bestelling (ServeerderId) values(@serveerderId);";
+            string insertQuery = "insert into Bestelling (ServeerderId, TableNr) values(@serveerderId,@TableNr);";
             string selectQuery = "SELECT TOP 1 * FROM Bestelling order by BestellingsId desc;";
-            SqlParameter[] sqlParameters = new SqlParameter[1]
+
+            SqlParameter[] sqlParameters = new SqlParameter[2]
               {
-                    new SqlParameter("@serveerderId", 2)
+                    new SqlParameter("@serveerderId", 2),
+                    new SqlParameter("@TableNr",TableNr)
               };
 
             ExecuteEditQuery(insertQuery, sqlParameters);
