@@ -14,24 +14,19 @@ namespace Service
 {
     public class InlogService
     {
-        PersoneelDAO personeelDAO = new PersoneelDAO();
-
-        public FunctieType LogUserIn(string userName, string password)
+        private PersoneelDAO personeelDAO = new PersoneelDAO();
+        public Personeel LogUserIn(string userName, string password)
         {
-            Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));
+            Personeel personeel = personeelDAO.GetPersoneelByIdAndLastName(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));
             if (personeel != null)
             {
-                if (personeel.wachtwoord.Trim() == ComputeSha256Hash(password).Trim())
+                if (personeel.wachtwoord == ComputeSha256Hash(password))
                 {
-                    return personeel.functie;
+                    return personeel;
                 };
+                throw new Exception("password");
             }
-            return FunctieType.GeenFunctie;
-        }
-        public Personeel ReturnPersoneel(string userName, string password)
-        {
-            Personeel personeel = personeelDAO.GetPersoneelByID(SplitUserName(userName)[1], int.Parse(SplitUserName(userName)[0]));
-            return personeel;
+            throw new Exception("username");
         }
         public void SetDBWachtwoord(int id, string wachtwoord)
         {

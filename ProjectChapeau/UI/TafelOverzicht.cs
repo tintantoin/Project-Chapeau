@@ -41,17 +41,17 @@ namespace UI
                 count++;
             }
         }
-    
         private void Button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            OpenTable(tafels[buttons.IndexOf(button)].Tafelnummer.ToString());
+            if (button != null)
+            {
+                OpenTable(button);
+            }
         }
-
-        private void OpenTable(string tableNumber) 
+        private void OpenTable(Button button) 
         {
-            TafelStatusUI tafelStatusUI = new TafelStatusUI(this);
-            tafelStatusUI.TableNumber(int.Parse(tableNumber));
+            TafelStatusUI tafelStatusUI = new TafelStatusUI(this, (Table)button.Tag);
             tafelStatusUI.ShowDialog();
         }
         public void GiveTablesStatus()
@@ -92,6 +92,7 @@ namespace UI
                 button.Text = tafel.Tafelnummer.ToString();
                 button.Size = new Size(100,70);
                 button.Click += Button_Click;
+                button.Tag = tafel;
                 buttons.Add(button);
             }
             return buttons;
@@ -127,17 +128,6 @@ namespace UI
         private void btnLogTableoverzichtOut_Click(object sender, EventArgs e)
         {
             formChanger.SluitForm();
-        }
-        public TafelStatus GetTafelStatus(int tafelNummer)
-        {
-            foreach (var item in tafels)
-            {
-                if (item.Tafelnummer == tafelNummer)
-                {
-                    return tafels[tafels.IndexOf(item)].Tafelstatus;
-                }
-            }
-            return TafelStatus.Free;
         }
     }
 }

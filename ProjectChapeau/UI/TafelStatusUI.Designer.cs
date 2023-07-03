@@ -37,6 +37,7 @@ namespace UI
             this.btnStatusReserved = new System.Windows.Forms.Button();
             this.btnBackTafelStatus = new System.Windows.Forms.Button();
             this.lblCurrentStateTable = new System.Windows.Forms.Label();
+            this.btnGoToServeerder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picChapeauLogIn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +112,22 @@ namespace UI
             this.lblCurrentStateTable.TabIndex = 8;
             this.lblCurrentStateTable.Text = "Table . is currenty ......";
             // 
+            // btnGoToServeerder
+            // 
+            this.btnGoToServeerder.Location = new System.Drawing.Point(196, 486);
+            this.btnGoToServeerder.Name = "btnGoToServeerder";
+            this.btnGoToServeerder.Size = new System.Drawing.Size(144, 47);
+            this.btnGoToServeerder.TabIndex = 9;
+            this.btnGoToServeerder.Text = "Go to table";
+            this.btnGoToServeerder.UseVisualStyleBackColor = true;
+            this.btnGoToServeerder.Click += new System.EventHandler(this.btnGoToServeerder_Click);
+            // 
             // TafelStatusUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 843);
+            this.Controls.Add(this.btnGoToServeerder);
             this.Controls.Add(this.lblCurrentStateTable);
             this.Controls.Add(this.btnBackTafelStatus);
             this.Controls.Add(this.btnStatusReserved);
@@ -140,5 +152,6 @@ namespace UI
         private Button btnStatusReserved;
         private Button btnBackTafelStatus;
         private Label lblCurrentStateTable;
+        private Button btnGoToServeerder;
     }
 }

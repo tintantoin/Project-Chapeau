@@ -19,6 +19,7 @@ namespace UI
         private const int labelBuffer = 3000;
         private InlogService inlogService;
         private FormChanger formChanger;
+        private Personeel logInPersoneel;
         public InlogUI()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace UI
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
             OpenPanel("Contact the manager to change your password");
-            //InlogService.SetDBWachtwoord(4, "4444");
+            //inlogService.SetDBWachtwoord(1, "1111");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -40,27 +41,48 @@ namespace UI
                 OpenPanel("You have not entered details for username or password");
                 return;
             }
-            string userName = txtboxUsername.Text;
-            string password = txtboxPassword.Text;
-            FunctieType type = inlogService.LogUserIn(userName, password);
-            switch (type)
+            UserLogIn(txtboxUsername.Text, txtboxPassword.Text);
+        }
+        private void UserLogIn(string username, string password)
+        {
+            try
             {
-                case FunctieType.BarPersoneel:
-                    formChanger.OpenForm(new ItemBereidersUI(inlogService.ReturnPersoneel(userName, password)));
-                    break;
-                case FunctieType.KeukenPersoneel:
-                    formChanger.OpenForm(new ItemBereidersUI(inlogService.ReturnPersoneel(userName, password)));
-                    break;
-                case FunctieType.Manager:
-                    break;
-                case FunctieType.Bediening:
-                    formChanger.OpenForm(new TafelOverzicht(inlogService.ReturnPersoneel(userName, password).voornaam));
-                    break;
-                default:
-                    NoLogin();
-                    break;
+                logInPersoneel = inlogService.LogUserIn(username, password);
+                ResetTextBox(true);
+                switch (logInPersoneel.functie)
+                {
+                    case FunctieType.BarPersoneel:
+                        formChanger.OpenForm(new ItemBereidersUI(logInPersoneel));
+                        break;
+                    case FunctieType.KeukenPersoneel:
+                        formChanger.OpenForm(new ItemBereidersUI(logInPersoneel));
+                        break;
+                    case FunctieType.Manager:
+                        break;
+                    case FunctieType.Bediening:
+                        formChanger.OpenForm(new TafelOverzicht(logInPersoneel.voornaam));
+                        break;
+                    default:
+                        OpenPanel("Invalid username or password");
+                        break;
+                }
             }
-            if (type != FunctieType.GeenFunctie)
+            catch (Exception Ex)
+            {
+                OpenPanel($"You entered the wrong {Ex.Message}");
+                if (Ex.Message == "username")
+                {
+                    ResetTextBox(true);
+                }
+                else
+                {
+                    ResetTextBox(false);
+                }
+            }
+        }
+        private void ResetTextBox(bool username)
+        {
+            if (username)
             {
                 txtboxUsername.Text = "";
             }
@@ -69,10 +91,6 @@ namespace UI
         private void btnInvalidNameOrPass_Click(object sender, EventArgs e)
         {
             pnlPopUpInlog.Hide();
-        }
-        private void NoLogin()
-        {
-            OpenPanel("Invalid username or password");
         }
         private void OpenPanel(string text)
         {

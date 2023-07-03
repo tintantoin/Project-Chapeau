@@ -12,12 +12,10 @@ namespace Service
     public class TafelService
     {
         private TafelDao tafelDb;
-
         public TafelService()
         {
             tafelDb = new TafelDao();
-        }
-        
+        } 
         public List<Table> GetTafels()
         {
             List<Table> tafels = tafelDb.GetAllTafels();
