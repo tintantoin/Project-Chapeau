@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\UI\\UI.csproj": {}
+    "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
+    "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+              "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -74,24 +73,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
+    "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\obj\\",
+        "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -100,7 +99,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -134,24 +132,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {
+    "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\Yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\obj\\",
+        "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -160,18 +158,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\DAL\\DAL.csproj"
+              "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+              "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -207,24 +204,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\UI\\UI.csproj": {
+    "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\UI\\UI.csproj",
+        "projectUniqueName": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\UI.csproj",
         "projectName": "UI",
-        "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\UI\\UI.csproj",
-        "packagesPath": "C:\\Users\\Yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\UI\\obj\\",
+        "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\UI.csproj",
+        "packagesPath": "C:\\Users\\teunk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teunk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -233,18 +230,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Model\\Model.csproj"
+              "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Model\\Model.csproj"
               },
-              "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\Yusuf\\Source\\Repos\\tintantoin\\Project-Chapeau\\ProjectChapeau\\Service\\Service.csproj"
+              "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\teunk\\Source\\Repos\\Project-Chapeauuu\\ProjectChapeau\\Service\\Service.csproj"
               }
             }
           }
@@ -277,7 +273,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

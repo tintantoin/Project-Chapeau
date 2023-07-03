@@ -51,8 +51,7 @@ namespace UI
         }
         private void OpenTable(Button button) 
         {
-            TafelStatusUI tafelStatusUI = new TafelStatusUI(this, (Table)button.Tag);
-            tafelStatusUI.ShowDialog();
+            formChanger.OpenForm(new TafelStatusUI(this, (Table)button.Tag));
         }
         public void GiveTablesStatus()
         {
@@ -127,7 +126,7 @@ namespace UI
 
         private void btnLogTableoverzichtOut_Click(object sender, EventArgs e)
         {
-            formChanger.SluitForm();
+            formChanger.SluitForm(this);
         }
     }
 }

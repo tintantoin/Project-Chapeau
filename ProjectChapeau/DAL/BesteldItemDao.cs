@@ -37,7 +37,7 @@ namespace DAL
                     };
                     item.menuItem.Name = (string)dr["Naam"];
                     s = (string)dr["TypeGerecht"];
-                    item.menuItem.gerechttype = (GerechtsType)Enum.Parse(typeof(GerechtsType),s);
+                    item.menuItem.Gerechttype = (GerechtsType)Enum.Parse(typeof(GerechtsType),s);
                     bestelling.Add(item);
                 }
                 catch (Exception ex)

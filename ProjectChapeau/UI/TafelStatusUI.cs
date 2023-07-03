@@ -64,7 +64,7 @@ namespace UI
         }
         private void btnGoToServeerder_Click(object sender, EventArgs e)
         {
-            formChanger.OpenForm(new ServeerderUI());
+            formChanger.OpenServeerder(table);
         }
     }
 }

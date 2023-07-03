@@ -39,7 +39,7 @@ namespace DAL
                     BestellingId = (int)dr["BestellingsId"],
                     InstuurTijd = (DateTime)dr["Instuurtijd"]
             };
-                besteldItem.table.TableId = (int)dr["TableNr"];
+                besteldItem.table.Tafelnummer = (int)dr["TableNr"];
 
                 bestellingen.Add(besteldItem);
             }

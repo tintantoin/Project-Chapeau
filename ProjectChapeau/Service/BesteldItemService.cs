@@ -32,7 +32,6 @@ namespace Service
                 FillList(items, id);
                 items = besteldItemDao.GetBestelling(id.BestellingId, gebruiker.ZoekDrank());
                 FillList(items, id);
-
                 b.Add(id);
             }
             return b;
@@ -44,7 +43,7 @@ namespace Service
             {
                 foreach (BesteldItem item in ItemsInBestelling)
                 {
-                    b.AddItem(item);
+                    b.Add(item);
                 }
             }
         }

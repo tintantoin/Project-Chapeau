@@ -20,10 +20,11 @@ namespace UI
         private Bestelling bestelling;
         private ServeerderService serveerderService;
         private Table tablenumber;
+        private FormChanger formChanger;
         public ServeerderUI(Table tablenumber)
         {
             InitializeComponent();
-
+            formChanger = FormChanger.GetFormChanger();
             bestelling = new Bestelling();
             serveerderService = new ServeerderService();
             this.tablenumber = tablenumber;
@@ -108,7 +109,7 @@ namespace UI
                 serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, tablenumber.Tafelnummer, DateTime.UtcNow, bestelling.GetAllItems());
                 MessageBox.Show("Order finished succesfully");
             }
-            Close();
+            orderListView.Items.Clear();
         }
 
         private void decreaseOrderButton_Click(object sender, EventArgs e)
@@ -190,5 +191,9 @@ namespace UI
 
         }
 
+        private void BtnBackServeerderUI_Click(object sender, EventArgs e)
+        {
+            formChanger.CloseServeerder();
+        }
     }
 }

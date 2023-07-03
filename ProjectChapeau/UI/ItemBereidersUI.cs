@@ -18,11 +18,13 @@ namespace UI
         private ItemBereidersService BereidersService;
         private BestellingService bestellingService;
         private BesteldItemService itemService;
+        private FormChanger changer;
         private List<Bestelling> bestellingen;
         public ItemBereidersUI(Personeel gebruiker)
         {
             try
             {
+                changer = FormChanger.GetFormChanger();
                 this.BereidersService = new ItemBereidersService();
                 this.bestellingService = new BestellingService();
                 this.itemService = new BesteldItemService();
@@ -68,13 +70,14 @@ namespace UI
         {
             foreach (BesteldItem besteld in items)
             {
+                
                 ListViewItem li = new ListViewItem(besteld.BesteldItemId.ToString());
                 foreach (Bestelling bestelling in b)
                 {
                     if (bestelling.Items.Contains(besteld))
                     {
                         li.SubItems.Add(bestelling.BestellingId.ToString());
-                        li.SubItems.Add(bestelling.table.TableId.ToString());
+                        li.SubItems.Add(bestelling.table.Tafelnummer.ToString());
                         li.SubItems.Add(bestelling.InstuurTijd.ToString());
                         TimeSpan WaitTimeInMinute = DateTime.UtcNow - bestelling.InstuurTijd;
                         li.SubItems.Add(WaitTimeInMinute.ToString());
@@ -141,7 +144,7 @@ namespace UI
 
                 b = bestellingService.SearchBestelling(b, bestellingen);
                 BesteldItem item = itemService.SearchBesteldItem(id, b);
-                switch (item.menuItem.gerechttype)
+                switch (item.menuItem.Gerechttype)
                 {
                     case GerechtsType.Starter:
                         b.SchrijfAlleVoorgerechtenAf();
@@ -228,6 +231,11 @@ namespace UI
         private void SearchFinishedItemsBtn_Click(object sender, EventArgs e)
         {
             SearchByStatus(GerechtsStatus.Prepared, "Finished");
+        }
+
+        private void BtnItemBereiderLoguit_Click(object sender, EventArgs e)
+        {
+            changer.SluitForm(this);
         }
     }
 }

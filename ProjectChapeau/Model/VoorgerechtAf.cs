@@ -19,7 +19,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared && item.menuItem.gerechttype == GerechtsType.Main)
+                if (item.Status != GerechtsStatus.Prepared && item.menuItem.Gerechttype == GerechtsType.Main)
                 {
                     IsAf = false;
                     break;
@@ -41,7 +41,7 @@ namespace Model
             bool IsAf = true;
             foreach (BesteldItem item in bestelling.Items)
             {
-                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItem.gerechttype == GerechtsType.Starter || item.menuItem.gerechttype == GerechtsType.Tussengerecht)
+                if (item.Status != GerechtsStatus.Prepared || item.Status != GerechtsStatus.NotStarted && item.menuItem.Gerechttype == GerechtsType.Starter || item.menuItem.Gerechttype == GerechtsType.Tussengerecht)
                 {
                     IsAf = false;
                     break;

@@ -60,6 +60,7 @@
             this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
+            this.BtnItemBereiderLoguit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OrderStatusLbl
@@ -318,11 +319,22 @@
             this.columnHeader16.Text = "Description";
             this.columnHeader16.Width = 200;
             // 
+            // BtnItemBereiderLoguit
+            // 
+            this.BtnItemBereiderLoguit.Location = new System.Drawing.Point(1764, 13);
+            this.BtnItemBereiderLoguit.Name = "BtnItemBereiderLoguit";
+            this.BtnItemBereiderLoguit.Size = new System.Drawing.Size(112, 41);
+            this.BtnItemBereiderLoguit.TabIndex = 43;
+            this.BtnItemBereiderLoguit.Text = "Logout";
+            this.BtnItemBereiderLoguit.UseVisualStyleBackColor = true;
+            this.BtnItemBereiderLoguit.Click += new System.EventHandler(this.BtnItemBereiderLoguit_Click);
+            // 
             // ItemBereidersUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 926);
+            this.Controls.Add(this.BtnItemBereiderLoguit);
             this.Controls.Add(this.InPrepListview);
             this.Controls.Add(this.SearchFinishedItemsBtn);
             this.Controls.Add(this.SearchOnGoingItemsBtn);
@@ -380,5 +392,6 @@
         private ColumnHeader columnHeader14;
         private ColumnHeader columnHeader15;
         private ColumnHeader columnHeader16;
+        private Button BtnItemBereiderLoguit;
     }
 }

@@ -14,19 +14,17 @@ using UI;
 
 namespace ProjectChapeau.ChapeauUI
 {
-    public partial class PaymentUI : Form, IObservable
+    public partial class PaymentUI : Form
     {
         private decimal changeAmount;
         private string feedback;
         private string customerPaid;
         private decimal tip;
         private string order;
-        private List<IObserver> observables;
 
         public PaymentUI()
         {
             InitializeComponent();
-            observables = new List<IObserver>();
         }
 
 
@@ -418,14 +416,6 @@ namespace ProjectChapeau.ChapeauUI
             paymenttable.Show();
         }
 
-        void IObservable.AddObserver(IObserver observer)
-        {
-            observables.Add(observer);
-        }
-
-        void IObservable.RemoveObserver(IObserver observer)
-        {
-            observables.Remove(observer);
-        }
+        
     }
 }

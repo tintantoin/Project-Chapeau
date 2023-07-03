@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace UI
     {
         private Form inlog;
         private Form activeForm;
+        private ServeerderUI serveerderUI;
         public Form ActiveForm { get { return activeForm; } }
 
         private static FormChanger formChanger;
@@ -25,10 +27,10 @@ namespace UI
         {
             ChangeForm(form);
         }
-        public void SluitForm()
+        public void SluitForm(Form form)
         {
-            activeForm.Close();
-            activeForm = null;
+            form.Hide();
+            form.Close();
             inlog.Show();
         }
         public void StartApplication()
@@ -42,5 +44,16 @@ namespace UI
             activeForm = form;
             activeForm.Show();
         }       
+        public void CloseServeerder()
+        {
+            serveerderUI.Close();
+            activeForm.Show();
+        }
+        public void OpenServeerder(Table table)
+        {
+            activeForm.Hide();
+            serveerderUI = new ServeerderUI(table);
+            serveerderUI.Show();
+        }
     }
 }

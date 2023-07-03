@@ -19,7 +19,7 @@ namespace Service
         public List<Table> GetTafels()
         {
             List<Table> tafels = tafelDb.GetAllTafels();
-            return tafels;
+            return tafels.OrderBy(table => table.Tafelnummer).ToList();
         }
         public void ChangeStatus(int tafelStatusId,int tafelNummer)
         {
