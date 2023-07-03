@@ -20,91 +20,35 @@ namespace Service
 
         public void SetStatus(int id, GerechtsStatus s)
         {
-            try
-            {
-                itemBereidersDao.SetStatus(s, id);
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException(ex.Message);
-            }
-
-
+            itemBereidersDao.SetStatus(s, id);
         }
         public void FillItemBereidersTable(GerechtsStatus s, int id)
         {
-            try
-            {
-                itemBereidersDao.FillItemBereidersTable(s, id);
-
-            }
-            catch (Exception ex)
-            {
-
-                throw new ApplicationException(ex.Message);
-            }
-        }
-        public void RemoveItemBereiderItem(int id)
-        {
-            try
-            {
-                itemBereidersDao.RemoveItemBereiderItem(id);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-
+            itemBereidersDao.FillItemBereidersTable(s, id);
         }
         public GerechtsStatus GetStatus(int id)
         {
-            try
-            {
-                return itemBereidersDao.GetStatus(id);
-            }
-            catch (Exception ex)
-            {
-
-                throw new ApplicationException(ex.Message);
-            }
-
+            return itemBereidersDao.GetStatus(id);
         }
-        public Bestelling GetAllStatus(Bestelling b)
+        public List<BesteldItem> GetAllStatus(List<BesteldItem> b)
         {
-            try
+            foreach (BesteldItem item in b)
             {
-                foreach (BesteldItem item in b.Items)
-                {
-                    item.Status = GetStatus(item.BesteldItemId);
-                }
-                return b;
+                item.Status = GetStatus(item.BesteldItemId);
             }
-            catch (Exception ex)
-            {
-
-                throw new ApplicationException($"{ex.Message}");
-            }
+            return b;
         }
         public List<BesteldItem> FilterItems(GerechtsStatus s, Bestelling bestelling)
         {
-            try
+            List<BesteldItem> items = new List<BesteldItem>();
+            foreach (BesteldItem item in bestelling.Items)
             {
-                List<BesteldItem> items = new List<BesteldItem>();
-                foreach (BesteldItem item in bestelling.Items)
+                if (item.Status == s)
                 {
-                    if (item.Status == s)
-                    {
-                        items.Add(item);
-                    }
+                    items.Add(item);
                 }
-                return items;
             }
-            catch (Exception ex)
-            {
-
-                throw new ApplicationException(ex.Message);
-            }
+            return items;
         }
     }
 }

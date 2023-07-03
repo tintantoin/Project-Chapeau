@@ -11,6 +11,8 @@ namespace Model
     {
         public Serveerder serveerder { get; set; }
         public int BestellingId { get; set; }
+        public Table table { get; set; }
+        public DateTime InstuurTijd { get; set; }
         public List<BesteldItem> Items { get; set; }
         private IBestellingsState voorgerechtenNietAf;
         private IBestellingsState voorgerechtenAf;
@@ -24,8 +26,9 @@ namespace Model
             voorgerechtenAf = new VoorgerechtAf(this);
             hoofdgerechtenAf = new HoofdgerechtAf(this);
             nagerechtenAf = new NagerechtenAf(this);
-            huidigeStatus = GeefVoorgerechtenNietAfState();
+            huidigeStatus = voorgerechtenNietAf;
             Items = new List<BesteldItem>();
+            table = new Table();
         }
         public void SchrijfAlleHoofdgerechtenAf()
         {
@@ -42,7 +45,7 @@ namespace Model
         }
         public void ZetStatus(IBestellingsState nieuweStatus)
         {
-            huidigeStatus = nieuweStatus;
+            huidigeStatus= nieuweStatus;
         }
         public IBestellingsState GeefVoorgerechtenNietAfState()
         {
@@ -60,39 +63,13 @@ namespace Model
         {
             return nagerechtenAf;
         }
-        public List<BesteldItem> GetAllItems()
-        {
-            return Items;
-        }
         public void AddItem(BesteldItem item)
         {
-            var existingItem = Items.FirstOrDefault(m => m.menuItem.MenuItemId == item.menuItem.MenuItemId);
-            if (existingItem != null)
-            {
-                existingItem.Count++;
-            }
-            else
-            {
-                item.Count = 1;
-                Items.Add(item);          
-            }
-
-        }
-        public void DecreaseCount(BesteldItem item)
-        {
-            var existingItem = Items.FirstOrDefault(m => m.menuItem.MenuItemId == item.menuItem.MenuItemId);
-            if (existingItem == null) return;
-            existingItem.Count--;
-            if (existingItem.Count == 0)
-                RemoveItem(item);
+            Items.Add(item);
         }
         public void RemoveItem(BesteldItem item)
         {
             Items.Remove(item);
-        }
-        public void ClearItems()
-        {
-            Items.Clear();
         }
     }
 }

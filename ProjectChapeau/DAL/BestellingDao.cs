@@ -13,8 +13,12 @@ namespace DAL
     {
         public List<Bestelling> GetAllBestelling()
         {
-            string query = "SELECT BestellingsId FROM Bestelling";
-            return ReadTables(ExecuteSelectQuery(query));
+            string query = "SELECT BestellingsId, TableNr, Instuurtijd FROM Bestelling WHERE @Instuurtijd >= DATEADD(HOUR, -24, GETDATE());";
+            SqlParameter[] sqlParameter = new SqlParameter[1]
+            {
+                new SqlParameter("@Instuurtijd", DateTime.UtcNow)
+            };
+            return ReadTables(ExecuteSelectQuery(query, sqlParameter));
         }
         public Bestelling GetBestelling(int id)
         {
@@ -32,8 +36,11 @@ namespace DAL
             {
                 Bestelling besteldItem = new Bestelling()
                 {
-                    BestellingId = (int)dr["BestellingsId"]
-                };
+                    BestellingId = (int)dr["BestellingsId"],
+                    InstuurTijd = (DateTime)dr["Instuurtijd"]
+            };
+                besteldItem.table.TableId = (int)dr["TableNr"];
+
                 bestellingen.Add(besteldItem);
             }
             return bestellingen;
@@ -44,9 +51,7 @@ namespace DAL
             int id = 0;
             foreach (DataRow dr in dataTable.Rows)
             {
-                
                 id = (int)dr["BestellingsId"];
-                
             }
             bestelling.BestellingId = id;
             return bestelling;

@@ -23,7 +23,7 @@ namespace DAL
         }
         public void FillItemBereidersTable(GerechtsStatus s, int id)
         {
-            string query = "INSERT INTO ItemBereiders Values(@id, @id, '@GerechtsStatus')";
+            string query = "INSERT INTO ItemBereiders( IsKlaar, bestelditemid) Values(@GerechtsStatus, @id)";
             SqlParameter[] sqlParameters = new SqlParameter[2]
             {
                 new SqlParameter("@id", id),
@@ -33,31 +33,20 @@ namespace DAL
         }
         public GerechtsStatus GetStatus(int id)
         {
-            string query = "SELECT IsKlaar FROM Itembereiders WHERE id=@id";
+            string query = "SELECT IsKlaar FROM Itembereiders WHERE bestelditemid=@id";
             SqlParameter[] sqlParameters = new SqlParameter[1]
             {
                 new SqlParameter("@id", id)
             };
             return ReadItemBereidersTable(ExecuteSelectQuery(query, sqlParameters));
         }
-        public void RemoveItemBereiderItem(int id)
-        {
-            string query = "DELETE FROM ItemBereiders WHERE id = @id')";
-            SqlParameter[] sqlParameters = new SqlParameter[1]
-            {
-                new SqlParameter("@id", id)
-            };
-            ExecuteEditQuery(query, sqlParameters);
-        }
         private GerechtsStatus ReadItemBereidersTable(DataTable dataTable)
         {
-            GerechtsStatus status = new GerechtsStatus();
+            GerechtsStatus status= new GerechtsStatus();
             foreach (DataRow dr in dataTable.Rows)
             {
-                string s = "";
-                {
-                    s = (string)dr["IsKlaar"];
-                };
+                string s = (string)dr["IsKlaar"];
+                
                 status = (GerechtsStatus)int.Parse(s);
             }
             return status;

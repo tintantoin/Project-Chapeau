@@ -14,10 +14,30 @@ namespace Model
         public string achternaam { get; set; }
         public FunctieType functie { get; set; }
         public string wachtwoord { get; set; }
-
+        public IItemBereiders gebruiker { get; set; }
         public Personeel()
         {
             functie = new FunctieType();
+        }
+        public GerechtsType ZoekVoorgerecht()
+        {
+            return gebruiker.ZoekVoorgerecht();
+        }
+        public GerechtsType ZoekTussenGerecht()
+        {
+            return gebruiker.ZoekTussenGerecht();
+        }
+        public GerechtsType ZoekHoofdGerecht()
+        {
+            return gebruiker.ZoekHoofdGerecht();
+        }
+        public GerechtsType ZoekNagerecht()
+        {
+            return gebruiker.ZoekNagerecht();
+        }
+        public GerechtsType ZoekDrank()
+        {
+            return gebruiker.ZoekDrank();
         }
     }
 }
