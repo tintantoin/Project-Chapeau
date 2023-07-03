@@ -30,9 +30,9 @@ namespace Service
         {
             return itemBereidersDao.GetStatus(id);
         }
-        public Bestelling GetAllStatus(Bestelling b)
+        public List<BesteldItem> GetAllStatus(List<BesteldItem> b)
         {
-            foreach (BesteldItem item in b.Items)
+            foreach (BesteldItem item in b)
             {
                 item.Status = GetStatus(item.BesteldItemId);
             }

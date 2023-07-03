@@ -119,11 +119,9 @@ namespace UI
         }
         private void GetAllStatus(List<Bestelling> bestellingen)
         {
-            Bestelling bestelling = new Bestelling();
             foreach (Bestelling b in bestellingen)
             {
-                bestelling = BereidersService.GetAllStatus(b);
-                b.Items = bestelling.Items;
+                b.Items = BereidersService.GetAllStatus(b.Items);
             }
         }
         private void FillItemBereidersTable(GerechtsStatus s, int id)
