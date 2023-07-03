@@ -11,15 +11,16 @@ namespace DAL
 {
     public class ServeerderDao : BaseDao
     {
-        public int CreateBestellingId(int serveerderId, int TableNr)
+        public int CreateBestellingId(int serveerderId, int TableNr,DateTime Instuurtijd)
         {
-            string insertQuery = "insert into Bestelling (ServeerderId, TableNr) values(@serveerderId,@TableNr);";
+            string insertQuery = "insert into Bestelling (ServeerderId, TableNr, Instuurtijd) values(@serveerderId,@TableNr,@Instuurtijd);";
             string selectQuery = "SELECT TOP 1 * FROM Bestelling order by BestellingsId desc;";
 
-            SqlParameter[] sqlParameters = new SqlParameter[2]
+            SqlParameter[] sqlParameters = new SqlParameter[3]
               {
                     new SqlParameter("@serveerderId", 2),
-                    new SqlParameter("@TableNr",TableNr)
+                    new SqlParameter("@TableNr",TableNr),
+                    new SqlParameter("@Instuurtijd",Instuurtijd)
               };
 
             ExecuteEditQuery(insertQuery, sqlParameters);
@@ -30,13 +31,13 @@ namespace DAL
         {
             foreach (var item in bestellingsItems)
             {
-                string query = "insert into BesteldItem (Opmerking, Instuurtijd, MenuItemId, BestellingsId, Amount)" +
-                               "values (@Opmerking, @Instuurtijd, @MenuItemId, @BestellingsId, @Amount);";
+                string query = "insert into BesteldItem (Opmerking, MenuItemId, BestellingsId, Amount)" +
+                               "values (@Opmerking, @MenuItemId, @BestellingsId, @Amount);";
 
-                SqlParameter[] sqlParameters = new SqlParameter[5]
+                SqlParameter[] sqlParameters = new SqlParameter[4]
                  {
                         new SqlParameter("@Opmerking",item.Opmerking),
-                        new SqlParameter("@Instuurtijd", DateTime.UtcNow),
+                        //new SqlParameter("@Instuurtijd", DateTime.UtcNow),
                         new SqlParameter("@MenuItemId", item.menuItem.MenuItemId),
                         new SqlParameter("@BestellingsId",bestellingsId),
                         new SqlParameter("@Amount", item.Count)

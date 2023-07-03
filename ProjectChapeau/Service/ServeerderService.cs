@@ -30,9 +30,9 @@ namespace Service
             return serveerderDao.PullMenuItemByMenu(MenuType.Lunch);
         }
 
-        public void FinishOrder( int serveerderId, int TableNr, List<BesteldItem> besteldItems)
+        public void FinishOrder( int serveerderId, int TableNr, DateTime Instuurtijd,List<BesteldItem> besteldItems)
         {
-           var bestellingId = serveerderDao.CreateBestellingId(serveerderId,TableNr);
+           var bestellingId = serveerderDao.CreateBestellingId(serveerderId,TableNr, Instuurtijd);
            serveerderDao.CreateBestellingItems(besteldItems, bestellingId);
         }
     }

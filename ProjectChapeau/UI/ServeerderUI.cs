@@ -105,7 +105,7 @@ namespace UI
             }
             else
             {
-                serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, tablenumber.Tafelnummer, bestelling.GetAllItems());
+                serveerderService.FinishOrder(tablenumber.serveerder.ServeerderId, tablenumber.Tafelnummer, DateTime.UtcNow, bestelling.GetAllItems());
                 MessageBox.Show("Order finished succesfully");
             }
             Close();
