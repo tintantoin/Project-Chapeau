@@ -25,7 +25,7 @@ namespace DAL
             string query = "SELECT BestellingsId FROM BesteldItem WHERE BesteldItemid = @id";
             SqlParameter[] sqlParameter = new SqlParameter[1]
             {
-                new SqlParameter("@Instuurtijd", DateTime.UtcNow)
+                new SqlParameter("@id", id)
             };
             return ReadBestellingTables(ExecuteSelectQuery(query, sqlParameter));
         }
@@ -51,9 +51,7 @@ namespace DAL
             int id = 0;
             foreach (DataRow dr in dataTable.Rows)
             {
-                
                 id = (int)dr["BestellingsId"];
-                
             }
             bestelling.BestellingId = id;
             return bestelling;

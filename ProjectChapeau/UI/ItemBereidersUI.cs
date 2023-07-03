@@ -75,8 +75,8 @@ namespace UI
                     {
                         li.SubItems.Add(bestelling.BestellingId.ToString());
                         li.SubItems.Add(bestelling.table.TableId.ToString());
-                        li.SubItems.Add(besteld.InstuurTijd.ToString());
-                        int WaitTimeInMinute = DateTime.Now.Minute - besteld.InstuurTijd.Minute;
+                        li.SubItems.Add(bestelling.InstuurTijd.ToString());
+                        TimeSpan WaitTimeInMinute = DateTime.UtcNow - bestelling.InstuurTijd;
                         li.SubItems.Add(WaitTimeInMinute.ToString());
                     }
                 }

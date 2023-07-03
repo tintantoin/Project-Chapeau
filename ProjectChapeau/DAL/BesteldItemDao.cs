@@ -28,7 +28,6 @@ namespace DAL
             {
                 try
                 {
-                    GerechtsType type = new GerechtsType();
                     string s = "";
                     BesteldItem item = new BesteldItem()
                     {
@@ -38,8 +37,7 @@ namespace DAL
                     };
                     item.menuItem.Name = (string)dr["Naam"];
                     s = (string)dr["TypeGerecht"];
-                    type = (GerechtsType)Enum.Parse(typeof(GerechtsType),s);
-                    item.menuItem.gerechttype = type;
+                    item.menuItem.gerechttype = (GerechtsType)Enum.Parse(typeof(GerechtsType),s);
                     bestelling.Add(item);
                 }
                 catch (Exception ex)
