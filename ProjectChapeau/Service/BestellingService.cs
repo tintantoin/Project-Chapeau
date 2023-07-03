@@ -16,7 +16,6 @@ namespace Service
         {
             this.bestellingDao = new BestellingDao();
         }
-
         public List<Bestelling> GetAllBestelling()
         {
             return bestellingDao.GetAllBestelling();

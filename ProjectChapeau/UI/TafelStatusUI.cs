@@ -17,51 +17,54 @@ namespace UI
 {
     public partial class TafelStatusUI : Form
     {
-        private int tableNumber;
+        private Table table;
         private TafelService tafelService;
         private TafelOverzicht tafelOverzicht;
-
-        public TafelStatusUI(TafelOverzicht tafelOverzicht)
+        private FormChanger formChanger;
+        public TafelStatusUI(TafelOverzicht tafelOverzicht, Table table)
         {
             tafelOverzicht.Hide();
             InitializeComponent();
+            StartForm(table);
             this.tafelOverzicht = tafelOverzicht;
             tafelService = new TafelService();
+            formChanger = FormChanger.GetFormChanger();
         }
-        public void TableNumber(int tableNumber)
-        {
-            this.tableNumber = tableNumber;
-            lblTheTable.Text = "Table " + tableNumber.ToString();
-            lblCurrentStateTable.Text = $"Table {tableNumber} is currenty {tafelOverzicht.GetTafelStatus(tableNumber)}";
+        private void StartForm(Table table)
+        {        
+            this.table = table;
+            lblTheTable.Text = "Table " + this.table.ToString();
+            lblCurrentStateTable.Text = $"Table {this.table} is currenty {this.table.Tafelstatus}";
         }
         private void btnBackTafelStatus_Click(object sender, EventArgs e)
         {
-            UpdateStatusLabel(tafelOverzicht.GetTafelStatus(this.tableNumber));
             tafelOverzicht.GiveTablesStatus();
             this.Close();
             tafelOverzicht.Show();
         }
-
         private void btnStatusFree_Click(object sender, EventArgs e)
         {
-            tafelService.ChangeStatus(1, this.tableNumber);
-            UpdateStatusLabel((TafelStatus)1);
+            tafelService.ChangeStatus(1, this.table.Tafelnummer);
+            UpdateStatusLabel(TafelStatus.Free);
         }
-
         private void btnStatusOccupied_Click(object sender, EventArgs e)
         {
-            tafelService.ChangeStatus(2, this.tableNumber);
-            UpdateStatusLabel((TafelStatus)2);
+            tafelService.ChangeStatus(2, this.table.Tafelnummer);
+            UpdateStatusLabel((TafelStatus.Occupied));
         }
 
         private void btnStatusReserved_Click(object sender, EventArgs e)
         {
-            tafelService.ChangeStatus(3, this.tableNumber);
-            UpdateStatusLabel((TafelStatus)3);
+            tafelService.ChangeStatus(3, this.table.Tafelnummer);
+            UpdateStatusLabel(TafelStatus.Reserved);
         }
         private void UpdateStatusLabel(TafelStatus status)
         {
-            lblCurrentStateTable.Text = $"Table {tableNumber} is currenty {status}";
+            lblCurrentStateTable.Text = $"Table {this.table.Tafelnummer} is currenty {status}";
+        }
+        private void btnGoToServeerder_Click(object sender, EventArgs e)
+        {
+            formChanger.OpenForm(new ServeerderUI());
         }
     }
 }

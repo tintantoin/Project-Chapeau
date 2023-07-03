@@ -1,5 +1,5 @@
 using ProjectChapeau.ChapeauUI;
-using Model;
+
 namespace UI
 {
     internal static class Program
@@ -13,13 +13,11 @@ namespace UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(TafelOverzicht.GetInstance());           
-            //Application.Run(new Form1());
-            //FormChanger formChanger = FormChanger.GetFormChanger();
-            //formChanger.StartApplication();
-            Table table = new Table();
-            table.Tafelnummer = 4;
-            Application.Run(new ServeerderUI(table));
+            //Application.Run(FormChanger.GetFormChanger());           
+            //Application.Run(new ServeerderUI());
+            FormChanger formChanger = FormChanger.GetFormChanger();
+            formChanger.StartApplication();
+            //Application.Run(new paymenttable());
         }
     }
 }

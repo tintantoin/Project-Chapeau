@@ -12,16 +12,10 @@ namespace DAL
 {
     public class PersoneelDAO : BaseDao
     {
-        public List<Personeel> GetAllPersoneel()
-        {
-            string query = "SELECT PersoneelID, Voornaam, Achternaam, FunctieID, Wachtwoord FROM Personeel";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
-        }
-        public Personeel GetPersoneelByID(string achternaam, int id)
+        public Personeel GetPersoneelByIdAndLastName(string achternaam, int id)
         {
             string query = "SELECT PersoneelID, FunctieID, Voornaam, Achternaam, Wachtwoord FROM Personeel WHERE PersoneelID = @id AND Achternaam = @achternaam";
-            SqlParameter[] sqlParameters = new SqlParameter[]
+            SqlParameter[] sqlParameters = new SqlParameter[2]
             {
                 new SqlParameter("@id", id),
                 new SqlParameter("@achternaam", achternaam)

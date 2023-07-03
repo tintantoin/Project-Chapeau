@@ -19,5 +19,9 @@ namespace Model
             Tafelstatus= new TafelStatus();
             serveerder= new Serveerder();
         }
+        public override string ToString()
+        {
+            return Tafelnummer.ToString();
+        }
     }
 }

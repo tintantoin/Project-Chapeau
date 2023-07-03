@@ -9,7 +9,6 @@ namespace UI
     public class FormChanger
     {
         private Form inlog;
-
         private Form activeForm;
         public Form ActiveForm { get { return activeForm; } }
 
@@ -38,11 +37,10 @@ namespace UI
             Application.Run(inlog);
         }
         private void ChangeForm(Form form)
-        {
-            inlog.Hide();
+        {           
+            inlog.Hide();           
             activeForm = form;
             activeForm.Show();
-        }
-        
+        }       
     }
 }
