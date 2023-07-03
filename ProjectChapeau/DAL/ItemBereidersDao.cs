@@ -40,15 +40,6 @@ namespace DAL
             };
             return ReadItemBereidersTable(ExecuteSelectQuery(query, sqlParameters));
         }
-        public void RemoveItemBereiderItem(int id)
-        {
-            string query = "DELETE FROM ItemBereiders WHERE id = @id')";
-            SqlParameter[] sqlParameters = new SqlParameter[1]
-            {
-                new SqlParameter("@id", id)
-            };
-            ExecuteEditQuery(query, sqlParameters);
-        }
         private GerechtsStatus ReadItemBereidersTable(DataTable dataTable)
         {
             GerechtsStatus status = new GerechtsStatus();

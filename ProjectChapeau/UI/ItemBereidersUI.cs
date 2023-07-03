@@ -134,10 +134,6 @@ namespace UI
         {
             BereidersService.SetStatus(id, s);
         }
-        private void RemoveItemBereiderItem(int id)
-        {
-            BereidersService.RemoveItemBereiderItem(id);
-        }
         private void ChangeStatus(GerechtsStatus s)
         {
             try

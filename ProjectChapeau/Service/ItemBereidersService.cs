@@ -26,10 +26,6 @@ namespace Service
         {
             itemBereidersDao.FillItemBereidersTable(s, id);
         }
-        public void RemoveItemBereiderItem(int id)
-        {
-            itemBereidersDao.RemoveItemBereiderItem(id);
-        }
         public GerechtsStatus GetStatus(int id)
         {
             return itemBereidersDao.GetStatus(id);
